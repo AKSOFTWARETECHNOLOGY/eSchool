@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bird (v1) - Responsive admin dashboard theme by Followtechnique</title>	
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png">
+	<link href="assets/images/favicon.ico" rel="icon" type="image/png">
+	<link href="assets/images/favicon.ico" rel="shortcut icon">
+
+	<!-- Global stylesheets -->
+	<link href="fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-extended.css" rel="stylesheet" type="text/css">
+	<link href="css/plugins.css" rel="stylesheet" type="text/css">
+	<link href="css/color-system.css" rel="stylesheet" type="text/css">
+	<link href="css/media.css" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="extensions_pnotify.htm" id="style">
+	<link type="text/css" rel="stylesheet" href="extensions_pnotify.htm" id="theme">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>	
+	<script src="js/fancybox.min.js"></script>	
+	<script src="js/app.js"></script><link href="assets/icomoon/icomoon.css" rel="stylesheet" type="text/css">
+<link href="assets/glyphicons/glyphicons.css" rel="stylesheet" type="text/css">
+<script src="js/pnotify.min.js"></script>
+</head>
+<body>
+<!-- Main navbar -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-header">
+		<a class="sidebar-mobile-toggle visible-xs"><i class="fa fa-ellipsis-v"></i></a>
+		<a class="navbar-brand" href="index.htm"></a>
+		<a class="sidebar-control sidebar-toggle hidden-xs pull-right"><i class="fa fa-bars"></i></a>
+	</div>
+	<ul class="navbar-right">
+		<li class="dropdown clearfix"> 
+			<a class="dropdown-toggle" id="settings" data-toggle="dropdown" aria-expanded="false"> <i class="fa fa-cog"></i></a> 
+			<ul class="dropdown-menu dropdown-menu-themes" aria-labelledby="settings"> 
+				<li class="dropdown-header">Styles</li>
+				<ul class="clearfix">
+					<li class="color-option style dark" data-popup="tooltip" title="Dark Theme" theme="dark"></li> 
+					<li class="color-option style light" data-popup="tooltip" title="Light Theme" theme="light"></li>
+					<li class="color-option style default" data-popup="tooltip" title="Default Theme" theme=""></li>					
+				</ul>
+				<li role="separator" class="divider"></li>
+				<li class="dropdown-header">Themes</li>
+				<ul class="clearfix">
+					<li class="color-option theme pink" data-popup="tooltip" title="Pink" theme="pink"></li> 					
+					<li class="color-option theme purple" data-popup="tooltip" title="Purple" theme="purple"></li>
+					<li class="color-option theme indigo" data-popup="tooltip" title="Indigo" theme="indigo"></li> 
+					<li class="color-option theme blue" data-popup="tooltip" title="Blue" theme="blue"></li>
+					<li class="color-option theme teal" data-popup="tooltip" title="Teal" theme="teal"></li> 
+					<li class="color-option theme lime" data-popup="tooltip" title="Lime" theme="lime"></li>
+					<li class="color-option theme amber" data-popup="tooltip" title="Amber" theme="amber"></li> 
+					<li class="color-option theme brown" data-popup="tooltip" title="Brown" theme="brown"></li>					
+					<li class="color-option theme slate" data-popup="tooltip" title="Slate" theme="slate"></li>
+					<li class="color-option theme grey" data-popup="tooltip" title="Grey" theme="grey"></li>
+					<li class="color-option theme default" data-popup="tooltip" title="Default" theme=""></li> 					
+				</ul>
+			</ul> 
+		</li>
+		<li class="dropdown notifications">
+			<a class="dropdown-toggle" data-toggle="dropdown">
+				<i class="fa fa-bell"></i>		
+				<span class="badge badge-info">5</span>
+			</a>
+			<div class="dropdown-menu">
+				<ul class="media-list media-list-linked">
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user1.png" class="img-circle img-sm" alt="">							
+						</div>
+						<div class="media-body">
+							<a href="extensions_pnotify.htm#" class="media-heading clearfix">
+								Jane Elliott
+								<span class="media-annotation pull-right">04:58</span>
+							</a>
+							<span>Suspendisse vel dolor dui. Cras bibendum elit ac...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user2.png" class="img-circle img-sm" alt="">							
+						</div>
+						<div class="media-body">
+							<a href="extensions_pnotify.htm#" class="media-heading clearfix">
+								Florence Douglas
+								<span class="media-annotation pull-right">12:16</span>
+							</a>
+
+							<span>Aenean aliquam tempor odio nec tincidunt...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user3.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="extensions_pnotify.htm#" class="media-heading clearfix">
+								Eugine Turner
+								<span class="media-annotation pull-right">22:48</span>
+							</a>
+
+							<span>Aliquam erat volutpat. Integer ut molestie elit...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left"><img src="assets/images/users/user4.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="extensions_pnotify.htm#" class="media-heading clearfix">
+								Ann Porter
+								<span class="media-annotation pull-right">Tue</span>
+							</a>
+
+							<span>Maecenas varius bibendum sagittis. Donec porttitor...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left"><img src="assets/images/users/user5.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="extensions_pnotify.htm#" class="media-heading clearfix">
+								Jacqueline Howell
+								<span class="media-annotation pull-right">Mon</span>
+							</a>
+							
+							<span>Cras eleifend gravida ullamcorper. Mauris id congue nunc...</span>
+						</div>
+					</li>
+				</ul>
+				<div class="dropdown-content-footer">
+					<a href="extensions_pnotify.htm#" data-popup="tooltip" title="All messages"><i class="fa fa-comments position-left"></i> Read all notifications</a>
+				</div>
+			</div>
+		</li>			
+	</ul>
+</div>
+<!-- /main navbar -->
+
+<!-- Page container -->
+<div class="page-container" style="min-height:700px">
+
+	<!-- Page content -->
+	<div class="page-content"><!-- Main sidebar -->
+<div class="sidebar sidebar-main hidden-xs">
+	<div class="sidebar-content">
+
+		<!-- User menu -->
+		<div class="sidebar-user">
+			<div class="category-content">
+				<div class="media">
+					<a href="extensions_pnotify.htm#" class="media-left"><img src="assets/images/users/user6.png" class="img-circle img-sm" alt=""></a>
+					<div class="media-body">
+						<span class="media-heading text-semibold">Andrew Brewer</span>
+						<div class="text-size-mini text-muted">
+							Network engineer
+						</div>
+					</div>
+
+					<div class="media-right media-middle">
+						<ul class="icons-list">
+							<li>
+								<a href="login_simple.htm"><i class="fa fa-sign-out"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /user menu -->
+
+		<!-- Main navigation -->
+		<div class="sidebar-category sidebar-category-visible">
+			<div class="category-content no-padding">
+				<ul class="navigation navigation-main navigation-accordion">
+					
+					<!-- Main -->					
+					<li>
+						<a href="index.htm"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>						
+					</li>																			
+					<!-- /Main -->	
+					
+					<!-- Content -->
+					<li class="navigation-header"><span>Content</span> <i class="fa fa-bars" title="Content"></i></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-th"></i> <span>Bootstrap Components</span></a>
+						<ul>
+							<li><a href="bootstrap_modals.htm">Modals</a></li>
+							<li><a href="bootstrap_dropdowns.htm">Dropdown menus</a></li>
+							<li><a href="bootstrap_tabs.htm">Tabs component</a></li>										
+							<li><a href="bootstrap_accordions.htm">Accordions</a></li>
+							<li><a href="bootstrap_buttons.htm">Buttons</a></li>																
+							<li><a href="bootstrap_popups.htm">Tooltips and popovers</a></li>
+							<li><a href="bootstrap_alerts.htm">Alerts</a></li>							
+							<li><a href="bootstrap_pagination.htm">Pagination</a></li>
+							<li><a href="bootstrap_labels.htm">Labels and badges</a></li>
+							<li><a href="bootstrap_loaders.htm">Loaders and bars</a></li>																									
+							<li><a href="bootstrap_media.htm">Media objects</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-paper-plane"></i> <span>Appearance</span></a>
+						<ul>
+							<li><a href="appearance_content_panels.htm">Content panels</a></li>							
+							<li><a href="appearance_draggable_panels.htm">Draggable panels</a></li>										
+							<li><a href="appearance_typography.htm">Typography</a></li>
+							<li><a href="appearance_helper_classes.htm">Helper classes</a></li>							
+							
+						</ul>
+					</li>													
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-star"></i> <span>Icons</span></a>
+						<ul>
+							<li><a href="icons_glyphicons.htm">Glyphicons</a></li>							
+							<li><a href="icons_fontawesome.htm">Font awesome</a></li>
+							<li><a href="icons_icomoon.htm">Icomoon</a></li>
+						</ul>
+					</li>
+					<li><a href="animations.htm"><i class="fa fa-spinner fa-pulse"></i> <span>CSS3 Animations</span></a></li>					
+					<li><a href="color_system.htm"><i class="fa fa-eyedropper"></i> <span>Color system</span></a></li>	
+					<li><a href="grid_system.htm"><i class="fa fa-th-large"></i> <span>Grid system</span></a></li>					
+					<!-- /Content -->
+					
+					<!-- Forms -->
+					<li class="navigation-header"><span>Forms</span> <i class="fa fa-check-square-o" title="Forms"></i></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-pencil"></i> <span>Form components</span></a>
+						<ul>
+							<li><a href="form_basic.htm">Basic inputs</a></li>
+							<li><a href="form_groups.htm">Input groups</a></li>
+							<li><a href="form_checkboxes_radios.htm">Checkboxes &amp; radios</a></li>							
+							<li><a href="form_select2.htm">Select2 selects</a></li>														
+							<li><a href="form_tag_inputs.htm">Tag inputs</a></li>	
+							<li><a href="form_sliders_noui.htm">NoUI sliders</a></li>														
+							<li><a href="form_wizard.htm">Form Wizard</a></li>										
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-text-height"></i> <span>Text Editors</span></a>
+						<ul>
+							<li><a href="editor_ckeditor.htm">CKEditor</a></li>
+							<li><a href="editor_tinymce.htm">TinyMCE editor</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-eyedropper"></i> <span>Pickers</span></a>
+						<ul>
+							<li><a href="pickers_date.htm">Date & Time pickers</a></li>
+							<li><a href="pickers_colors.htm">Color pickers</a></li>							
+						</ul>
+					</li>							
+					<!-- /forms -->				
+
+					<!-- Data & charts -->
+					<li class="navigation-header"><span>Charts &amp; Graphs</span> <i class="fa fa-area-chart" title="Charts &amp; Graphs"></i></li>																									
+					<li><a href="extensions_pnotify.htm#"><i class="fa fa-pie-chart"></i> <span>C3 library</span></a>
+						<ul>
+							<li><a href="charts_c3_lines_areas.htm">Lines &amp; areas</a></li>
+							<li><a href="charts_c3_bars_pies.htm">Bars &amp; pies</a></li>
+							<li><a href="charts_c3_advanced.htm">Advanced examples</a></li>
+							<li><a href="charts_c3_chart_axis.htm">Chart axis</a></li>
+							<li><a href="charts_c3_grid_options.htm">Grid options</a></li>
+						</ul>
+					</li>					
+					<li><a href="extensions_pnotify.htm#"><i class="fa fa-line-chart"></i> <span>Google charts</span></a>
+						<ul>
+							<li><a href="charts_google_lines.htm">Line charts</a></li>
+							<li><a href="charts_google_bars.htm">Bar charts</a></li>
+							<li><a href="charts_google_pies.htm">Pie charts</a></li>
+							<li><a href="charts_google_bubbles.htm">Bubble &amp; scatter charts</a></li>							
+						</ul>
+					</li>						
+					<!-- /data & charts -->
+
+					<!-- Extensions -->
+					<li class="navigation-header"><span>Extensions</span> <i class="fa fa-puzzle-piece" title="Extensions"></i></li>
+					<li class="active"><a href="extensions_pnotify.htm"><i class="fa fa-warning"></i> <span>PNotify notifications</span></a></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-cloud-upload"></i> <span>File uploaders</span></a>
+						<ul>
+							<li><a href="extensions_bootstrap.htm">Bootstrap file uploader</a></li>
+							<li><a href="extensions_dropzone.htm">Dropzone</a></li>																
+						</ul>
+					</li>
+					<li><a href="extension_calendar.htm"><i class="fa fa-calendar"></i> <span>Event calendars</span></a></li>						
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-map"></i> <span>Maps integration</span></a>
+						<ul>
+							<li><a href="maps_vector.htm">Vector maps</a></li>
+							<li>
+								<a href="extensions_pnotify.htm#">Google maps</a>
+								<ul>
+									<li><a href="maps_google_basic.htm">Basics</a></li>									
+									<li><a href="maps_google_markers.htm">Markers</a></li>									
+									<li><a href="maps_google_layers.htm">Layers</a></li>
+								</ul>
+							</li>							
+						</ul>
+					</li>								
+					<!-- /extensions -->
+
+					<!-- Tables -->
+					<li class="navigation-header"><span>Tables</span> <i class="fa fa-table" title="Tables"></i></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-table"></i> <span>Basic tables</span></a>
+						<ul>
+							<li><a href="table_basic.htm">Basic examples</a></li>
+							<li><a href="table_borders.htm">Table borders</a></li>
+							<li><a href="table_sizing.htm">Table sizing</a></li>							
+							<li><a href="table_styling.htm">Table styling</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-th-large"></i> <span>Data tables</span></a>
+						<ul>
+							<li><a href="datatable_basic.htm">Basic datatable</a></li>																					
+							<li><a href="datatable_advanced.htm">Advanced datatables</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-plug"></i> <span>Data tables extensions</span></a>
+						<ul>							
+							<li><a href="datatable_extension_row_reorder.htm">Row reorder</a></li>
+							<li><a href="datatable_extension_column_reorder.htm">Columns reorder</a></li>
+							<li><a href="datatable_extension_state_saving.htm">State Saving</a></li>
+							<li><a href="datatable_extension_fixed_columns.htm">Fixed columns</a></li>
+							<li><a href="datatable_extension_fixed_header.htm">Fixed header</a></li>
+							<li><a href="datatable_extension_autofill.htm">Auto fill</a></li>
+							<li><a href="datatable_extension_key_table.htm">Key table</a></li>
+							<li><a href="datatable_extension_export_options.htm">Export options</a></li>
+							<li><a href="datatable_extension_columns_selection.htm">Columns selection</a></li>																					
+						</ul>
+					</li>	
+					<li><a href="datatable_responsive.htm"><i class="fa fa-arrows-alt"></i> <span>Responsive tables</span></a></li>					
+					<!-- /tables -->
+
+					<!-- Pages -->
+					<li class="navigation-header"><span>Pages</span> <i class="fa fa-file-o" title="Pages"></i></li>	
+					<li><a href="page_email.htm"><i class="fa fa-envelope"></i> <span>Email</span></a></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-money"></i> <span>Invoice</span></a>
+						<ul>
+							<li><a href="invoice_list.htm">Invoice list</a></li>
+							<li><a href="invoice_template.htm">Invoice template</a></li>														
+						</ul>
+					</li>
+					<li><a href="timeline.htm"><i class="fa fa-file-text-o"></i> <span>Timeline</span></a></li>
+					<li><a href="page_tasks.htm"><i class="fa fa-tasks"></i> <span>Tasks</span></a></li>
+					<li><a href="gallery.htm"><i class="fa fa-file-image-o"></i> <span>Media Gallery</span></a></li>
+					<li><a href="search.htm"><i class="fa fa-search"></i> <span>Search</span></a></li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-users"></i> <span>User pages</span></a>
+						<ul>
+							<li><a href="user_cards.htm">Users cards</a></li>
+							<li><a href="user_list.htm">Users list</a></li>
+							<li><a href="user_profile.htm">Simple user profile</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-user-plus"></i> <span>Login &amp; registration</span></a>
+						<ul>
+							<li><a href="login_simple.htm">User login</a></li>							
+							<li><a href="login_registration.htm">Simple registration</a></li>
+							<li><a href="login_registration_advanced.htm">Detailed registration</a></li>
+							<li><a href="login_unlock.htm">Unlock user</a></li>
+							<li><a href="login_recover.htm">Reset password</a></li>
+							<li><a href="login_tabbed.htm">Tabbed form</a></li>									
+						</ul>
+					</li>														
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-info-circle"></i> <span>Support</span></a>
+						<ul>
+							<li><a href="support_faq.htm">FAQ page</a></li>
+							<li><a href="support_knowledgebase.htm">Knowledgebase</a></li>
+							<li><a href="support_center.htm">Support Center</a></li>													
+						</ul>
+					</li>					
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-warning"></i> <span>Error pages</span></a>
+						<ul>
+							<li><a href="error_403.htm">Error 403</a></li>
+							<li><a href="error_404.htm">Error 404</a></li>
+							<li><a href="error_405.htm">Error 405</a></li>
+							<li><a href="error_500.htm">Error 500</a></li>
+							<li><a href="error_503.htm">Error 503</a></li>
+							<li><a href="error_offline.htm">Offline page</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.htm"><i class="fa fa-phone"></i> <span>Contact Page</span></a></li>
+					<!-- /pages -->
+					
+					<!-- Others -->
+					<li class="navigation-header"><span>Extras</span> <i class="fa fa-folder-o" title="Extras"></i></li>
+					<li><a href="page_starter.htm"><i class="fa fa-file-o"></i> <span>Starter Page</span></a></li>					
+					<li>
+						<a href="extensions_pnotify.htm#"><i class="fa fa-sitemap"></i> <span>Menu levels</span></a>
+						<ul>
+							<li><a href="extensions_pnotify.htm#">Second level</a></li>
+							<li>
+								<a href="extensions_pnotify.htm#">Second level with child</a>
+								<ul>
+									<li><a href="extensions_pnotify.htm#">Third level</a></li>
+									<li>
+										<a href="extensions_pnotify.htm#">Third level with child</a>
+										<ul>
+											<li><a href="extensions_pnotify.htm#">Fourth level</a></li>
+											<li><a href="extensions_pnotify.htm#">Fourth level</a></li>
+										</ul>
+									</li>
+									<li><a href="extensions_pnotify.htm#">Third level</a></li>
+								</ul>
+							</li>
+							<li><a href="extensions_pnotify.htm#">Second level</a></li>
+						</ul>
+					</li>
+					<!-- /Others -->
+
+				</ul>
+			</div>
+		</div>
+		<!-- /main navigation -->
+
+	</div>
+</div>
+<!-- /main sidebar -->
+<!-- Main content -->
+<div class="content-wrapper">
+
+	<!-- Page header -->
+	<div class="page-header">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h4><i class="fa fa-warning position-left"></i> PNotify notifications</h4>
+			</div>										
+			<ul class="breadcrumb">
+				<li><a href="index.htm"><i class="fa fa-home"></i>Home</a></li>				
+				<li>Extensions</li>
+				<li class="active">PNotify notifications</li>
+			</ul>					
+		</div>
+	</div>
+	<!-- /page header -->
+
+	<!-- Content area -->
+	<div class="content">
+		<!-- PNotify notifications -->
+		<div class="panel panel-flat">
+			<div class="panel-heading mb-10">
+				<h4 class="panel-title">PNotify notifications</h4>
+			</div>			
+
+			<div class="table-responsive">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th colspan="3" class="active">Solid color notifications</th>
+						</tr>
+						<tr>
+							<td>Primary notice</td>
+							<td><button type="button" class="btn btn-primary btn-sm" id="pnotify-solid-primary">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Primary notice. To use, add <code>.bg-primary</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr>
+							<td>Danger notice</td>
+							<td><button type="button" class="btn btn-danger btn-sm" id="pnotify-solid-danger">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Danger notice. To use, add <code>.bg-danger</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr>
+							<td>Success notice</td>
+							<td><button type="button" class="btn btn-success btn-sm" id="pnotify-solid-success">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Success notice. To use, add <code>.bg-success</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr>
+							<td>Warning notice</td>
+							<td><button type="button" class="btn btn-warning btn-sm" id="pnotify-solid-warning">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Warning notice. To use, add <code>.bg-warning</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr>
+							<td>Info notice</td>
+							<td><button type="button" class="btn btn-info btn-sm" id="pnotify-solid-info">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Info notice. To use, add <code>.bg-info</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr class="border-solid">
+							<td>Custom color notice</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-solid-custom">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notice with custom background color. To use, add custom <code>.bg-*</code> color class to the plugin configuration options</td>
+						</tr>
+						<tr>
+							<td>Left icon</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-solid-styled-left">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Solid color notification with left icon. To use, add <code>'bg-* alert-styled-left'</code> to the <code>addclass: '...'</code> option</td>
+						</tr>
+						<tr>
+							<td>Right icon</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-solid-styled-right">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Solid color notification with right icon. To use, add <code>'bg-* alert-styled-right'</code> to the <code>addclass: '...'</code> option</td>
+						</tr>
+
+						<tr>
+							<th colspan="3" class="active">Basic notifications</th>
+						</tr>
+						<tr>
+							<td style="width: 20%;">Default notice</td>
+							<td style="width: 20%;"><button type="button" class="btn btn-primary btn-sm" id="pnotify-default">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Basic pnotify notification. All notification color styles correspond to the Boostrap's <code>alert</code> component</td>
+						</tr>
+						<tr>
+							<td>Danger notice</td>
+							<td><button type="button" class="btn btn-danger btn-sm" id="pnotify-danger">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Danger notice. To use, add <code>type: 'error'</code> to the plugin configuration</td>
+						</tr>
+						<tr>
+							<td>Success notice</td>
+							<td><button type="button" class="btn btn-success btn-sm" id="pnotify-success">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Success notice. To use, add <code>type: 'success'</code> to the plugin configuration</td>
+						</tr>
+						<tr>
+							<td>Warning notice</td>
+							<td><button type="button" class="btn btn-warning btn-sm" id="pnotify-warning">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Warning notice. To use, add <code>type: 'warning'</code> to the plugin configuration</td>
+						</tr>
+						<tr>
+							<td>Info notice</td>
+							<td><button type="button" class="btn btn-info btn-sm" id="pnotify-info">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Info notice. To use, add <code>type: 'info'</code> to the plugin configuration</td>
+						</tr>
+						<tr class="border-solid">
+							<td>Left positioned icon</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-styled-left">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with left positioned icon. To use, add <code>'alert-styled-left'</code> to the <code>addclass: '...'</code> option</td>
+						</tr>
+						<tr>
+							<td>Right positioned icon</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-styled-right">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with right positioned icon. To use, add <code>'alert-styled-right'</code> to the <code>addclass: '...'</code> option</td>
+						</tr>
+						<tr>
+							<td>Display arrow</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-styled-arrow">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Display arrow in styled notifications. To use, add <code>'alert-arrow-left'</code> or <code>'*-right'</code> to the <code>addclass: '...'</code> option</td>
+						</tr>
+						<tr>
+							<td>Notice with custom color</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-custom-styled">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with custom background/border/text color. Text, background and border color can be changed by adding proper classes to the plugin configuration</td>
+						</tr>
+
+						<tr class="border-double">
+							<th colspan="3" class="active">Desktop notifications</th>
+						</tr>
+						<tr>
+							<td>Default notice</td>
+							<td><button type="button" class="btn btn-primary btn-sm" id="pnotify-desktop-default">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>The first time you click one of these buttons, you will be asked to grant permission for this site to show notices. Then you can click them again to see the desktop notification</td>
+						</tr>
+						<tr>
+							<td>Danger notice</td>
+							<td><button type="button" class="btn btn-danger btn-sm" id="pnotify-desktop-danger">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Danger desktop notification using a custom contextual icon. If permission denied, this icon will be hidden</td>
+						</tr>
+						<tr>
+							<td>Success notice</td>
+							<td><button type="button" class="btn btn-success btn-sm" id="pnotify-desktop-success">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Success desktop notification using a custom contextual icon. If permission denied, this icon will be hidden</td>
+						</tr>
+						<tr>
+							<td>Warning notice</td>
+							<td><button type="button" class="btn btn-warning btn-sm" id="pnotify-desktop-warning">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Warning desktop notification using a custom contextual icon. If permission denied, this icon will be hidden</td>
+						</tr>
+						<tr>
+							<td>Info notice</td>
+							<td><button type="button" class="btn btn-info btn-sm" id="pnotify-desktop-info">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Info desktop notification using a custom contextual icon. If permission denied, this icon will be hidden</td>
+						</tr>
+
+						<tr class="border-double">
+							<th colspan="3" class="active">Notification options</th>
+						</tr>
+						<tr>
+							<td>No title</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-no-title">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification without <code>title</code>. This is a default option, the title won't be shown if it isn't specified in notification configuration</td>
+						</tr>
+						<tr>
+							<td>Rich notice</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-rich">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>By default notification supports <code>rich</code> content, including typography components, links, icons, buttons etc</td>
+						</tr>
+						<tr>
+							<td>Click to close</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-click">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification can be closed on a <code>closer</code> button click or on a notification itself via <code>click()</code> event</td>
+						</tr>
+						<tr>
+							<td>Form notice</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-form">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with <code>form</code> components. Form is inserted as a DOM object</td>
+						</tr>
+						<tr>
+							<td>Sticky notice</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-sticky">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Sticky notification. To use, add <code>hide: false</code> to the notification configuration</td>
+						</tr>
+						<tr>
+							<td>No sticky button</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-sticky-buttons">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with hidden <code>sticky</code> button. To use, add <code>button.sticker: false</code> to the notification config</td>
+						</tr>
+						<tr>
+							<td>Permanent buttons</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-permanent-buttons">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>By default, notification control buttons appear on hover. To make them always visible, add <code>buttons.closer_hover: false</code></td>
+						</tr>
+						<tr>
+							<td>Permanotice</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-permanotice">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>To show <code>permanent</code> notification, make it sticky and hide control buttons</td>
+						</tr>
+
+						<tr class="border-double">
+							<th colspan="3" class="active">PNotify modules</th>
+						</tr>
+						<tr>
+							<td>Confirmation</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-confirm">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Confirmation dialog with callbacks. To use, add <code>confirm.confirm: true</code> to the notice config</td>
+						</tr>
+						<tr>
+							<td>Prompt</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-prompt">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Prompt dialog with callbacks. To use, add <code>confirm.prompt: true</code> to the notice config</td>
+						</tr>
+						<tr>
+							<td>Multi line</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-multiline">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Multi line prompt dialog with textarea. To use, add <code>prompt_multi_line: true</code> to the notice config</td>
+						</tr>
+						<tr>
+							<td>Custom buttons</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-buttons">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with <code>custom</code> buttons and callbacks</td>
+						</tr>
+						<tr>
+							<td>With callbacks</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-callbacks">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification <code>callbacks</code>. Available callbacks: before and after <code>init</code>, before and after <code>open</code>, before and after <code>close</code></td>
+						</tr>
+						<tr>
+							<td>Switching notices</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-switching">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>PNotify supports dynamic notification change. Here notifications are switching using <code>before_close</code> callback</td>
+						</tr>
+						<tr>
+							<td>Progress loader</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-progress">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with dynamic <code>progress</code>bar. Here <code>before_open</code> callback is used</td>
+						</tr>
+						<tr>
+							<td>Dynamic loader</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-dynamic">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Notification with <code>dynamic</code> content. The content changes in a given time interval using <code>update()</code> function</td>
+						</tr>
+
+						<tr class="border-double">
+							<th colspan="3" class="active">PNotify stacks</th>
+						</tr>
+						<tr>
+							<td>Top left</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-top-left">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Top left stack. Moves down, then right. Pushes to stack top</td>
+						</tr>
+						<tr>
+							<td>Bottom left</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-bottom-left">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Bottom left stack. Moves right, then up. Pushes to stack top</td>
+						</tr>
+						<tr>
+							<td>Bottom right</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-bottom-right">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Bottom right stack. Moves up, then left. Pushes to stack bottom</td>
+						</tr>
+						<tr>
+							<td>Custom left</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-custom-left">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Left stack with custom position. Moves right, then down. Pushes to stack bottom</td>
+						</tr>
+						<tr>
+							<td>Custom right</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-custom-right">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Right stack with custom position. Moves left, then up. Pushes to stack top</td>
+						</tr>
+						<tr>
+							<td>Top bar</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-custom-top">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Top bar stack style. Moves down, then right. Pushes to stack top</td>
+						</tr>
+						<tr>
+							<td>Bottom bar</td>
+							<td><button type="button" class="btn btn-default btn-sm" id="pnotify-stack-custom-bottom">Launch <i class="fa fa-play-circle-o position-right"></i></button></td>
+							<td>Bottom bar&gt; stack style. Moves up, then right. Pushes to stack bottom</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Sample form -->
+			<div id="form_notice" class="hide">
+				<form action="extensions_pnotify.htm#">
+					<h6 class="no-margin-top mb-15">Login to Continue</h6>
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" class="form-control" name="username" placeholder="Your username...">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Your password...">
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
+						</div>
+
+						<div class="col-md-6">
+							<button type="button" name="cancel" class="btn btn-danger btn-block">Cancel</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- /sample form -->
+
+		</div>
+		<!-- /PNotify notifications -->
+	<!-- Content area -->
+<script type='text/javascript'>
+	$(function() {	
+	
+		// Popup notifications
+		// ------------------------------
+		// Notification styles
+		// Default style
+		$('#pnotify-default').on('click', function () {
+			new PNotify({
+				title: 'Primary notice',
+				text: 'Check me out! I\'m a notice.',
+				icon: 'icon-warning22'
+			});
+		});
+
+		// Styled left
+		$('#pnotify-styled-left').on('click', function () {
+			new PNotify({
+				title: 'Left icon',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert alert-styled-left',
+				type: 'info'
+			});
+		});
+
+		// Styled right
+		$('#pnotify-styled-right').on('click', function () {
+			new PNotify({
+				title: 'Right icon',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert alert-warning alert-styled-right',
+				type: 'error'
+			});
+		});
+
+		// Styled with arrow
+		$('#pnotify-styled-arrow').on('click', function () {
+			new PNotify({
+				title: 'Notice with arrow',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert alert-styled-left alert-arrow-left',
+				type: 'info'
+			});
+		});
+
+		// Custom style
+		$('#pnotify-custom-styled').on('click', function () {
+			new PNotify({
+				title: 'Custom color notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert alert-styled-left alert-styled-custom alert-arrow-left alpha-teal text-teal-800'
+			});
+		});
+
+		// Contextual alternatives
+		// Danger notification
+		$('#pnotify-danger').on('click', function () {
+			new PNotify({
+				title: 'Danger notice',
+				text: 'Check me out! I\'m a notice.',
+				icon: 'icon-blocked',
+				type: 'error'
+			});
+		});
+
+		// Success notification
+		$('#pnotify-success').on('click', function () {
+			new PNotify({
+				title: 'Success notice',
+				text: 'Check me out! I\'m a notice.',
+				icon: 'icon-checkmark3',
+				type: 'success'
+			});
+		});
+		
+		// Warning notification
+		$('#pnotify-warning').on('click', function () {
+			new PNotify({
+				title: 'Warning notice',
+				text: 'Check me out! I\'m a notice.',
+				icon: 'icon-warning22',
+				type: 'warning'
+			});
+		});
+
+		// Info notification
+		$('#pnotify-info').on('click', function () {
+			new PNotify({
+				title: 'Info notice',
+				text: 'Check me out! I\'m a notice.',
+				icon: 'icon-info22',
+				type: 'info'
+			});
+		});
+
+		// Solid color style
+		// Solid primary
+		$('#pnotify-solid-primary').on('click', function () {
+			new PNotify({
+				title: 'Primary notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-primary'
+			});
+		});
+
+		// Solid danger
+		$('#pnotify-solid-danger').on('click', function () {
+			new PNotify({
+				title: 'Danger notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-danger'
+			});
+		});
+
+		// Solid success
+		$('#pnotify-solid-success').on('click', function () {
+			new PNotify({
+				title: 'Success notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-success'
+			});
+		});
+
+		// Solid warning
+		$('#pnotify-solid-warning').on('click', function () {
+			new PNotify({
+				title: 'Warning notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-warning'
+			});
+		});
+
+		// Solid info
+		$('#pnotify-solid-info').on('click', function () {
+			new PNotify({
+				title: 'Info notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-info'
+			});
+		});
+
+
+		// Custom solid color
+		$('#pnotify-solid-custom').on('click', function () {
+			new PNotify({
+				title: 'Custom color notice',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'bg-teal'
+			});
+		});
+
+		// Solid styled left
+		$('#pnotify-solid-styled-left').on('click', function () {
+			new PNotify({
+				title: 'Left icon',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert bg-primary alert-styled-left'
+			});
+		});
+
+		// Solid styled right
+		$('#pnotify-solid-styled-right').on('click', function () {
+			new PNotify({
+				title: 'Right icon',
+				text: 'Check me out! I\'m a notice.',
+				addclass: 'alert bg-danger alert-styled-right',
+				type: 'error'
+			});
+		});
+
+		// Desktop notifications
+		// ------------------------------
+		// Default
+		$('#pnotify-desktop-default').on('click', function () {
+			PNotify.desktop.permission();
+			(new PNotify({
+				title: 'Default Desktop Notice',
+				text: 'If you\'ve given me permission, I\'ll appear as a desktop notification.',
+				desktop: {
+					desktop: true,
+					addclass: 'bg-green',
+					icon: 'assets/images/pnotify/default.png'
+				}
+			})
+			).get().click(function(e) {
+				if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				alert('Hey! You clicked the desktop notification!');
+			});
+		});
+
+		// Danger
+		$('#pnotify-desktop-danger').on('click', function () {
+			PNotify.desktop.permission();
+			(new PNotify({
+				title: 'Danger Desktop Notice',
+				type: 'danger',
+				text: 'I\'m a danger desktop notification, if you have given me a permission.',
+				desktop: {
+					desktop: true,
+					icon: 'assets/images/pnotify/danger.png'
+				}
+			})
+			).get().click(function(e) {
+				if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				alert('Hey! You clicked the desktop notification!');
+			});
+		});
+
+		// Success
+		$('#pnotify-desktop-success').on('click', function () {
+			PNotify.desktop.permission();
+			(new PNotify({
+				title: 'Success Desktop Notice',
+				type: 'success',
+				text: 'I\'m a success desktop notification, if you have given me a permission.',
+				desktop: {
+					desktop: true,
+					icon: 'assets/images/pnotify/success.png'
+				}
+			})
+			).get().click(function(e) {
+				if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				alert('Hey! You clicked the desktop notification!');
+			});
+		});
+
+		// Warning
+		$('#pnotify-desktop-warning').on('click', function () {
+			PNotify.desktop.permission();
+			(new PNotify({
+				title: 'Warning Desktop Notice',
+				type: 'warning',
+				text: 'I\'m a warning desktop notification, if you have given me a permission.',
+				desktop: {
+					desktop: true,
+					icon: 'assets/images/pnotify/warning.png'
+				}
+			})
+			).get().click(function(e) {
+				if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				alert('Hey! You clicked the desktop notification!');
+			});
+		});
+
+		// Info
+		$('#pnotify-desktop-info').on('click', function () {
+			PNotify.desktop.permission();
+			(new PNotify({
+				title: 'Info Desktop Notice',
+				type: 'info',
+				text: 'I\'m an info desktop notification, if you have given me a permission.',
+				desktop: {
+					desktop: true,
+					icon: 'assets/images/pnotify/info.png'
+				}
+			})
+			).get().click(function(e) {
+				if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				alert('Hey! You clicked the desktop notification!');
+			});
+		});
+
+		// Options
+		// ------------------------------
+		// No title
+		$('#pnotify-no-title').on('click', function () {
+			new PNotify({
+				text: 'Check me out! I\'m a notice without title.',
+				addclass: 'bg-primary'
+			});
+		});
+
+		// Rich content
+		$('#pnotify-rich').on('click', function () {
+			new PNotify({
+				title: 'Rich content notice',
+				text: 'Look at my beautiful <strong>strong</strong>, <a href="extensions_pnotify.htm#" class="alert-link">linked</a>, <em>emphasized</em>, and <u>underlined</u> text with <i class="icon-make-group"></i> icon.',
+				icon: 'icon-comment-discussion'
+			});
+		});
+
+		// Close on click
+		$('#pnotify-click').on('click', function () {
+			var notice = new PNotify({
+				title: 'Close on click',
+				text: 'Click me anywhere to dismiss me.',
+				addclass: 'bg-warning',
+				hide: false,
+				buttons: {
+					closer: false,
+					sticker: false
+				}
+			});
+			notice.get().click(function() {
+				notice.remove();
+			});  
+		});
+
+		// Form
+		$('#pnotify-form').on('click', function () {
+			var notice = new PNotify({
+				text: $('#form_notice').html(),
+				width: '300px',
+				hide: false,
+				addclass: 'bg-slate',
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				insert_brs: false
+			});
+
+			// Remove if cancelled
+			notice.get().find('button[name=cancel]').on('click', function() {
+				notice.remove();
+			})
+
+			// Submit form
+			notice.get().submit(function() {
+				var username = $(this).find('input[name=username]').val();
+				if (!username) {
+					alert('Please provide a username.');
+					return false;
+				}
+				notice.update({
+					title: 'Welcome',
+					text: 'Successfully logged in as ' + username,
+					addclass: 'bg-teal',
+					icon: true,
+					width: PNotify.prototype.options.width,
+					hide: true,
+					buttons: {
+						closer: true,
+						sticker: true
+					}
+				});
+				return false;
+			});
+		});
+
+		// Sticky notice
+		$('#pnotify-sticky').on('click', function () {
+			new PNotify({
+				title: 'Sticky notice',
+				text: 'Check me out! I\'m a sticky notice. You\'ll have to close me yourself.',
+				addclass: 'bg-primary',
+				hide: false
+			});
+		});
+
+		// Sticky buttons
+		$('#pnotify-sticky-buttons').on('click', function () {
+			new PNotify({
+				title: 'No sticky button notice',
+				text: 'I\'m a sticky notice with no unsticky button. You\'ll have to close me yourself.',
+				addclass: 'bg-primary',
+				hide: false,
+				buttons: {
+					sticker: false
+				}
+			});
+		});
+
+		// Permanent buttons
+		$('#pnotify-permanent-buttons').on('click', function () {
+			new PNotify({
+				title: 'Permanent buttons notice',
+				text: 'My buttons are really lonely, so they\'re gonna hang out with us.',
+				addclass: 'bg-slate',
+				buttons: {
+					closer_hover: false,
+					sticker_hover: false
+				}
+			});
+		});
+
+		// Modules
+		// -----------------------------
+		// Confirm
+		$('#pnotify-confirm').on('click', function () {
+
+			// Setup
+			var notice = new PNotify({
+				title: 'Confirmation',
+				text: '<p>Are you sure you want to discard changes?</p>',
+				hide: false,
+				type: 'warning',
+				confirm: {
+					confirm: true,
+					buttons: [
+						{
+							text: 'Yes',
+							addClass: 'btn btn-sm btn-primary'
+						},
+						{
+							addClass: 'btn btn-sm btn-default'
+						}
+					]
+				},
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				history: {
+					history: false
+				}
+			})
+
+			// On confirm
+			notice.get().on('pnotify.confirm', function() {
+				alert('Ok, cool.');
+			})
+
+			// On cancel
+			notice.get().on('pnotify.cancel', function() {
+				alert('Oh ok. Chicken, I see.');
+			});
+		});
+
+		// Prompt
+		$('#pnotify-prompt').on('click', function () {
+
+			// Setup
+			var notice = new PNotify({
+				title: 'Input needed',
+				text: 'What side would you like?',
+				hide: false,
+				confirm: {
+					prompt: true,
+					buttons: [
+						{
+							text: 'Yes',
+							addClass: 'btn btn-sm btn-primary'
+						},
+						{
+							addClass: 'btn btn-sm btn-default'
+						}
+					]
+				},
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				history: {
+					history: false
+				}
+			});
+
+			// On confirm
+			notice.get().on('pnotify.confirm', function(e, notice, val) {
+				notice.cancelRemove().update({
+					title: 'You\'ve chosen a side',
+					text: 'You want ' + $('<div/>').text(val).html() + '.',
+					icon: 'icon-checkmark3',
+					type: 'success',
+					delay: 2000,
+					hide: true,
+					confirm: {
+						prompt: false
+					},
+					buttons: {
+						closer: true,
+						sticker: true
+					}
+				});
+			})
+
+			// On cancel
+			notice.get().on('pnotify.cancel', function(e, notice) {
+				notice.cancelRemove().update({
+					title: 'You don\'t want a side',
+					text: 'No soup for you!',
+					icon: 'icon-blocked',
+					type: 'error',
+					delay: 2000,
+					hide: true,
+					confirm: {
+						prompt: false
+					},
+					buttons: {
+						closer: true,
+						sticker: true
+					}
+				});
+			});
+		});
+
+		// Multiline prompt
+		$('#pnotify-multiline').on('click', function () {
+
+			// Setup
+			var notice = new PNotify({
+				title: 'Input needed',
+				text: 'Write me a poem, please.',
+				hide: false,
+				confirm: {
+					prompt: true,
+					prompt_multi_line: true,
+					prompt_default: 'Roses are red,\nViolets are blue,\n',
+					buttons: [
+						{
+							text: 'Yes',
+							addClass: 'btn btn-sm btn-primary'
+						},
+						{
+							addClass: 'btn btn-sm btn-default'
+						}
+					]
+				},
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				history: {
+					history: false
+				}
+			});
+
+			// Confirm
+			notice.get().on('pnotify.confirm', function(e, notice, val) {
+				notice.cancelRemove().update({
+					title: 'Your poem',
+					text: $('<div/>').text(val).html(),
+					icon: 'icon-checkmark3',
+					type: 'success',
+					hide: true,
+					confirm: {
+						prompt: false
+					},
+					buttons: {
+						closer: true,
+						sticker: true
+					}
+				});
+			});
+
+			// On cancel
+			notice.get().on('pnotify.cancel', function(e, notice) {
+				notice.cancelRemove().update({
+					title: 'You don\'t like poetry',
+					text: 'Roses are dead,\nViolets are dead,\nI suck at gardening.',
+					icon: 'icon-blocked',
+					type: 'error',
+					hide: true,
+					confirm: {
+						prompt: false
+					},
+					buttons: {
+						closer: true,
+						sticker: true
+					}
+				});
+			});
+		});
+
+		// Custom buttons
+		$('#pnotify-buttons').on('click', function () {
+			new PNotify({
+				title: 'Choose a side',
+				text: 'You have three options to choose from.',
+				hide: false,
+				width: 420,
+				confirm: {
+					confirm: true,
+					buttons: [
+						{
+							text: 'Fries',
+							addClass: 'btn btn-sm bg-blue',
+							click: function(notice) {
+								notice.update({
+									title: 'You\'ve chosen a side',
+									text: 'You want fries.',
+									icon: 'icon-checkmark3',
+									type: 'success',
+									hide: true,
+									confirm: {
+										confirm: false
+									},
+									buttons: {
+										closer: true,
+										sticker: true
+									}
+								});
+							}
+						},
+						{
+							text: 'Mashed Potatoes',
+							addClass: 'btn btn-sm bg-pink-400',
+							click: function(notice) {
+								notice.update({
+									title: 'You\'ve chosen a side',
+									text: 'You want mashed potatoes.',
+									icon: 'icon-checkmark3',
+									type: 'info',
+									hide: true,
+									confirm: {
+										confirm: false
+									},
+									buttons: {
+										closer: true,
+										sticker: true
+									}
+								});
+							}
+						},
+						{
+							text: 'Fruit',
+							addClass: 'btn btn-sm bg-indigo-400',
+							click: function(notice) {
+								notice.update({
+									title: 'You\'ve chosen a side',
+									text: 'You want fruit.',
+									icon: 'icon-checkmark3',
+									type: 'info',
+									hide: true,
+									confirm: {
+										confirm: false
+									},
+									buttons: {
+										closer: true,
+										sticker: true
+									}
+								});
+							}
+						}
+					]
+				},
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				history: {
+					history: false
+				}
+			});
+		});
+
+		// Permanotice
+		$('#pnotify-permanotice').on('click', function () {
+			var permanotice;
+			if (permanotice) {
+				permanotice.open();
+			}
+			else {
+				permanotice = new PNotify({
+					title: 'Now look here',
+					text: 'There\'s something you need to know, and I won\'t go away until you come to grips with it.',
+					addclass: 'bg-danger',
+					hide: false,
+					buttons: {
+						closer: false,
+						sticker: false
+					}
+				});
+			}
+		});
+
+		// Callbacks
+		$('#pnotify-callbacks').on('click', function () {
+			var dont_alert = function() {};
+			new PNotify({
+				title: 'I\'m here',
+				text: 'I have a callback for each of my events. I\'ll call all my callbacks while I change states.',
+				addclass: 'bg-teal',
+				before_init: function(opts) {
+					dont_alert('I\'m called before the notice initializes. I\'m passed the options used to make the notice. I can modify them. Watch me replace the word callback with tire iron!');
+					opts.text = opts.text.replace(/callback/g, 'tire iron');
+				},
+				after_init: function(PNotify) {
+					dont_alert('I\'m called after the notice initializes. I\'m passed the PNotify object for the current notice: ' + PNotify + '\n\nThere are more callbacks you can assign, but this is the last notice you\'ll see. Check the code to see them all.');
+				},
+				before_open: function(PNotify) {
+					var source_note = 'Return false to cancel opening.';
+					dont_alert('I\'m called before the notice opens. I\'m passed the PNotify object for the current notice: ' + PNotify);
+				},
+				after_open: function(PNotify) {
+					alert('I\'m called after the notice opens. I\'m passed the PNotify object for the current notice: ' + PNotify);
+				},
+				before_close: function(PNotify, timer_hide) {
+					var source_note = 'Return false to cancel close. Use PNotify.queueRemove() to set the removal timer again.';
+					dont_alert('I\'m called before the notice closes. I\'m passed the PNotify object for the current notice: ' + PNotify);
+					dont_alert('I also have an argument called timer_hide, which is true if the notice was closed because the timer ran down. Value: ' + timer_hide);
+				},
+				after_close: function(PNotify, timer_hide) {
+					alert('I\'m called after the notice closes. I\'m passed the PNotify object for the current notice: ' + PNotify);
+					dont_alert('I also have an argument called timer_hide, which is true if the notice was closed because the timer ran down. Value: ' + timer_hide);
+				}
+			});
+		});
+
+		// Switching notices
+		$('#pnotify-switching').on('click', function () {
+			new PNotify({
+				title: 'Notice',
+				text: 'Right now I\'m a notice.',
+				addclass: 'alert bg-primary alert-styled-right',
+				before_close: function(PNotify) {
+					PNotify.update({
+						title: 'Error',
+						text: 'Uh oh. Now I\'ve become an error.',
+						addclass: 'alert bg-danger alert-styled-right',
+						type: 'error',
+						before_close: function(PNotify) {
+							PNotify.update({
+								title: 'Success',
+								text: 'I fixed the error!',
+								addclass: 'alert bg-success alert-styled-right',
+								type: 'success',
+								before_close: function(PNotify) {
+									PNotify.update({
+										title: 'Info',
+										text: 'Everything\'s cool now.',
+										addclass: 'alert bg-info alert-styled-right',
+										type: 'info',
+										before_close: null
+									});
+									PNotify.queueRemove();
+									return false;
+								}
+							});
+							PNotify.queueRemove();
+							return false;
+						}
+					});
+					PNotify.queueRemove();
+					return false;
+				}
+			});
+		});
+
+		// Progress loader
+		$('#pnotify-progress').on('click', function () {
+			var cur_value = 1,
+			progress;
+
+			// Make a loader.
+			var loader = new PNotify({
+				title: "Creating series of tubes",
+				text: '<div class="progress progress-striped active" style="margin:0">\
+				<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">\
+				<span class="sr-only">0%</span>\
+				</div>\
+				</div>',
+				addclass: 'bg-primary',
+				icon: 'icon-spinner4 spinner',
+				hide: false,
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				history: {
+					history: false
+				},
+				before_open: function(PNotify) {
+					progress = PNotify.get().find("div.progress-bar");
+					progress.width(cur_value + "%").attr("aria-valuenow", cur_value).find("span").html(cur_value + "%");
+
+					// Pretend to do something.
+					var timer = setInterval(function() {
+						if (cur_value >= 100) {
+
+							// Remove the interval.
+							window.clearInterval(timer);
+							loader.remove();
+							return;
+						}
+						cur_value += 1;
+						progress.width(cur_value + "%").attr("aria-valuenow", cur_value).find("span").html(cur_value + "%");
+					}, 65);
+				}
+			});
+		});
+
+		// Dynamic loader
+		$('#pnotify-dynamic').on('click', function () {
+			var percent = 0;
+			var notice = new PNotify({
+				text: "Please wait",
+				addclass: 'bg-primary',
+				type: 'info',
+				icon: 'icon-spinner4 fa-pulse',
+				hide: false,
+				buttons: {
+					closer: false,
+					sticker: false
+				},
+				opacity: .9,
+				width: "170px"
+			});
+
+			setTimeout(function() {
+			notice.update({
+				title: false
+			});
+			var interval = setInterval(function() {
+				percent += 2;
+				var options = {
+					text: percent + "% complete."
+				};
+				if (percent == 80) options.title = "Almost There";
+				if (percent >= 100) {
+					window.clearInterval(interval);
+					options.title = "Done!";
+					options.addclass = "bg-success";
+					options.type = "success";
+					options.hide = true;
+					options.buttons = {
+						closer: true,
+						sticker: true
+					};
+					options.icon = 'icon-checkmark3';
+					options.opacity = 1;
+					options.width = PNotify.prototype.options.width;
+				}
+				notice.update(options);
+				}, 120);
+			}, 2000);
+		});
+
+		// Define directions
+		var stack_top_left = {"dir1": "down", "dir2": "right", "push": "top"};
+		var stack_bottom_left = {"dir1": "right", "dir2": "up", "push": "top"};
+		var stack_bottom_right = {"dir1": "up", "dir2": "left", "firstpos1": 25, "firstpos2": 25};
+		var stack_custom_left = {"dir1": "right", "dir2": "down"};
+		var stack_custom_right = {"dir1": "left", "dir2": "up", "push": "top"};
+		var stack_custom_top = {"dir1": "down", "dir2": "right", "push": "top", "spacing1": 1};
+		var stack_custom_bottom = {"dir1": "up", "dir2": "right", "spacing1": 1};
+
+		// Setup options for positions
+		// Top left
+		function show_stack_top_left(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				addclass: "stack-top-left bg-primary",
+				stack: stack_top_left
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-top-left bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-top-left bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-top-left bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Bottom left
+		function show_stack_bottom_left(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				addclass: "stack-bottom-left bg-primary",
+				stack: stack_bottom_left
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-bottom-left bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-bottom-left bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-bottom-left bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Bottom right
+		function show_stack_bottom_right(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				addclass: "stack-bottom-right bg-primary",
+				stack: stack_bottom_right
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-bottom-right bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-bottom-right bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-bottom-right bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Custom left position
+		function show_stack_custom_left(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				addclass: "stack-custom-left bg-primary alert-styled-right",
+				stack: stack_custom_left
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-custom-left bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-custom-left bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-custom-left bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Custom right position
+		function show_stack_custom_right(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				addclass: "stack-custom-right bg-primary",
+				stack: stack_custom_right
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-custom-right bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-custom-right bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-custom-right bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Custom top position
+		function show_stack_custom_top(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				width: "100%",
+				cornerclass: "no-border-radius",
+				addclass: "stack-custom-top bg-primary",
+				stack: stack_custom_top
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-custom-top bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-custom-top bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-custom-top bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Custom bottom position
+		function show_stack_custom_bottom(type) {
+			var opts = {
+				title: "Over here",
+				text: "Check me out. I'm in a different stack.",
+				width: "100%",
+				cornerclass: "no-border-radius",
+				addclass: "stack-custom-bottom bg-primary",
+				stack: stack_custom_bottom
+			};
+			switch (type) {
+				case 'error':
+				opts.title = "Oh No";
+				opts.text = "Watch out for that water tower!";
+				opts.addclass = "stack-custom-bottom bg-danger";
+				opts.type = "error";
+				break;
+
+				case 'info':
+				opts.title = "Breaking News";
+				opts.text = "Have you met Ted?";
+				opts.addclass = "stack-custom-bottom bg-info";
+				opts.type = "info";
+				break;
+
+				case 'success':
+				opts.title = "Good News Everyone";
+				opts.text = "I've invented a device that bites shiny metal asses.";
+				opts.addclass = "stack-custom-bottom bg-success";
+				opts.type = "success";
+				break;
+			}
+			new PNotify(opts);
+		}
+
+		// Initialize
+		// Top left
+		$('#pnotify-stack-top-left').on('click', function () {
+			show_stack_top_left('primary');
+		});
+
+		// Bottom left
+		$('#pnotify-stack-bottom-left').on('click', function () {
+			show_stack_bottom_left('primary');
+		});
+
+		// Bottom right
+		$('#pnotify-stack-bottom-right').on('click', function () {
+			show_stack_bottom_right('danger');
+		});
+
+		// Custom left
+		$('#pnotify-stack-custom-left').on('click', function () {
+			show_stack_custom_left('success');
+		});
+
+		// Custom right
+		$('#pnotify-stack-custom-right').on('click', function () {
+			show_stack_custom_right('success');
+		});
+
+		// Custom top
+		$('#pnotify-stack-custom-top').on('click', function () {
+			show_stack_custom_top('info');
+		});
+
+		// Custom bottom
+		$('#pnotify-stack-custom-bottom').on('click', function () {
+			show_stack_custom_bottom('info');
+		});
+	});
+</script>
+					<!-- Footer -->
+					<div class="footer pt-20">
+						&copy; 2016 Bird - Admin theme by <a href="http://followtechnique.com" target="_blank">FollowTechnique</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;Version - 1.0.0
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+		
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+</body>
+</html>

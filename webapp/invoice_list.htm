@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bird (v1) - Responsive admin dashboard theme by Followtechnique</title>	
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="assets/images/favicon.ico" rel="apple-touch-icon" type="image/png">
+	<link href="assets/images/favicon.ico" rel="icon" type="image/png">
+	<link href="assets/images/favicon.ico" rel="shortcut icon">
+
+	<!-- Global stylesheets -->
+	<link href="fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-extended.css" rel="stylesheet" type="text/css">
+	<link href="css/plugins.css" rel="stylesheet" type="text/css">
+	<link href="css/color-system.css" rel="stylesheet" type="text/css">
+	<link href="css/media.css" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="invoice_list.htm" id="style">
+	<link type="text/css" rel="stylesheet" href="invoice_list.htm" id="theme">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>	
+	<script src="js/fancybox.min.js"></script>	
+	<script src="js/app.js"></script><script src="js/fancybox.min.js"></script>
+<script src="js/forms/uniform.min.js"></script>
+<script src="js/forms/select2.min.js"></script>
+<script src="js/datatables/datatables.min.js"></script>
+</head>
+<body>
+<!-- Main navbar -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-header">
+		<a class="sidebar-mobile-toggle visible-xs"><i class="fa fa-ellipsis-v"></i></a>
+		<a class="navbar-brand" href="index.htm"></a>
+		<a class="sidebar-control sidebar-toggle hidden-xs pull-right"><i class="fa fa-bars"></i></a>
+	</div>
+	<ul class="navbar-right">
+		<li class="dropdown clearfix"> 
+			<a class="dropdown-toggle" id="settings" data-toggle="dropdown" aria-expanded="false"> <i class="fa fa-cog"></i></a> 
+			<ul class="dropdown-menu dropdown-menu-themes" aria-labelledby="settings"> 
+				<li class="dropdown-header">Styles</li>
+				<ul class="clearfix">
+					<li class="color-option style dark" data-popup="tooltip" title="Dark Theme" theme="dark"></li> 
+					<li class="color-option style light" data-popup="tooltip" title="Light Theme" theme="light"></li>
+					<li class="color-option style default" data-popup="tooltip" title="Default Theme" theme=""></li>					
+				</ul>
+				<li role="separator" class="divider"></li>
+				<li class="dropdown-header">Themes</li>
+				<ul class="clearfix">
+					<li class="color-option theme pink" data-popup="tooltip" title="Pink" theme="pink"></li> 					
+					<li class="color-option theme purple" data-popup="tooltip" title="Purple" theme="purple"></li>
+					<li class="color-option theme indigo" data-popup="tooltip" title="Indigo" theme="indigo"></li> 
+					<li class="color-option theme blue" data-popup="tooltip" title="Blue" theme="blue"></li>
+					<li class="color-option theme teal" data-popup="tooltip" title="Teal" theme="teal"></li> 
+					<li class="color-option theme lime" data-popup="tooltip" title="Lime" theme="lime"></li>
+					<li class="color-option theme amber" data-popup="tooltip" title="Amber" theme="amber"></li> 
+					<li class="color-option theme brown" data-popup="tooltip" title="Brown" theme="brown"></li>					
+					<li class="color-option theme slate" data-popup="tooltip" title="Slate" theme="slate"></li>
+					<li class="color-option theme grey" data-popup="tooltip" title="Grey" theme="grey"></li>
+					<li class="color-option theme default" data-popup="tooltip" title="Default" theme=""></li> 					
+				</ul>
+			</ul> 
+		</li>
+		<li class="dropdown notifications">
+			<a class="dropdown-toggle" data-toggle="dropdown">
+				<i class="fa fa-bell"></i>		
+				<span class="badge badge-info">5</span>
+			</a>
+			<div class="dropdown-menu">
+				<ul class="media-list media-list-linked">
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user1.png" class="img-circle img-sm" alt="">							
+						</div>
+						<div class="media-body">
+							<a href="invoice_list.htm#" class="media-heading clearfix">
+								Jane Elliott
+								<span class="media-annotation pull-right">04:58</span>
+							</a>
+							<span>Suspendisse vel dolor dui. Cras bibendum elit ac...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user2.png" class="img-circle img-sm" alt="">							
+						</div>
+						<div class="media-body">
+							<a href="invoice_list.htm#" class="media-heading clearfix">
+								Florence Douglas
+								<span class="media-annotation pull-right">12:16</span>
+							</a>
+
+							<span>Aenean aliquam tempor odio nec tincidunt...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left">
+							<img src="assets/images/users/user3.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="invoice_list.htm#" class="media-heading clearfix">
+								Eugine Turner
+								<span class="media-annotation pull-right">22:48</span>
+							</a>
+
+							<span>Aliquam erat volutpat. Integer ut molestie elit...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left"><img src="assets/images/users/user4.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="invoice_list.htm#" class="media-heading clearfix">
+								Ann Porter
+								<span class="media-annotation pull-right">Tue</span>
+							</a>
+
+							<span>Maecenas varius bibendum sagittis. Donec porttitor...</span>
+						</div>
+					</li>
+					<li class="media">
+						<div class="media-left"><img src="assets/images/users/user5.png" class="img-circle img-sm" alt=""></div>
+						<div class="media-body">
+							<a href="invoice_list.htm#" class="media-heading clearfix">
+								Jacqueline Howell
+								<span class="media-annotation pull-right">Mon</span>
+							</a>
+							
+							<span>Cras eleifend gravida ullamcorper. Mauris id congue nunc...</span>
+						</div>
+					</li>
+				</ul>
+				<div class="dropdown-content-footer">
+					<a href="invoice_list.htm#" data-popup="tooltip" title="All messages"><i class="fa fa-comments position-left"></i> Read all notifications</a>
+				</div>
+			</div>
+		</li>			
+	</ul>
+</div>
+<!-- /main navbar -->
+
+<!-- Page container -->
+<div class="page-container" style="min-height:700px">
+
+	<!-- Page content -->
+	<div class="page-content"><!-- Main sidebar -->
+<div class="sidebar sidebar-main hidden-xs">
+	<div class="sidebar-content">
+
+		<!-- User menu -->
+		<div class="sidebar-user">
+			<div class="category-content">
+				<div class="media">
+					<a href="invoice_list.htm#" class="media-left"><img src="assets/images/users/user6.png" class="img-circle img-sm" alt=""></a>
+					<div class="media-body">
+						<span class="media-heading text-semibold">Andrew Brewer</span>
+						<div class="text-size-mini text-muted">
+							Network engineer
+						</div>
+					</div>
+
+					<div class="media-right media-middle">
+						<ul class="icons-list">
+							<li>
+								<a href="login_simple.htm"><i class="fa fa-sign-out"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /user menu -->
+
+		<!-- Main navigation -->
+		<div class="sidebar-category sidebar-category-visible">
+			<div class="category-content no-padding">
+				<ul class="navigation navigation-main navigation-accordion">
+					
+					<!-- Main -->					
+					<li>
+						<a href="index.htm"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>						
+					</li>																			
+					<!-- /Main -->	
+					
+					<!-- Content -->
+					<li class="navigation-header"><span>Content</span> <i class="fa fa-bars" title="Content"></i></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-th"></i> <span>Bootstrap Components</span></a>
+						<ul>
+							<li><a href="bootstrap_modals.htm">Modals</a></li>
+							<li><a href="bootstrap_dropdowns.htm">Dropdown menus</a></li>
+							<li><a href="bootstrap_tabs.htm">Tabs component</a></li>										
+							<li><a href="bootstrap_accordions.htm">Accordions</a></li>
+							<li><a href="bootstrap_buttons.htm">Buttons</a></li>																
+							<li><a href="bootstrap_popups.htm">Tooltips and popovers</a></li>
+							<li><a href="bootstrap_alerts.htm">Alerts</a></li>							
+							<li><a href="bootstrap_pagination.htm">Pagination</a></li>
+							<li><a href="bootstrap_labels.htm">Labels and badges</a></li>
+							<li><a href="bootstrap_loaders.htm">Loaders and bars</a></li>																									
+							<li><a href="bootstrap_media.htm">Media objects</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-paper-plane"></i> <span>Appearance</span></a>
+						<ul>
+							<li><a href="appearance_content_panels.htm">Content panels</a></li>							
+							<li><a href="appearance_draggable_panels.htm">Draggable panels</a></li>										
+							<li><a href="appearance_typography.htm">Typography</a></li>
+							<li><a href="appearance_helper_classes.htm">Helper classes</a></li>							
+							
+						</ul>
+					</li>													
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-star"></i> <span>Icons</span></a>
+						<ul>
+							<li><a href="icons_glyphicons.htm">Glyphicons</a></li>							
+							<li><a href="icons_fontawesome.htm">Font awesome</a></li>
+							<li><a href="icons_icomoon.htm">Icomoon</a></li>
+						</ul>
+					</li>
+					<li><a href="animations.htm"><i class="fa fa-spinner fa-pulse"></i> <span>CSS3 Animations</span></a></li>					
+					<li><a href="color_system.htm"><i class="fa fa-eyedropper"></i> <span>Color system</span></a></li>	
+					<li><a href="grid_system.htm"><i class="fa fa-th-large"></i> <span>Grid system</span></a></li>					
+					<!-- /Content -->
+					
+					<!-- Forms -->
+					<li class="navigation-header"><span>Forms</span> <i class="fa fa-check-square-o" title="Forms"></i></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-pencil"></i> <span>Form components</span></a>
+						<ul>
+							<li><a href="form_basic.htm">Basic inputs</a></li>
+							<li><a href="form_groups.htm">Input groups</a></li>
+							<li><a href="form_checkboxes_radios.htm">Checkboxes &amp; radios</a></li>							
+							<li><a href="form_select2.htm">Select2 selects</a></li>														
+							<li><a href="form_tag_inputs.htm">Tag inputs</a></li>	
+							<li><a href="form_sliders_noui.htm">NoUI sliders</a></li>														
+							<li><a href="form_wizard.htm">Form Wizard</a></li>										
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-text-height"></i> <span>Text Editors</span></a>
+						<ul>
+							<li><a href="editor_ckeditor.htm">CKEditor</a></li>
+							<li><a href="editor_tinymce.htm">TinyMCE editor</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-eyedropper"></i> <span>Pickers</span></a>
+						<ul>
+							<li><a href="pickers_date.htm">Date & Time pickers</a></li>
+							<li><a href="pickers_colors.htm">Color pickers</a></li>							
+						</ul>
+					</li>							
+					<!-- /forms -->				
+
+					<!-- Data & charts -->
+					<li class="navigation-header"><span>Charts &amp; Graphs</span> <i class="fa fa-area-chart" title="Charts &amp; Graphs"></i></li>																									
+					<li><a href="invoice_list.htm#"><i class="fa fa-pie-chart"></i> <span>C3 library</span></a>
+						<ul>
+							<li><a href="charts_c3_lines_areas.htm">Lines &amp; areas</a></li>
+							<li><a href="charts_c3_bars_pies.htm">Bars &amp; pies</a></li>
+							<li><a href="charts_c3_advanced.htm">Advanced examples</a></li>
+							<li><a href="charts_c3_chart_axis.htm">Chart axis</a></li>
+							<li><a href="charts_c3_grid_options.htm">Grid options</a></li>
+						</ul>
+					</li>					
+					<li><a href="invoice_list.htm#"><i class="fa fa-line-chart"></i> <span>Google charts</span></a>
+						<ul>
+							<li><a href="charts_google_lines.htm">Line charts</a></li>
+							<li><a href="charts_google_bars.htm">Bar charts</a></li>
+							<li><a href="charts_google_pies.htm">Pie charts</a></li>
+							<li><a href="charts_google_bubbles.htm">Bubble &amp; scatter charts</a></li>							
+						</ul>
+					</li>						
+					<!-- /data & charts -->
+
+					<!-- Extensions -->
+					<li class="navigation-header"><span>Extensions</span> <i class="fa fa-puzzle-piece" title="Extensions"></i></li>
+					<li><a href="extensions_pnotify.htm"><i class="fa fa-warning"></i> <span>PNotify notifications</span></a></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-cloud-upload"></i> <span>File uploaders</span></a>
+						<ul>
+							<li><a href="extensions_bootstrap.htm">Bootstrap file uploader</a></li>
+							<li><a href="extensions_dropzone.htm">Dropzone</a></li>																
+						</ul>
+					</li>
+					<li><a href="extension_calendar.htm"><i class="fa fa-calendar"></i> <span>Event calendars</span></a></li>						
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-map"></i> <span>Maps integration</span></a>
+						<ul>
+							<li><a href="maps_vector.htm">Vector maps</a></li>
+							<li>
+								<a href="invoice_list.htm#">Google maps</a>
+								<ul>
+									<li><a href="maps_google_basic.htm">Basics</a></li>									
+									<li><a href="maps_google_markers.htm">Markers</a></li>									
+									<li><a href="maps_google_layers.htm">Layers</a></li>
+								</ul>
+							</li>							
+						</ul>
+					</li>								
+					<!-- /extensions -->
+
+					<!-- Tables -->
+					<li class="navigation-header"><span>Tables</span> <i class="fa fa-table" title="Tables"></i></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-table"></i> <span>Basic tables</span></a>
+						<ul>
+							<li><a href="table_basic.htm">Basic examples</a></li>
+							<li><a href="table_borders.htm">Table borders</a></li>
+							<li><a href="table_sizing.htm">Table sizing</a></li>							
+							<li><a href="table_styling.htm">Table styling</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-th-large"></i> <span>Data tables</span></a>
+						<ul>
+							<li><a href="datatable_basic.htm">Basic datatable</a></li>																					
+							<li><a href="datatable_advanced.htm">Advanced datatables</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-plug"></i> <span>Data tables extensions</span></a>
+						<ul>							
+							<li><a href="datatable_extension_row_reorder.htm">Row reorder</a></li>
+							<li><a href="datatable_extension_column_reorder.htm">Columns reorder</a></li>
+							<li><a href="datatable_extension_state_saving.htm">State Saving</a></li>
+							<li><a href="datatable_extension_fixed_columns.htm">Fixed columns</a></li>
+							<li><a href="datatable_extension_fixed_header.htm">Fixed header</a></li>
+							<li><a href="datatable_extension_autofill.htm">Auto fill</a></li>
+							<li><a href="datatable_extension_key_table.htm">Key table</a></li>
+							<li><a href="datatable_extension_export_options.htm">Export options</a></li>
+							<li><a href="datatable_extension_columns_selection.htm">Columns selection</a></li>																					
+						</ul>
+					</li>	
+					<li><a href="datatable_responsive.htm"><i class="fa fa-arrows-alt"></i> <span>Responsive tables</span></a></li>					
+					<!-- /tables -->
+
+					<!-- Pages -->
+					<li class="navigation-header"><span>Pages</span> <i class="fa fa-file-o" title="Pages"></i></li>	
+					<li><a href="page_email.htm"><i class="fa fa-envelope"></i> <span>Email</span></a></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-money"></i> <span>Invoice</span></a>
+						<ul>
+							<li class="active"><a href="invoice_list.htm">Invoice list</a></li>
+							<li><a href="invoice_template.htm">Invoice template</a></li>														
+						</ul>
+					</li>
+					<li><a href="timeline.htm"><i class="fa fa-file-text-o"></i> <span>Timeline</span></a></li>
+					<li><a href="page_tasks.htm"><i class="fa fa-tasks"></i> <span>Tasks</span></a></li>
+					<li><a href="gallery.htm"><i class="fa fa-file-image-o"></i> <span>Media Gallery</span></a></li>
+					<li><a href="search.htm"><i class="fa fa-search"></i> <span>Search</span></a></li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-users"></i> <span>User pages</span></a>
+						<ul>
+							<li><a href="user_cards.htm">Users cards</a></li>
+							<li><a href="user_list.htm">Users list</a></li>
+							<li><a href="user_profile.htm">Simple user profile</a></li>							
+						</ul>
+					</li>
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-user-plus"></i> <span>Login &amp; registration</span></a>
+						<ul>
+							<li><a href="login_simple.htm">User login</a></li>							
+							<li><a href="login_registration.htm">Simple registration</a></li>
+							<li><a href="login_registration_advanced.htm">Detailed registration</a></li>
+							<li><a href="login_unlock.htm">Unlock user</a></li>
+							<li><a href="login_recover.htm">Reset password</a></li>
+							<li><a href="login_tabbed.htm">Tabbed form</a></li>									
+						</ul>
+					</li>														
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-info-circle"></i> <span>Support</span></a>
+						<ul>
+							<li><a href="support_faq.htm">FAQ page</a></li>
+							<li><a href="support_knowledgebase.htm">Knowledgebase</a></li>
+							<li><a href="support_center.htm">Support Center</a></li>													
+						</ul>
+					</li>					
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-warning"></i> <span>Error pages</span></a>
+						<ul>
+							<li><a href="error_403.htm">Error 403</a></li>
+							<li><a href="error_404.htm">Error 404</a></li>
+							<li><a href="error_405.htm">Error 405</a></li>
+							<li><a href="error_500.htm">Error 500</a></li>
+							<li><a href="error_503.htm">Error 503</a></li>
+							<li><a href="error_offline.htm">Offline page</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.htm"><i class="fa fa-phone"></i> <span>Contact Page</span></a></li>
+					<!-- /pages -->
+					
+					<!-- Others -->
+					<li class="navigation-header"><span>Extras</span> <i class="fa fa-folder-o" title="Extras"></i></li>
+					<li><a href="page_starter.htm"><i class="fa fa-file-o"></i> <span>Starter Page</span></a></li>					
+					<li>
+						<a href="invoice_list.htm#"><i class="fa fa-sitemap"></i> <span>Menu levels</span></a>
+						<ul>
+							<li><a href="invoice_list.htm#">Second level</a></li>
+							<li>
+								<a href="invoice_list.htm#">Second level with child</a>
+								<ul>
+									<li><a href="invoice_list.htm#">Third level</a></li>
+									<li>
+										<a href="invoice_list.htm#">Third level with child</a>
+										<ul>
+											<li><a href="invoice_list.htm#">Fourth level</a></li>
+											<li><a href="invoice_list.htm#">Fourth level</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice_list.htm#">Third level</a></li>
+								</ul>
+							</li>
+							<li><a href="invoice_list.htm#">Second level</a></li>
+						</ul>
+					</li>
+					<!-- /Others -->
+
+				</ul>
+			</div>
+		</div>
+		<!-- /main navigation -->
+
+	</div>
+</div>
+<!-- /main sidebar -->
+<!-- Main content -->
+<div class="content-wrapper">
+
+	<!-- Page header -->
+	<div class="page-header">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h4><i class="fa fa-money position-left"></i> Invoice List</h4>
+			</div>										
+			<ul class="breadcrumb">
+				<li><a href="index.htm"><i class="fa fa-home"></i>Home</a></li>
+				<li>Invoice</li>
+				<li class="active">Archive</li>
+			</ul>					
+		</div>
+	</div>
+	<!-- /page header -->
+
+	<!-- Content area -->
+	<div class="content">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			
+				<!-- Invoice archive -->
+				<div class="panel panel-flat">
+					<div class="panel-heading mb-10">
+						<h4 class="panel-title">List of all invoices</h4>						
+					</div>
+
+					<table class="table table-lg invoice-archive" id="datatable">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Period</th>
+								<th>Status</th>
+								<th>Issued to</th>								
+								<th>Issue date</th>
+								<th>Due Date</th>
+								<th>Amount</th>
+								<th class="text-center">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>#INV01525</td>
+								<td>April 2016</td>
+								<td>
+									<select name="status" class="select select-danger select-size-xs" data-placeholder="Select status">
+										<option value="overdue" selected="selected">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Jane Elliott</a>
+										<small class="display-block text-muted">Payment method: Bank Transfer</small>
+									</h6>
+								</td>								
+								<td>
+									April 04, 2016
+								</td>
+								<td>
+									<span class="label label-danger">-5 days</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$14,320 <small class="display-block text-muted text-size-small">VAT $400</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Delete</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01524</td>
+								<td>April 2016</td>
+								<td>
+					                	<select name="status" class="select select-default" data-placeholder="Select status">
+					                		<option value="overdue">Overdue</option>
+					                		<option value="hold" selected="selected">On hold</option>
+					                		<option value="pending">Pending</option>
+					                		<option value="paid">Paid</option>
+					                		
+					                		<option value="cancel">Canceled</option>
+					                	</select>
+				                	</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Florence Douglas</a>
+										<small class="display-block text-muted">Payment method: Bank transfer</small>
+									</h6>
+								</td>								
+								<td>
+									April 02, 2016
+								</td>
+								<td>
+									<span class="label label-default">On Hold</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$1,400 <small class="display-block text-muted text-size-small">VAT $78</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01523</td>
+								<td>March 2016</td>
+								<td>
+					                	<select name="status" class="select select-warning" data-placeholder="Select status">
+					                		<option value="overdue">Overdue</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="pending" selected="selected">Pending</option>
+					                		<option value="paid">Paid</option>
+					                		
+					                		<option value="cancel">Canceled</option>
+					                	</select>
+				                	</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Eugine Turner</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									March 14, 2016
+								</td>
+								<td>
+									<span class="label label-warning">4 days</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$1,400 <small class="display-block text-muted text-size-small">VAT $70</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01522</td>
+								<td>March 2016</td>
+								<td>
+					                	<select name="status" class="select select-default" data-placeholder="Select status">
+					                		<option value="overdue">Overdue</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="pending">Pending</option>
+					                		<option value="paid">Paid</option>
+					                		
+					                		<option value="cancel" selected="selected">Canceled</option>
+					                	</select>
+				                	</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Ann Porter</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>							
+								<td>
+									March 5, 2016
+								</td>
+								<td>
+									<span class="label label-default">Canceled</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$4,580 <small class="display-block text-muted text-size-small">VAT $492</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01521</td>
+								<td>March 2016</td>
+								<td>
+					                	<select name="status" class="select select-success" data-placeholder="Select status">
+					                		<option value="overdue">Overdue</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="pending">Pending</option>
+					                		<option value="paid" selected="selected">Paid</option>
+					                		
+					                		<option value="cancel">Canceled</option>
+					                	</select>
+				                	</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Jacqueline Howell</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									MArch 10, 2016
+								</td>
+								<td>
+									<span class="label label-success">Paid on March 24, 2016</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$7,350 <small class="display-block text-muted text-size-small">VAT $1,200</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01520</td>
+								<td>March 2016</td>
+								<td>
+									<select name="status" class="select select-success" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid" selected="selected">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Andrew Brewer</a>
+										<small class="display-block text-muted">Payment method: Bank transfer</small>
+									</h6>
+								</td>								
+								<td>
+									March 1, 2016
+								</td>
+								<td>
+									<span class="label label-success">Paid on March 29, 2016</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$2,120 <small class="display-block text-muted text-size-small">VAT $278</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01519</td>
+								<td>February 2016</td>
+								<td>
+									<select name="status" class="select select-danger" data-placeholder="Select status">
+										<option value="overdue" selected="selected">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Marilyn Romero</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									Feb 26, 2016
+								</td>
+								<td>
+									<span class="label label-danger">2 months</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$3,400 <small class="display-block text-muted text-size-small">VAT $780</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01518</td>
+								<td>February 2016</td>
+								<td>
+					                	<select name="status" class="select select-danger" data-placeholder="Select status">
+					                		<option value="overdue" selected="selected">Overdue</option>
+					                		<option value="hold">On hold</option>
+					                		<option value="pending">Pending</option>
+					                		<option value="paid">Paid</option>
+					                		
+					                		<option value="cancel">Canceled</option>
+					                	</select>
+				                	</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Jane Elliott</a>
+										<small class="display-block text-muted">Payment method: Cash</small>
+									</h6>
+								</td>								
+								<td>
+									Feb 17, 2016
+								</td>
+								<td>
+									<span class="label label-danger">2 months</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$10,280 <small class="display-block text-muted text-size-small">VAT $2,190</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01517</td>
+								<td>January 2016</td>
+								<td>
+									<select name="status" class="select select-success" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid" selected="selected">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Florence Douglas</a>
+										<small class="display-block text-muted">Payment method: Bank transfer</small>
+									</h6>
+								</td>								
+								<td>
+									Jan 23, 2016
+								</td>
+								<td>
+									<span class="label label-success">Paid on Feb 13, 2016</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$13,320 <small class="display-block text-muted text-size-small">VAT $1,499</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01516</td>
+								<td>January 2016</td>
+								<td>
+									<select name="status" class="select select-default" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold" selected="selected">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Eugine Turner</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									Jan 7, 2016
+								</td>
+								<td>
+									<span class="label label-default">On Hold</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$700 <small class="display-block text-muted text-size-small">VAT $40</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01515</td>
+								<td>December 2015</td>
+								<td>
+									<select name="status" class="select select-default" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold" selected="selected">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Ann Porter</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									Dec 23, 2015
+								</td>
+								<td>
+									<span class="label label-default">On Hold</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$1,730 <small class="display-block text-muted text-size-small">VAT $140</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01514</td>
+								<td>December 2015</td>
+								<td>
+									<select name="status" class="select select-success" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid" selected="selected">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Jacqueline Howell</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>							
+								<td>
+									Dec 12, 2015
+								</td>
+								<td>
+									<span class="label label-success">Paid on Dec 27, 2015</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$1,800 <small class="display-block text-muted text-size-small">VAT $199</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01513</td>
+								<td>November 2015</td>
+								<td>
+									<select name="status" class="select select-warning" data-placeholder="Select status">
+										<option value="overdue">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending" selected="selected">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Andrew Brewer</a>
+										<small class="display-block text-muted">Payment method: Bank transfer</small>
+									</h6>
+								</td>								
+								<td>
+									Nov 25, 2015
+								</td>
+								<td>
+									<span class="label label-warning">-3 months</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$4,500 <small class="display-block text-muted text-size-small">VAT $700</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<td>#INV01512</td>
+								<td>November 2015</td>
+								<td>
+									<select name="status" class="select select-danger" data-placeholder="Select status">
+										<option value="overdue" selected="selected">Overdue</option>
+										<option value="hold">On hold</option>
+										<option value="pending">Pending</option>
+										<option value="paid">Paid</option>
+										
+										<option value="cancel">Canceled</option>
+									</select>
+								</td>
+								<td>
+									<h6 class="no-margin">
+										<a href="invoice_list.htm#">Marilyn Romero</a>
+										<small class="display-block text-muted">Payment method: Paypal</small>
+									</h6>
+								</td>								
+								<td>
+									February 26, 2016
+								</td>
+								<td>
+									<span class="label label-danger">-3 months</span>
+								</td>
+								<td>
+									<h6 class="no-margin text-bold">$2,200 <small class="display-block text-muted text-size-small">VAT $600</small></h6>
+								</td>
+								<td class="text-center">
+									<ul class="icons-list">
+										<li><a href="invoice_list.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+										<li class="dropdown">
+											<a href="invoice_list.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="invoice_list.htm#"><i class="fa fa-download"></i> Download</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-print"></i> Print</a></li>
+												<li class="divider"></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-edit"></i> Edit</a></li>
+												<li><a href="invoice_list.htm#"><i class="fa fa-trash"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</td>
+							</tr>							
+						</tbody>
+					</table>
+				</div>
+				<!-- /invoice archive -->
+			</div>			
+			
+			<!-- Modal with invoice -->
+			<div id="invoice" class="modal fade">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header bg-indigo pb-20">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="panel-title text-semibold">Invoice: <strong>#INV0152</strong></h4>
+						</div>
+
+						<div class="panel-body no-padding-bottom">
+							<div class="row">												
+								<div class="col-sm-6 mt-10">
+									<h4 class="text-uppercase text-semibold">Invoice: #INV0152</h4>
+									<ul class="list-condensed list-unstyled">
+										<li>Date: <span class="text-semibold">March 28, 2016</span></li>
+										<li>Due date: <span class="text-semibold">May 30, 2016</span></li>
+									</ul>	
+									<hr class="mt-20">
+									<h2><strong>Company Inc.</strong></h2>
+									<address>
+									Address<br>
+									Town/City<br>
+									Region, Zip/Postal Code<br><br>
+									<i class="fa fa-phone"></i> (000) 000-0000<br>
+									<i class="fa fa-envelope-o"></i> <a href="javascript:void(0)">example@example.com</a>
+									</address>
+								</div>
+								<div class="col-sm-6 text-right">
+									<img src="assets/images/users/user2.png" alt="photo" class="img-circle" style="width:16.5%">
+									<hr>
+									<h2><strong>Client</strong></h2>
+									<address>
+									Address<br>
+									Town/City<br>
+									Region, Zip/Postal Code<br><br>
+									(000) 000-0000 <i class="fa fa-phone"></i><br>
+									<a href="javascript:void(0)">example@example.com</a> <i class="fa fa-envelope-o"></i>
+									</address>
+								</div>
+							</div>						
+							
+							<div class="table-responsive">
+								<table class="table table-vcenter">
+									<thead>
+										<tr>
+											<th></th>
+											<th style="width: 60%;"><strong>Product</strong></th>
+											<th class="text-center"><strong>Quantity</strong></th>
+											<th class="text-center"><strong>Unit Price</strong></th>
+											<th class="text-right"><strong>Amount</strong></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="text-center">1</td>
+											<td>
+												<h4>Logo Design</h4>
+												<span class="label label-info"><i class="fa fa-clock-o"></i> 3 weeks</span>
+												<span class="label label-info">4 Revisions Available</span>
+											</td>
+											<td class="text-center"><strong>x <span class="label label-info">1</span></strong></td>
+											<td class="text-center"><strong>$ 1.000</strong></td>
+											<td class="text-right"><span class="h4">$ 1.000</span></td>
+										</tr>
+										<tr>
+											<td class="text-center">2</td>
+											<td>
+												<h4>Website Design</h4>
+												<span class="label label-info"><i class="fa fa-clock-o"></i> 1 month</span>
+												<span class="label label-info">2 Revisions Available</span>
+											</td>
+											<td class="text-center"><strong>x <span class="label label-info">1</span></strong></td>
+											<td class="text-center"><strong>$ 1.000</strong></td>
+											<td class="text-right"><span class="h4">$ 1.000</span></td>
+										</tr>
+										<tr>
+											<td class="text-center">3</td>
+											<td>
+												<h4>Application Design</h4>
+												<span class="label label-info"><i class="fa fa-clock-o"></i> 2 months</span>
+												<span class="label label-info">Mobile</span>
+											</td>
+											<td class="text-center"><strong>x <span class="label label-info">2</span></strong></td>
+											<td class="text-center"><strong>$ 1.000</strong></td>
+											<td class="text-right"><span class="h4">$ 2.000</span></td>
+										</tr>
+										<tr>
+											<td class="text-center">4</td>
+											<td>
+												<h4>Application Development</h4>
+												<span class="label label-info"><i class="fa fa-clock-o"></i> 6 months</span>
+												<span class="label label-info">Mobile</span>
+											</td>
+											<td class="text-center"><strong>x <span class="label label-info">2</span></strong></td>
+											<td class="text-center"><strong>$ 5.500</strong></td>
+											<td class="text-right"><span class="h4">$ 11.000</span></td>
+										</tr>						
+										<tr class="active">
+											<td colspan="4" class="text-right"><span class="h4">SUBTOTAL</span></td>
+											<td class="text-right"><span class="h4">$ 15.000</span></td>
+										</tr>
+										<tr class="active">
+											<td colspan="4" class="text-right"><span class="h4">VAT RATE</span></td>
+											<td class="text-right"><span class="h4">5%</span></td>
+										</tr>
+										<tr class="active">
+											<td colspan="4" class="text-right"><span class="h4">VAT DUE</span></td>
+											<td class="text-right"><span class="h4">$ 750</span></td>
+										</tr>
+										<tr class="active">
+											<td colspan="4" class="text-right"><span class="h3"><strong>TOTAL DUE</strong></span></td>
+											<td class="text-right"><span class="h3"><strong>$ 15.750</strong></span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row invoice-payment">
+								<div class="col-sm-12">
+									<div class="mt-20">									
+										<span class="text-muted">Payment Details:</span>
+										<ul class="list-condensed list-unstyled invoice-payment-details">
+											<li><h4>Total Due: <span class="text-right text-semibold">$15,750</span></h4></li>
+											<li>Bank name: <span class="text-semibold">UBNB Bank, USA</span></li>
+											<li>Country: <span>USA</span></li>
+											<li>City: <span>New York</span></li>
+											<li>Address: <span>Full street name</span></li>
+											<li>IBAN: <span class="text-semibold">GNBHS6723832234</span></li>
+											<li>SWIFT code: <span class="text-semibold">GSHEB456</span></li>
+										</ul>									
+									</div>
+								</div>							
+							</div>
+
+							<h6>Important information</h6>
+							<p class="text-muted">Thank you for using our services. This invoice can be paid via PayPal or Bank transfer. Payment is due within 30 days from the date of delivery. Late payment is possible, but with with a fee of 5% per month.</p>
+						</div>					
+						<div class="modal-footer bg-indigo">
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close position-left"></i>Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /modal with invoice -->
+							
+		</div>
+
+		
+<script type='text/javascript'>
+	$(document).ready(function() {		
+		$(function() {
+			$('.styled').uniform();
+		});
+		$(function() {
+
+			// Table setup
+			// ------------------------------
+			// Initialize
+			$('.invoice-archive').DataTable({
+				autoWidth: false,
+				columnDefs: [
+					{
+						width: '30px',
+						targets: 0
+					},
+					{
+						visible: false,
+						targets: 1
+					},
+					{ 
+						orderable: false,
+						width: '100px',
+						targets: 7
+					},
+					{
+						width: '15%',
+						targets: [4, 5]
+					},
+					{
+						width: '5',
+						targets: 6
+					},
+					{
+						width: '22%',
+						targets: 3
+					}
+				],
+				order: [[ 0, 'desc' ]],
+				dom: '<"datatable-header"fl><"datatable-scroll-lg"t><"datatable-footer"ip>',
+				language: {
+					search: '<span>Search:</span> _INPUT_',
+					lengthMenu: '<span>Show:</span> _MENU_',
+					paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+				},
+				lengthMenu: [ 25, 50, 75, 100 ],
+				displayLength: 25,
+				drawCallback: function ( settings ) {
+					var api = this.api();
+					var rows = api.rows( {page:'current'} ).nodes();
+					var last=null;
+		 
+					api.column(1, {page:'current'} ).data().each( function ( group, i ) {
+						if ( last !== group ) {
+							$(rows).eq( i ).before(
+								'<tr class="active border-double"><td colspan="8" class="text-semibold">'+group+'</td></tr>'
+							);
+		 
+							last = group;
+						}
+					});
+
+					$('.select').select2({
+						width: '150px',
+						minimumResultsForSearch: Infinity
+					});
+
+					$(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+				},
+				preDrawCallback: function(settings) {
+					$(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+					$('.select').select2().select2('destroy');
+				}
+			});
+
+			// External table additions
+			// ------------------------------
+			// Add placeholder to the datatable filter option
+			$('.dataTables_filter input[type=search]').attr('placeholder','Search invoice...');
+
+			// Enable Select2 select for the length option
+			$('.dataTables_length select').select2({
+				minimumResultsForSearch: -1,
+				width: 'auto'
+			});
+			
+			$('.select').select2({
+				containerCssClass: 'select-size-xs',
+				minimumResultsForSearch: -1
+			});
+			
+			$('.select-warning').select2({
+				containerCssClass: 'bg-warning-400'
+			});
+			
+			$('.select-danger').select2({
+				containerCssClass: 'bg-danger-400'
+			});
+			
+			$('.select-info').select2({
+				containerCssClass: 'bg-info-400'
+			});
+			
+			$('.select-success').select2({
+				containerCssClass: 'bg-success-400'
+			});
+			
+			$('.select-default').select2({
+				containerCssClass: 'bg-slate-400'
+			});
+
+		});
+	});
+</script>
+					<!-- Footer -->
+					<div class="footer pt-20">
+						&copy; 2016 Bird - Admin theme by <a href="http://followtechnique.com" target="_blank">FollowTechnique</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;Version - 1.0.0
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+		
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+</body>
+</html>
