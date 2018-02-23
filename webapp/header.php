@@ -2,7 +2,7 @@
 	<div class="navbar-header">
 		<a class="sidebar-mobile-toggle visible-xs"><i class="fa fa-ellipsis-v"></i></a>
 		<a class="navbar-brand" href="" style="background:none;color:#fff;">
-		<img src="http://www.myskoo.in/images/logo.png"> MySkoo
+		<img src="http://www.myskoo.in/images/logo.png">
 		</a>
 		<a class="sidebar-control sidebar-toggle hidden-xs pull-right"><i class="fa fa-bars"></i></a>
 	</div>

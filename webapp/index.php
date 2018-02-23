@@ -20,7 +20,7 @@
 				<div class="content">
 
 					<!-- Simple login form -->
-					<form action="index.htm">			
+					<form action="dashboard.php">
 						<div class="panel panel-body login-form">							
 							<div class="text-center mb-20">
 								<div class="icon-object border-slate-300 text-slate-300"><i class="fa fa-user"></i></div>
@@ -59,7 +59,7 @@
 							</div>
 
 							<div class="form-group">
-								<button type="button" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block"><b><i class="fa fa-sign-in"></i></b> Sign in</button>								
+								<button type="submit" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block"><b><i class="fa fa-sign-in"></i></b> Sign in</button>
 							</div>						
 						</div>
 						
@@ -69,7 +69,7 @@
 
 					<!-- Footer -->
 					<div class="footer text-muted">
-						&copy; 2016 Bird - Admin theme by <a href="http://followtechnique.com" target="_blank">FollowTechnique</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;Version - 1.0.0
+						&copy; <?php echo date('Y'); ?> Design and Developed By <a href="#">MySkoo</a>.
 					</div>
 					<!-- /footer -->
 
