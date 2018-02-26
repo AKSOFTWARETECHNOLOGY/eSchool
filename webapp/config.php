@@ -1,14 +1,14 @@
-<?php error_reporting(0);
+<?php //error_reporting(0);
 
 $hostname		=	"localhost";
 $username		=	"root";
 $password	    =	"";
 $database		=	"eschool_app";
-/* * /
+/*
 	$connection	=	mysql_connect($hostname,$username,$password) or die("not Server not connected");
 	$database	=	mysql_select_db($database) or die("Data base not connected");
-/* */
-/*
+	*/
+
 $conn = mysqli_connect($hostname, $username, $password, $database);
 if( mysqli_connect_error()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 $GLOBALS['conn'] = $conn;
@@ -34,7 +34,6 @@ function mysql_insert_id() {
     $conn = $GLOBALS['conn'];
     return mysqli_insert_id($conn);
 }
-*/
 ?>
                             
 						

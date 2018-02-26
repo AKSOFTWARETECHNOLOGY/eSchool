@@ -30,12 +30,11 @@ include 'header.php';
 	<div class="page-header">
 		<div class="page-header-content">
 			<div class="page-title">
-				<h4><i class="fa fa-th-large position-left"></i> Basic Datatable</h4>
+				<h4><i class="fa fa-th-large position-left"></i> STAFF LIST</h4>
 			</div>										
 			<ul class="breadcrumb">
-				<li><a href="index.htm"><i class="fa fa-home"></i>Home</a></li>
-				<li>Datatables</li>
-				<li class="active">Basic</li>
+				<li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
+				<li class="active">Staff List</li>
 			</ul>					
 		</div>
 	</div>
@@ -49,519 +48,162 @@ include 'header.php';
 				<!-- basic datatable -->
 				<div class="panel panel-flat">
 					<div class="panel-heading">
-						<h4 class="panel-title">Basic datatable</h4>						
+						<h4 class="panel-title">Staff List</h4>
 					</div>
-					<div class="panel-body">
-						<p>Basic datatable initialization using <code>.datatable</code> to the <code>&lttable&gt</code>class.</p>
-					</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button type="button" class="form-control btn btn-info">Delete Staff</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="form-control btn btn-info"> Send Message</button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="form-control btn btn-info">Add To Groups</button>
+                            </div>
+
+                            <div class="col-md-3">
+                                <a href="add-staff.php"><button type="button" class="form-control btn btn-info">Add Staff</button></a>
+                            </div>
+                        </div>
+                    </div>
 					<table class="table datatable">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Period</th>								
-								<th>Issued to</th>								
-								<th>Issue date</th>
-								<th>Due Date</th>								
-								<th class="text-center">Actions</th>
+								<th></th>
+								<th>NAME</th>
+								<th>POSITION</th>
+								<th>PHONE NUMBER</th>
+                                <th>ACTIONS</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>#INV01525</td>
-								<td>April 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Jane Elliott</a>
-										<small class="display-block text-muted">Payment method: Bank Transfer</small>
-									</h6>
-								</td>								
-								<td>
-									April 04, 2016
-								</td>
-								<td>
-									<span class="label label-danger">-5 days</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Delete</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                        <form method="get">
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mrs. Menisha</td>
+                                <td>Senior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01524</td>
-								<td>April 2016</td>	
-								<td>								
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Florence Douglas</a>
-										<small class="display-block text-muted">Payment method: Bank transfer</small>
-									</h6>
-								</td>								
-								<td>
-									April 02, 2016
-								</td>
-								<td>
-									<span class="label label-default">On Hold</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Ajankumar</td>
+                                <td>Principal </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01523</td>
-								<td>March 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Eugine Turner</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									March 14, 2016
-								</td>
-								<td>
-									<span class="label label-warning">4 days</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Chellathurai</td>
+                                <td> </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01522</td>
-								<td>March 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Ann Porter</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>							
-								<td>
-									March 5, 2016
-								</td>
-								<td>
-									<span class="label label-default">Canceled</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Jayakumaran Thambi</td>
+                                <td>Junior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01521</td>
-								<td>March 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Jacqueline Howell</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									MArch 10, 2016
-								</td>
-								<td>
-									<span class="label label-success">Paid on March 24, 2016</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Ms. Antony Ammal</td>
+                                <td>Junior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01520</td>
-								<td>March 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Andrew Brewer</a>
-										<small class="display-block text-muted">Payment method: Bank transfer</small>
-									</h6>
-								</td>								
-								<td>
-									March 1, 2016
-								</td>
-								<td>
-									<span class="label label-success">Paid on March 29, 2016</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mrs. Madona</td>
+                                <td>Senior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01519</td>
-								<td>February 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Marilyn Romero</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									Feb 26, 2016
-								</td>
-								<td>
-									<span class="label label-danger">2 months</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Ajaykrishna</td>
+                                <td>Correspondent </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01518</td>
-								<td>February 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Jane Elliott</a>
-										<small class="display-block text-muted">Payment method: Cash</small>
-									</h6>
-								</td>								
-								<td>
-									Feb 17, 2016
-								</td>
-								<td>
-									<span class="label label-danger">2 months</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Ms. Tina</td>
+                                <td>Junior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01517</td>
-								<td>January 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Florence Douglas</a>
-										<small class="display-block text-muted">Payment method: Bank transfer</small>
-									</h6>
-								</td>								
-								<td>
-									Jan 23, 2016
-								</td>
-								<td>
-									<span class="label label-success">Paid on Feb 13, 2016</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Jayakumar</td>
+                                <td>Junior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-							<tr>
-								<td>#INV01516</td>
-								<td>January 2016</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Eugine Turner</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									Jan 7, 2016
-								</td>
-								<td>
-									<span class="label label-default">On Hold</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-
-							<tr>
-								<td>#INV01515</td>
-								<td>December 2015</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Ann Porter</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									Dec 23, 2015
-								</td>
-								<td>
-									<span class="label label-default">On Hold</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-
-							<tr>
-								<td>#INV01514</td>
-								<td>December 2015</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Jacqueline Howell</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>							
-								<td>
-									Dec 12, 2015
-								</td>
-								<td>
-									<span class="label label-success">Paid on Dec 27, 2015</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-
-							<tr>
-								<td>#INV01513</td>
-								<td>November 2015</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Andrew Brewer</a>
-										<small class="display-block text-muted">Payment method: Bank transfer</small>
-									</h6>
-								</td>								
-								<td>
-									Nov 25, 2015
-								</td>
-								<td>
-									<span class="label label-warning">-3 months</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>
-
-							<tr>
-								<td>#INV01512</td>
-								<td>November 2015</td>								
-								<td>
-									<h6 class="no-margin">
-										<a href="datatable_basic.htm#">Marilyn Romero</a>
-										<small class="display-block text-muted">Payment method: Paypal</small>
-									</h6>
-								</td>								
-								<td>
-									February 26, 2016
-								</td>
-								<td>
-									<span class="label label-danger">-3 months</span>
-								</td>								
-								<td class="text-center">
-									<ul class="icons-list">
-										<li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-										<li class="dropdown">
-											<a href="datatable_basic.htm#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li><a href="datatable_basic.htm#"><i class="fa fa-download"></i> Download</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-print"></i> Print</a></li>
-												<li class="divider"></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-edit"></i> Edit</a></li>
-												<li><a href="datatable_basic.htm#"><i class="fa fa-trash"></i> Remove</a></li>
-											</ul>
-										</li>
-									</ul>
-								</td>
-							</tr>							
+                            <tr>
+                                <td><input type="checkbox" name="staff"/> </td>
+                                <td>Mr. Antony</td>
+                                <td>Junior Staff </td>
+                                <td>9787131376</td>
+                                <td class="text-center">
+                                    <ul class="icons-list">
+                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </form>
 						</tbody>
 					</table>
 				</div>
 				<!-- /basic datatable -->
-				
-				<!-- datatable options -->
-				<div class="panel panel-flat">
-					<div class="panel-heading">
-						<h4 class="panel-title">Datatable options</h4>						
-					</div>
-					<div class="panel-body">
-						<table class="table table-bordered table-hover table-xxs">
-							<thead>
-								<tr class="bg-teal">
-									<th>Name</th>
-									<th>Summary</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td colspan="3">DataTables - Features</td>
-								</tr>
-								<tr>
-									<td><p><a href="http://datatables.net/reference/option/lengthChange" target="_blank"><code>lengthChange</code></a></p></td>
-									<td><p>Feature control the end user's ability to change the paging display length of the table.</p></td>
-								</tr>
-								<tr>
-									<td><p><a href="http://datatables.net/reference/option/ordering" target="_blank"><code>ordering</code></a></p></td>
-									<td><p>Feature control ordering (sorting) abilities in DataTables.</p></td>
-								</tr>
-								<tr>
-									<td><p><a href="http://datatables.net/reference/option/paging" target="_blank"><code>paging</code></a></p></td>
-									<td><p>Enable or disable table pagination.</p></td>
-								</tr>
-								<tr>
-									<td><p><a href="http://datatables.net/reference/option/searching" target="_blank"><code>searching</code></a></p></td>
-									<td><p>Feature control search (filtering) abilities</p></td>
-								</tr>
-								<tr>
-									<td><p><a href="http://datatables.net/reference/option/stateSave" target="_blank"><code>stateSave</code></a></p></td>
-									<td><p>State saving - restore table state on page reload</p></td>
-								</tr>
-								
-								
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<!-- /datatable options -->
+
 			</div>										
 		</div>
 		
@@ -577,20 +219,21 @@ include 'header.php';
 				autoWidth: false,
 				columnDefs: [
 					{
-						width: '30px',
+						width: '10%',
 						targets: 0
 					},
-					{						
-						targets: 1
+					{
+                        width: '30%',
+						targets: [1,2]
 					},
 					{ 
 						orderable: false,
-						width: '100px',
-						targets: 5
+						width: '10%',
+						targets: 4
 					},
 					{
-						width: '15%',
-						targets: [3, 4]
+						width: '20%',
+						targets: 3
 					}					
 				],
 				order: [[ 0, 'desc' ]],

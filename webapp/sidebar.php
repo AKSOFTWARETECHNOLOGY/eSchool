@@ -37,6 +37,12 @@
                 <li class="navigation-header"><span>Staff</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li><a href="staff.php"><i class="fa fa-users"></i> <span>Staff List</span></a></li>
                 <li><a href="add-staff.php"><i class="fa fa-user-plus"></i> <span>Add Staff</span></a></li>
+                <li><a href="import-staff.php"><i class="fa fa-user-plus"></i> <span>Import Staff</span></a></li>
+
+                <li class="navigation-header"><span>Student</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li><a href="student.php"><i class="fa fa-users"></i> <span>Student List</span></a></li>
+                <li><a href="add-student.php"><i class="fa fa-user-plus"></i> <span>Add Student</span></a></li>
+                <li><a href="import-student.php"><i class="fa fa-user-plus"></i> <span>Import Student</span></a></li>
 
             </ul>
         </div>
