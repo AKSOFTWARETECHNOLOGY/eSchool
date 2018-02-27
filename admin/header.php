@@ -3,9 +3,9 @@
     <!-- Logo -->
     <a href="dashboard.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><img src="image/logo.png" width="100%"></span>
+        <span class="logo-mini"><img src="http://www.myskoo.in/images/logo.png" width="100%"></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><img src="image/logo.png" width="40%"></span>
+        <span class="logo-lg"><img src="http://www.myskoo.in/images/logo.png" width="40%"></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">

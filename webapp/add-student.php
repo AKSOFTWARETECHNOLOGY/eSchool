@@ -297,9 +297,7 @@ include 'header.php';
                     });
                 </script>
                 <!-- Footer -->
-                <div class="footer pt-20">
-                    &copy; 2016 Bird - Admin theme by <a href="http://followtechnique.com" target="_blank">FollowTechnique</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;Version - 1.0.0
-                </div>
+                <?php include "footer.php"; ?>
                 <!-- /footer -->
 
             </div>

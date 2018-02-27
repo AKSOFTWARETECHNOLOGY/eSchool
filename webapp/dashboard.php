@@ -33,7 +33,7 @@ include 'header.php';
 				<h4><i class="fa fa-home position-left"></i> <span>Dashboard</span></h4>
 			</div>										
 			<ul class="breadcrumb">
-				<li><a href="index.htm"><i class="fa fa-home"></i>Home</a></li>
+				<li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
 				<li class="active">Dashboard</li>
 			</ul>					
 		</div>
@@ -44,7 +44,86 @@ include 'header.php';
 	<!-- Content area -->
 	<div class="content">
 
-		<div class="row">			
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-indigo">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Staff</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-pink">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Student</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area-intervals"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-purple">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Classes</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-column"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-indigo">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Staff</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-pink">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Student</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area-intervals"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-purple">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Classes</h6>
+                    </div>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-column"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row hidden">
 			<div class="col-md-4 col-sm-4">
 				<div class="panel panel-flat bg-indigo">
 					<div class="panel-heading heading-condensed">
@@ -77,7 +156,7 @@ include 'header.php';
 			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row hidden">
 			<div class="col-md-8 col-sm-8">
 				<div class="panel panel-flat no-border bg-slate-400">
 					<div class="panel-heading text-center heading-condensed">
@@ -164,7 +243,7 @@ include 'header.php';
 			</div>			
 		</div>
 				
-		<div class="row">
+		<div class="row hidden">
 			<div class="col-md-8 col-sm-8">
 				<div class="panel panel-flat timeline-content">																												
 					<img src="assets/images/covers/weather.jpg" class="img-responsive" alt="">
@@ -250,7 +329,7 @@ include 'header.php';
 			</div>			
 		</div>
 		
-		<div class="row">
+		<div class="row hidden">
 			<div class="col-md-3 col-sm-4">
 				<div class="panel panel-flat border-top-xlg border-top-warning">
 					<div class="panel-heading">
@@ -329,7 +408,7 @@ include 'header.php';
 			</div>			
 		</div>
 		
-		<div class="row">
+		<div class="row hidden">
 			<div class="col-md-6">
 				<div class="panel panel-flat timeline-content">
 					<div class="panel-heading mb-10">
