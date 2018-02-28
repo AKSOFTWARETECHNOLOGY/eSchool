@@ -44,6 +44,15 @@
                 <li><a href="add-student.php"><i class="fa fa-user-plus"></i> <span>Add Student</span></a></li>
                 <li><a href="import-student.php"><i class="fa fa-user-plus"></i> <span>Import Student</span></a></li>
 
+                <li class="navigation-header"><span>Class</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li><a href="class.php"><i class="fa fa-users"></i> <span>Class List</span></a></li>
+                <li><a href="add-class.php"><i class="fa fa-user-plus"></i> <span>Add Class</span></a></li>
+
+                <li class="navigation-header"><span>Message</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li><a href="sms.php"><i class="fa fa-users"></i> <span>SMS</span></a></li>
+                <li><a href="email.php"><i class="fa fa-user-plus"></i> <span>Email</span></a></li>
+                <li><a href="group-sms.php"><i class="fa fa-user-plus"></i> <span>Group SMS</span></a></li>
+
             </ul>
         </div>
     </div>

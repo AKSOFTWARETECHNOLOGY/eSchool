@@ -44,12 +44,12 @@ $school_cnt=@mysql_num_rows($school_exe);
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Profile List
+                School List
             </h1>
             <ol class="breadcrumb">
                 <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Home</a></li>
 
-                <li class="active">Profile List</li>
+                <li class="active">School List</li>
             </ol>
         </section>
 
@@ -59,11 +59,11 @@ $school_cnt=@mysql_num_rows($school_exe);
                 <div class="col-xs-12">
                     <div class="box" style="min-height: 600px;">
                         <div class="box-header">
-                            <h3 class="box-title" style="line-height:30px;">Profile List</h3>
+                            <h3 class="box-title" style="line-height:30px;">School List</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <a href="createprofile.php" style="float: right; margin-right: 10px;"><button type="button" class="btn btn-info btn-md" style="margin-bottom:10px;">Create Profile</button></a>
+                                <a href="createprofile.php" style="float: right; margin-right: 10px;"><button type="button" class="btn btn-info btn-md" style="margin-bottom:10px;">Create School</button></a>
                             </div>
 
                             <?php

@@ -2,7 +2,8 @@
 SQLyog Ultimate v8.82 
 MySQL - 5.5.5-10.1.16-MariaDB : Database - eschool_app
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -330,6 +331,25 @@ CREATE TABLE `staff_info` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Table structure for table `section` */
+
+DROP TABLE IF EXISTS `section`;
+
+CREATE TABLE `section` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `section_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `section_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_by` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'admin',
+  `modified_by` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'admin',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `section` */
+
+insert  into `section`(`id`,`section_name`,`section_status`,`created_by`,`modified_by`,`created_at`,`updated_at`) values (1,'A',1,'admin','admin',NULL,NULL),(2,'B',1,'admin','admin',NULL,NULL),(3,'C',1,'admin','admin',NULL,NULL),(4,'D',1,'admin','admin',NULL,NULL),(5,'E',1,'admin','admin',NULL,NULL),(6,'F',1,'admin','admin',NULL,NULL),(7,'G',1,'admin','admin',NULL,NULL),(8,'H',1,'admin','admin',NULL,NULL),(9,'I',1,'admin','admin',NULL,NULL),(10,'J',1,'admin','admin',NULL,NULL),(11,'K',1,'admin','admin',NULL,NULL),(12,'L',1,'admin','admin',NULL,NULL);
 
 /*Data for the table `staff_info` */
 

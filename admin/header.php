@@ -71,12 +71,12 @@
             </li>
             <li class="treeview">
                 <a href="profile-list.php">
-                    <i class="ion ion-android-person"></i> <span>Profile List</span>
+                    <i class="ion ion-android-person"></i> <span>Schools</span>
                 </a>
             </li>
             <li class="treeview">
                 <a href="createprofile.php">
-                    <i class="ion ion-android-person"></i> <span>Create Profile</span>
+                    <i class="ion ion-android-person"></i> <span>Create School</span>
                 </a>
             </li>
 

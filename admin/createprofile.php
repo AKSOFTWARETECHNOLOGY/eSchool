@@ -56,12 +56,12 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Create Profile
+                Create School
             </h1>
             <ol class="breadcrumb">
                 <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Home</a></li>
 
-                <li class="active">Create Profile</li>
+                <li class="active">Create School</li>
             </ol>
         </section>
 
@@ -73,7 +73,7 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add New Profile</h3>
+                            <h3 class="box-title">Add New School</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
                         <form role="form" id="createProfileForm" action="docreateprofile.php" method="post">
@@ -208,7 +208,7 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
 
                         <div class="box-body">
                             <div class="form-group col-md-12">
-                                <a href="profile-list.php"><button type="submit" class="btn btn-warning col-md-12" style="margin-bottom:10px;" >Back to Profile List</button></a>
+                                <a href="profile-list.php"><button type="submit" class="btn btn-warning col-md-12" style="margin-bottom:10px;" >Back to School List</button></a>
                             </div>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
