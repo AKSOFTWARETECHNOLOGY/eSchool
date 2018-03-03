@@ -79,6 +79,16 @@
                     <i class="ion ion-android-person"></i> <span>Create School</span>
                 </a>
             </li>
+            <li class="treeview">
+                <a href="class-list.php">
+                    <i class="ion ion-android-person"></i> <span>Class List</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="section-list.php">
+                    <i class="ion ion-android-person"></i> <span>Section List</span>
+                </a>
+            </li>
 
             <li class="treeview">
                 <a href="logout.php">

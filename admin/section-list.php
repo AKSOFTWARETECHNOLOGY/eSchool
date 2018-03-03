@@ -13,13 +13,9 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$school_sql="SELECT si.*, `countries`.`name` AS country_name, cities.city_name, users.delete_status
-FROM `school_info` AS `si`
-LEFT JOIN `users` ON users.id = si.user_id
-LEFT JOIN `countries` ON countries.id = si.country
-LEFT JOIN `cities` ON cities.id = si.city";
-$school_exe=mysql_query($school_sql);
-$school_cnt=@mysql_num_rows($school_exe);
+$class_sql="SELECT * FROM `section`";
+$class_exe=mysql_query($class_sql);
+$class_cnt=@mysql_num_rows($class_exe);
 
 
 ?>
@@ -44,12 +40,12 @@ $school_cnt=@mysql_num_rows($school_exe);
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                School List
+                Section List
             </h1>
             <ol class="breadcrumb">
                 <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Home</a></li>
 
-                <li class="active">School List</li>
+                <li class="active">Section List</li>
             </ol>
         </section>
 
@@ -59,64 +55,52 @@ $school_cnt=@mysql_num_rows($school_exe);
                 <div class="col-xs-12">
                     <div class="box" style="min-height: 600px;">
                         <div class="box-header">
-                            <h3 class="box-title" style="line-height:30px;">School List</h3>
+                            <h3 class="box-title" style="line-height:30px;">Section List</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <a href="createprofile.php" style="float: right; margin-right: 10px;"><button type="button" class="btn btn-info btn-md" style="margin-bottom:10px;">Create School</button></a>
+                                <a href="add-section.php" style="float: right; margin-right: 10px;"><button type="button" class="btn btn-info btn-md" style="margin-bottom:10px;">Create Section</button></a>
                             </div>
 
                             <?php
-                            if($school_cnt>0)
+                            if($class_cnt>0)
                             {
                                 ?>
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th>Sl.No</th>
-                                        <th>School Code</th>
-                                        <th>School Name</th>
-                                        <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>Status</th>
+                                        <th>ID</th>
+                                        <th>Section Name</th>
+                                        <th>Section Status</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $sl=0;
-                                    while($school_fet=mysql_fetch_array($school_exe))
+                                    $i =1;
+                                    while($class_fet=mysql_fetch_array($class_exe))
                                     {
-                                        $sl++;
                                         ?>
                                         <tr>
-                                            <td><?php echo $sl; ?></td>
-                                            <td><?php echo $school_fet['school_code']; ?></td>
-                                            <td><?php echo $school_fet['name_school']; ?></td>
-                                            <td><?php echo $school_fet['mobile']; ?></td>
-                                            <td><?php echo $school_fet['email']; ?></td>
-                                            <td>
-                                                <?php if($school_fet['delete_status'] == 1)
-                                                {?>
-                                                    <button type="button" class="btn btn-success btn-xs">Active</button>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $class_fet['section_name']; ?></td>
+                                            <td><?php
+                                                if($class_fet['section_status'] == 1){?>
+                                                    <button type="button" class="btn btn-success btn-xs"> Active </button>
                                                 <?php
                                                 }
-                                                else{
+                                                else if($class_fet['section_status'] == 0){
                                                     ?>
-                                                    <button type="button" class="btn btn-danger btn-xs">Inactive</button>
+                                                    <button type="button" class="btn btn-warning btn-xs"> Inactive </button>
                                                 <?php
-                                                }?>
-                                            </td>
+                                                }
+                                                ?></td>
                                             <td>
-                                                <a href="schoolview.php?school_id=<?php echo $school_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View</button></a>
-                                                &nbsp;&nbsp;&nbsp;
-
-                                                &nbsp;&nbsp;&nbsp;
-                                                <a class="hidden" href="product-delete.php?delete=1&product_id=<?php echo $school_fet['id']; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><button type="button" class="btn btn-warning btn-xs"><i class="fa fa-trash-o"></i> Delete</button></a>
-
+                                                <a href="section-edit.php?section_id=<?php echo $class_fet['id']; ?>"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-pencil"></i> Edit</button></a>
                                             </td>
                                         </tr>
-                                    <?php
+                                        <?php
+                                        $i++;
                                     }
                                     ?>
                                     </tbody>
