@@ -23,7 +23,9 @@
 					<form action="dashboard.php">
 						<div class="panel panel-body login-form">							
 							<div class="text-center mb-20">
-								<div class="icon-object border-slate-300 text-slate-300"><i class="fa fa-user"></i></div>
+								<div class="icon-object border-slate-300 text-slate-300">
+                                    <img src="http://www.myskoo.in/images/logo.png" width="100px" />
+                                </div>
 								<h5 class="content-group">Login to your account <small class="display-block">Please put your credentials</small></h5>
 							</div>
 
