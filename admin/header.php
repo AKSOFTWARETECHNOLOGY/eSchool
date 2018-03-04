@@ -1,4 +1,8 @@
-
+<style>
+    .content-wrapper {
+        min-height: 590px !important;
+    }
+</style>
 <header class="main-header">
     <!-- Logo -->
     <a href="dashboard.php" class="logo">
