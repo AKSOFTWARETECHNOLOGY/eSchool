@@ -13,9 +13,6 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$stu_sql="SELECT * FROM `student_info` where school_id=$user_id";
-$stu_exe=mysql_query($stu_sql);
-$stu_cnt=@mysql_num_rows($stu_exe);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +22,11 @@ $stu_cnt=@mysql_num_rows($stu_exe);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MySkoo - Student</title>
     <?php include "head-inner.php"; ?>
+    <style>
+        span.req{
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <!-- Main navbar -->
@@ -49,11 +51,11 @@ include 'header.php';
             <div class="page-header">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="fa fa-th-large position-left"></i> STUDENT LIST</h4>
+                        <h4><i class="fa fa-th-large position-left"></i> CHANGE PASSWORD</h4>
                     </div>
                     <ul class="breadcrumb">
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
-                        <li class="active">Student List</li>
+                        <li class="active">Change Password</li>
                     </ul>
                 </div>
             </div>
@@ -67,68 +69,44 @@ include 'header.php';
                         <!-- basic datatable -->
                         <div class="panel panel-flat">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Student List</h4>
+                                <h4 class="panel-title">Change Password</h4>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Delete Student</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info"> Send Message</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Add To Groups</button>
-                                    </div>
+                                <form action="dochangepassword.php" method="post">
+                                    <table id="example2" class="table table-bordered table-hover">
+                                        <tr>
+                                            <th><label>Old Password</label> <span class="req"> *</span></th>
+                                            <td>
+                                                <input name="old_password" id="old_password" type="password" class="form-control" placeholder="Old Password" />
+                                                <div id="errOldPassword" style="color:red"></div>
+                                            </td>
+                                        </tr>
 
-                                    <div class="col-md-3">
-                                        <a href="add-student.php"><button type="button" class="form-control btn btn-info">Add Student</button></a>
-                                    </div>
-                                </div>
+                                        <tr>
+                                            <th><label>New Password</label> <span class="req"> *</span></th>
+                                            <td>
+                                                <input name="new_password" id="new_password" type="password" class="form-control" placeholder="New Password" />
+                                                <div id="errNewPassword" style="color:red"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th><label>Confirm Password</label> <span class="req"> *</span></th>
+                                            <td>
+                                                <input name="confirm_password" id="confirm_password" type="password" class="form-control" placeholder="Re-enter New Password" />
+                                                <div id="errConfirmPassword" style="color:red"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <button name="changepassword" type="submit" class="btn btn-primary btn-md changepassword">Save Changes</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
                             </div>
-                            <?php
-                            if($stu_cnt>0)
-                            {
-                            ?>
-                            <table class="table datatable">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>NAME</th>
-                                    <th>PHONE NUMBER</th>
-                                    <th>TODAY ATTENDANCE</th>
-                                    <th>ACTIONS</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                while($stu_fet=mysql_fetch_array($stu_exe))
-                                {
-                                ?>
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td><?php echo $stu_fet['firstname_person'] . $stu_fet['lastname_person']; ?></td>
-                                        <td><?php echo $stu_fet['mobile'] ?></td>
-                                        <td>NA </td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <a href="stu-view.php?staff_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                            <?php
-                            }
-                            else{
-                                ?>
-                                <p><b> Records are being updated. </b></p>
-                            <?php
-                            }
-                            ?>
+
                         </div>
                         <!-- /basic datatable -->
                     </div>
@@ -198,5 +176,43 @@ include 'header.php';
 
 </div>
 <!-- /page container -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".changepassword").click(function(){
+            $("div#errOldPassword").html( " " );
+            $("div#errNewPassword").html( " " );
+            $("div#errConfirmPassword").html( " " );
+            var oldPass = $('#old_password').val();
+            if(!oldPass){
+                $("div#errOldPassword").html( "This field is required" );
+                return false;
+            }
+            var newPass = $('#new_password').val();
+            var len = newPass.length;
+            if(!newPass){
+                $("div#errNewPassword").html( "This field is required" );
+                return false;
+            }
+            if(oldPass == newPass){
+                $("div#errNewPassword").html( "The new password should be different from old password");
+                return false;
+            }
+            if(len < 6){
+                $("div#errNewPassword").html( "The new password should be minimum of 6 characters");
+                return false;
+            }
+            var confPass = $('#confirm_password').val();
+            if(!confPass){
+                $("div#errConfirmPassword").html( "This field is required" );
+                return false;
+            }
+            if(confPass != newPass){
+                $("div#errConfirmPassword").html( "The new password and confirm password should be same");
+                return false;
+            }
+        });
+    });
+</script>
 </body>
 </html>

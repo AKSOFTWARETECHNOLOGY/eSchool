@@ -20,7 +20,7 @@
 				<div class="content">
 
 					<!-- Simple login form -->
-					<form action="dashboard.php">
+					<form action="dologin.php" method="post">
 						<div class="panel panel-body login-form">							
 							<div class="text-center mb-20">
 								<div class="icon-object border-slate-300 text-slate-300">
@@ -61,7 +61,7 @@
 							</div>
 
 							<div class="form-group">
-								<button type="submit" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block"><b><i class="fa fa-sign-in"></i></b> Sign in</button>
+								<button type="submit" name="login" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block"><b><i class="fa fa-sign-in"></i></b> Sign in</button>
 							</div>						
 						</div>
 						

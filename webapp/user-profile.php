@@ -13,9 +13,6 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$stu_sql="SELECT * FROM `student_info` where school_id=$user_id";
-$stu_exe=mysql_query($stu_sql);
-$stu_cnt=@mysql_num_rows($stu_exe);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,11 +46,11 @@ include 'header.php';
             <div class="page-header">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="fa fa-th-large position-left"></i> STUDENT LIST</h4>
+                        <h4><i class="fa fa-th-large position-left"></i> USER PROFILE</h4>
                     </div>
                     <ul class="breadcrumb">
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
-                        <li class="active">Student List</li>
+                        <li class="active">User Profile</li>
                     </ul>
                 </div>
             </div>
@@ -67,68 +64,28 @@ include 'header.php';
                         <!-- basic datatable -->
                         <div class="panel panel-flat">
                             <div class="panel-heading">
-                                <h4 class="panel-title">Student List</h4>
+                                <h4 class="panel-title">User Profile</h4>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Delete Student</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info"> Send Message</button>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Add To Groups</button>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <a href="add-student.php"><button type="button" class="form-control btn btn-info">Add Student</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                            if($stu_cnt>0)
-                            {
-                            ?>
-                            <table class="table datatable">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>NAME</th>
-                                    <th>PHONE NUMBER</th>
-                                    <th>TODAY ATTENDANCE</th>
-                                    <th>ACTIONS</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                while($stu_fet=mysql_fetch_array($stu_exe))
-                                {
-                                ?>
+                                <table id="example2" class="table table-bordered table-hover">
                                     <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td><?php echo $stu_fet['firstname_person'] . $stu_fet['lastname_person']; ?></td>
-                                        <td><?php echo $stu_fet['mobile'] ?></td>
-                                        <td>NA </td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <a href="stu-view.php?staff_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
-                                            </ul>
+                                        <th>User Name</th>
+                                        <td><?php echo $user_name; ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>User Email</th>
+                                        <td><?php echo $user_email; ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <a href="change-password.php"><button class="btn btn-info">Change Password</button></a>
                                         </td>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                            <?php
-                            }
-                            else{
-                                ?>
-                                <p><b> Records are being updated. </b></p>
-                            <?php
-                            }
-                            ?>
+                                </table>
+                            </div>
+                            
                         </div>
                         <!-- /basic datatable -->
                     </div>

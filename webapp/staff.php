@@ -1,3 +1,22 @@
+<?php session_start();
+ob_start();
+
+if(!isset($_SESSION['adminuserid']))
+{
+    header("Location: index.php");
+}
+
+include "config.php";
+
+$user_id=$_SESSION['adminuserid'];
+$user_role=$_SESSION['adminuserrole'];
+$user_name=$_SESSION['adminusername'];
+$user_email=$_SESSION['adminuseremail'];
+
+$staff_sql="SELECT * FROM `staff_info` where school_id=$user_id";
+$staff_exe=mysql_query($staff_sql);
+$staff_cnt=@mysql_num_rows($staff_exe);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +86,10 @@ include 'header.php';
                             </div>
                         </div>
                     </div>
+                    <?php
+                    if($staff_cnt>0)
+                    {
+                    ?>
 					<table class="table datatable">
 						<thead>
 							<tr>
@@ -78,129 +101,34 @@ include 'header.php';
 							</tr>
 						</thead>
 						<tbody>
-                        <form method="get">
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mrs. Menisha</td>
-                                <td>Senior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Ajankumar</td>
-                                <td>Principal </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Chellathurai</td>
-                                <td> </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Jayakumaran Thambi</td>
-                                <td>Junior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Ms. Antony Ammal</td>
-                                <td>Junior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mrs. Madona</td>
-                                <td>Senior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Ajaykrishna</td>
-                                <td>Correspondent </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Ms. Tina</td>
-                                <td>Junior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Jayakumar</td>
-                                <td>Junior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="staff"/> </td>
-                                <td>Mr. Antony</td>
-                                <td>Junior Staff </td>
-                                <td>9787131376</td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </form>
+                        <?php
+                        while($staff_fet=mysql_fetch_array($staff_exe))
+                        {
+                        ?>
+                        <tr>
+                            <td><input type="checkbox" name="staff"/> </td>
+                            <td><?php echo $staff_fet['firstname_person'] . $staff_fet['lastname_person']; ?></td>
+                            <td><?php echo $staff_fet['job_position'] ?> </td>
+                            <td><?php echo $staff_fet['mobile'] ?></td>
+                            <td class="text-center">
+                                <ul class="icons-list">
+                                    <a href="#staff-view.php?staff_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
+                                </ul>
+                            </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
 						</tbody>
 					</table>
+                    <?php
+                    }
+                    else{
+                        ?>
+                        <p><b> Records are being updated. </b></p>
+                    <?php
+                    }
+                    ?>
 				</div>
 				<!-- /basic datatable -->
 

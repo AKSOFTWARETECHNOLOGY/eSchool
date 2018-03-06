@@ -53,6 +53,10 @@
                 <li><a href="email.php"><i class="fa fa-user-plus"></i> <span>Email</span></a></li>
                 <li><a href="group-sms.php"><i class="fa fa-user-plus"></i> <span>Group SMS</span></a></li>
 
+                <li class="navigation-header"><span>Profile</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li><a href="user-profile.php"><i class="fa fa-users"></i> <span>My Profile</span></a></li>
+                <li><a href="change-password.php"><i class="fa fa-user-plus"></i> <span>Change Password</span></a></li>
+                <li><a href="logout.php"><i class="fa fa-user-plus"></i> <span>Logout</span></a></li>
             </ul>
         </div>
     </div>

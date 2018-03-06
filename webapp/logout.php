@@ -3,12 +3,12 @@ ob_start();
 
 include "config.php";
 
-if(isset($_SESSION['schooluserid']))
+if(isset($_SESSION['adminuserid']))
 {
-    unset($_SESSION['schooluserid']);
-    unset($_SESSION['schoolusername']);
-    unset($_SESSION['schooluseremail']);
-    unset($_SESSION['schooluserrole']);
+    unset($_SESSION['adminuserid']);
+    unset($_SESSION['adminusername']);
+    unset($_SESSION['adminuseremail']);
+    unset($_SESSION['adminuserrole']);
 
     header("Location: index.php?success=1");
 }
