@@ -109,10 +109,10 @@ include 'header.php';
                                         <td><input type="checkbox" name="staff"/> </td>
                                         <td><?php echo $stu_fet['firstname_person'] . $stu_fet['lastname_person']; ?></td>
                                         <td><?php echo $stu_fet['mobile'] ?></td>
-                                        <td>NA </td>
+                                        <td>N/A </td>
                                         <td class="text-center">
                                             <ul class="icons-list">
-                                                <a href="stu-view.php?staff_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
+                                                <a href="stu-view.php?staff_id=<?php echo $stu_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
                                             </ul>
                                         </td>
                                     </tr>

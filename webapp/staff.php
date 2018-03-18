@@ -107,8 +107,19 @@ include 'header.php';
                         ?>
                         <tr>
                             <td><input type="checkbox" name="staff"/> </td>
-                            <td><?php echo $staff_fet['firstname_person'] . $staff_fet['lastname_person']; ?></td>
-                            <td><?php echo $staff_fet['job_position'] ?> </td>
+                            <td><?php echo $staff_fet['firstname_person'] . ' ' . $staff_fet['lastname_person']; ?></td>
+                            <td>
+                                <?php
+                                if($staff_fet['job_position'] == 1){
+                                    echo "Principal";
+                                }
+                                elseif($staff_fet['job_position'] == 2){
+                                    echo "Senior Staff";
+                                }if($staff_fet['job_position'] == 3){
+                                    echo "Junior Staff";
+                                }
+                                ?>
+                            </td>
                             <td><?php echo $staff_fet['mobile'] ?></td>
                             <td class="text-center">
                                 <ul class="icons-list">
