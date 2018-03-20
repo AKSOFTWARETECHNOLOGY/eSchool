@@ -13,7 +13,9 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$stu_sql="SELECT * FROM `student_info` where school_id=$user_id";
+$stu_sql="SELECT * FROM `student_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+where school_id=$user_id and users.delete_status=1";
 $stu_exe=mysql_query($stu_sql);
 $stu_cnt=@mysql_num_rows($stu_exe);
 ?>
@@ -69,10 +71,11 @@ include 'header.php';
                             <div class="panel-heading">
                                 <h4 class="panel-title">Student List</h4>
                             </div>
+                            <form method="post" action="delete-student.php">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Delete Student</button>
+                                        <button type="submit" class="form-control btn btn-info" onclick="return confirm('Do you want to delete?');">Delete Student</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button type="button" class="form-control btn btn-info"> Send Message</button>
@@ -106,7 +109,7 @@ include 'header.php';
                                 {
                                 ?>
                                     <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
+                                        <td><input type="checkbox" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
                                         <td><?php echo $stu_fet['firstname_person'] . $stu_fet['lastname_person']; ?></td>
                                         <td><?php echo $stu_fet['mobile'] ?></td>
                                         <td>N/A </td>
@@ -129,6 +132,7 @@ include 'header.php';
                             <?php
                             }
                             ?>
+                            </form>
                         </div>
                         <!-- /basic datatable -->
                     </div>

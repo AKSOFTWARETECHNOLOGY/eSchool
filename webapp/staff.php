@@ -13,7 +13,9 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$staff_sql="SELECT * FROM `staff_info` where school_id=$user_id";
+$staff_sql="SELECT * FROM `staff_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+where school_id=$user_id and users.delete_status=1";
 $staff_exe=mysql_query($staff_sql);
 $staff_cnt=@mysql_num_rows($staff_exe);
 ?>
@@ -69,10 +71,11 @@ include 'header.php';
 					<div class="panel-heading">
 						<h4 class="panel-title">Staff List</h4>
 					</div>
+                    <form method="post" action="delete-staff.php">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <button type="button" class="form-control btn btn-info">Delete Staff</button>
+                                <button type="submit" class="form-control btn btn-info" onclick="return confirm('Do you want to delete?');">Delete Staff</button>
                             </div>
                             <div class="col-md-3">
                                 <button type="button" class="form-control btn btn-info"> Send Message</button>
@@ -106,7 +109,7 @@ include 'header.php';
                         {
                         ?>
                         <tr>
-                            <td><input type="checkbox" name="staff"/> </td>
+                            <td><input type="checkbox" name="staff[]" value="<?php echo $staff_fet['user_id'] ?>"/> </td>
                             <td><?php echo $staff_fet['firstname_person'] . ' ' . $staff_fet['lastname_person']; ?></td>
                             <td>
                                 <?php
@@ -140,6 +143,7 @@ include 'header.php';
                     <?php
                     }
                     ?>
+                        </form>
 				</div>
 				<!-- /basic datatable -->
 

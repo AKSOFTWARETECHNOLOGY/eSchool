@@ -1,3 +1,27 @@
+<?php session_start();
+ob_start();
+
+if(!isset($_SESSION['adminuserid']))
+{
+    header("Location: index.php");
+}
+
+include "config.php";
+
+$user_id=$_SESSION['adminuserid'];
+$user_role=$_SESSION['adminuserrole'];
+$user_name=$_SESSION['adminusername'];
+$user_email=$_SESSION['adminuseremail'];
+
+$staff_sql="SELECT cs.*, classes.class_name, section.section_name, users.name as staff_name FROM `class_section` as cs
+ LEFT JOIN `classes` ON classes.id = cs.class_id
+ LEFT JOIN `section` ON section.id = cs.section_id
+ LEFT JOIN `users` ON users.id = cs.staff_id
+ where school_id=$user_id and cs.class_section_status=1";
+$staff_exe=mysql_query($staff_sql);
+$staff_cnt=@mysql_num_rows($staff_exe);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,10 +74,11 @@ include 'header.php';
                             <div class="panel-heading">
                                 <h4 class="panel-title">Class List</h4>
                             </div>
+                            <form method="post" action="delete-class.php">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Delete Class</button>
+                                        <button type="submit" class="form-control btn btn-info" value="submit" onclick="return confirm('Do you want to delete?');" >Delete Class</button>
                                     </div>
 
                                     <div class="col-md-3">
@@ -61,6 +86,10 @@ include 'header.php';
                                     </div>
                                 </div>
                             </div>
+                                <?php
+                                if($staff_cnt>0)
+                                {
+                                ?>
                             <table class="table datatable">
                                 <thead>
                                 <tr>
@@ -72,142 +101,38 @@ include 'header.php';
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <form method="get">
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>Pre-KG(A) </td>
-                                        <td>Ms. Menisha</td>
-                                        <td>10</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>LKG(A) </td>
-                                        <td>Sr. Sherin</td>
-                                        <td>30</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    while($staff_fet=mysql_fetch_array($staff_exe)) {
+                                        ?>
+                                        <tr>
+                                            <td><input type="checkbox" name="class[]" value="<?php echo $staff_fet['id'] ?>"/></td>
+                                            <td><?php echo $staff_fet['class_name'] . '(' .$staff_fet['section_name'] . ')'; ?></td>
+                                            <td><?php echo $staff_fet['staff_name']; ?></td>
+                                            <td><?php echo $staff_fet['num_of_students']; ?></td>
+                                            <td class="text-center">
+                                                <ul class="icons-list">
+                                                    <li><a href="datatable_basic.htm#" data-toggle="modal"
+                                                           data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
 
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>LKG(B) </td>
-                                        <td>Sr. Stella</td>
-                                        <td>32</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>LKG(C) </td>
-                                        <td>Ms. Anitha</td>
-                                        <td>25</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>UKG(A) </td>
-                                        <td>Ms. Gayathri</td>
-                                        <td>30</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>UKG(B) </td>
-                                        <td>Ms. Manisha</td>
-                                        <td>32</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>UKG(C) </td>
-                                        <td>Ms. Anitha</td>
-                                        <td>32</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>I(A) </td>
-                                        <td>Ms. Gayathri</td>
-                                        <td>45</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>I(B) </td>
-                                        <td>Ms. Manisha</td>
-                                        <td>42</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>II(A) </td>
-                                        <td>Ms. Gayathri</td>
-                                        <td>45</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" name="staff"/> </td>
-                                        <td>II(B) </td>
-                                        <td>Ms. Momtha</td>
-                                        <td>42</td>
-                                        <td class="text-center">
-                                            <ul class="icons-list">
-                                                <li><a href="datatable_basic.htm#" data-toggle="modal" data-target="#invoice"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                </form>
                                 </tbody>
                             </table>
+                                <?php
+                                }
+                                else{
+                                    ?>
+                                    <p><b> Records are being updated. </b></p>
+                                <?php
+                                }
+                                ?>
+                            </form>
                         </div>
                         <!-- /basic datatable -->
 
@@ -280,5 +205,6 @@ include 'header.php';
 
 </div>
 <!-- /page container -->
+
 </body>
 </html>
