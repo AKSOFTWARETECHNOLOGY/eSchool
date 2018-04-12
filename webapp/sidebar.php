@@ -34,7 +34,6 @@
                     <a href="dashboard.php"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
                 </li>
                 <!-- /Main -->
-                <li class="navigation-header"><span>Staff</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Staff</span></a>
                     <ul>
@@ -44,7 +43,6 @@
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Student</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Student</span></a>
                     <ul>
@@ -55,7 +53,6 @@
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Class</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Class</span></a>
                     <ul>
@@ -64,7 +61,6 @@
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Message</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Message</span></a>
                     <ul>
@@ -74,7 +70,6 @@
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Profile</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Profile</span></a>
                     <ul>
