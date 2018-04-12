@@ -35,6 +35,57 @@
                 </li>
                 <!-- /Main -->
                 <li class="navigation-header"><span>Staff</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Staff</span></a>
+                    <ul>
+                        <li><a href="staff.php"><i class="fa fa-users"></i> <span>Staff List</span></a></li>
+                        <li><a href="add-staff.php"><i class="fa fa-user-plus"></i> <span>Add Staff</span></a></li>
+                        <li><a href="import-staff.php"><i class="fa fa-user-plus"></i> <span>Import Staff</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Student</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Student</span></a>
+                    <ul>
+                        <li><a href="student.php"><i class="fa fa-users"></i> <span>Student List</span></a></li>
+                        <li><a href="add-student.php"><i class="fa fa-user-plus"></i> <span>Add Student</span></a></li>
+                        <li><a href="import-student.php"><i class="fa fa-user-plus"></i> <span>Import Student</span></a></li>
+
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Class</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Class</span></a>
+                    <ul>
+                        <li><a href="class.php"><i class="fa fa-users"></i> <span>Class List</span></a></li>
+                        <li><a href="add-class.php"><i class="fa fa-user-plus"></i> <span>Add Class</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Message</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Message</span></a>
+                    <ul>
+                        <li><a href="sms.php"><i class="fa fa-users"></i> <span>SMS</span></a></li>
+                        <li><a href="email.php"><i class="fa fa-user-plus"></i> <span>Email</span></a></li>
+                        <li><a href="group-sms.php"><i class="fa fa-user-plus"></i> <span>Group SMS</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Profile</span> <i class="fa fa-bars" title="Content"></i></li>
+                <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Profile</span></a>
+                    <ul>
+                        <li><a href="user-profile.php"><i class="fa fa-users"></i> <span>My Profile</span></a></li>
+                        <li><a href="change-password.php"><i class="fa fa-user-plus"></i> <span>Change Password</span></a></li>
+                        <li><a href="logout.php"><i class="fa fa-user-plus"></i> <span>Logout</span></a></li>
+                    </ul>
+                </li>
+
+                <?php /* ?>
+                <li class="navigation-header"><span>Staff</span> <i class="fa fa-bars" title="Content"></i></li>
                 <li><a href="staff.php"><i class="fa fa-users"></i> <span>Staff List</span></a></li>
                 <li><a href="add-staff.php"><i class="fa fa-user-plus"></i> <span>Add Staff</span></a></li>
                 <li><a href="import-staff.php"><i class="fa fa-user-plus"></i> <span>Import Staff</span></a></li>
@@ -57,6 +108,7 @@
                 <li><a href="user-profile.php"><i class="fa fa-users"></i> <span>My Profile</span></a></li>
                 <li><a href="change-password.php"><i class="fa fa-user-plus"></i> <span>Change Password</span></a></li>
                 <li><a href="logout.php"><i class="fa fa-user-plus"></i> <span>Logout</span></a></li>
+                <?php */ ?>
             </ul>
         </div>
     </div>
