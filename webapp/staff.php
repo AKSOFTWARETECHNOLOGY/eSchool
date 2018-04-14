@@ -13,7 +13,7 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
-$staff_sql="SELECT * FROM `staff_info` as si
+$staff_sql="SELECT si.* FROM `staff_info` as si
 LEFT JOIN `users` ON users.id = si.user_id
 where school_id=$user_id and users.delete_status=1";
 $staff_exe=mysql_query($staff_sql);
@@ -100,7 +100,7 @@ include 'header.php';
 								<th>NAME</th>
 								<th>POSITION</th>
 								<th>PHONE NUMBER</th>
-                                <th>ACTIONS</th>
+                                <th class="text-center">ACTIONS</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -126,7 +126,9 @@ include 'header.php';
                             <td><?php echo $staff_fet['mobile'] ?></td>
                             <td class="text-center">
                                 <ul class="icons-list">
-                                    <a href="#staff-view.php?staff_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
+                                    <li><a href="staff-view.php?staff_id=<?php echo $staff_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>&nbsp;&nbsp;</li>
+                                    <li><a href="staff-edit.php?staff_id=<?php echo $staff_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></button></a>&nbsp;&nbsp;</li>
+                                    <li><a href="staff-delete.php?staff_id=<?php echo $staff_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a>&nbsp;&nbsp;</li>
                                 </ul>
                             </td>
                         </tr>
@@ -167,17 +169,17 @@ include 'header.php';
 					},
 					{
                         width: '30%',
-						targets: [1,2]
+						targets: 1
 					},
+                    {
+                        width: '20%',
+                        targets: [2,3]
+                    },
 					{ 
 						orderable: false,
-						width: '10%',
-						targets: 4
-					},
-					{
 						width: '20%',
-						targets: 3
-					}					
+						targets: 4
+					}
 				],
 				order: [[ 0, 'desc' ]],
 				dom: '<"datatable-header"fl><"datatable-scroll-lg"t><"datatable-footer"ip>',

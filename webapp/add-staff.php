@@ -75,7 +75,7 @@ include 'header.php';
 
 	<!-- Content area -->
 	<div class="content">
-        <form role="form" id="addStaffForm" class="form-horizontal" method="post" action="doaddstaff.php">
+        <form role="form" id="addStaffForm" class="form-horizontal" method="post" action="doaddstaff.php" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-flat">
@@ -138,7 +138,7 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Marital Status</label>
                                 <div class="col-lg-8">
                                     <select name="maritalStatus" class="form-control">
@@ -148,14 +148,14 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Spouse Name</label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" name="spouseName">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Nationality<span class="req"> *</span></label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="nationality" id="nationality">
@@ -170,7 +170,7 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Blood Group</label>
                                 <div class="col-lg-8">
                                     <select name="bloodGroup" class="form-control">
@@ -188,7 +188,7 @@ include 'header.php';
                             <div class="form-group">
                                 <label class="control-label col-lg-4">Photo</label>
                                 <div class="col-lg-8">
-                                    <input type="file" class="form-control" name="photo">
+                                    <input type="file" class="form-control" name="staffPhoto">
                                 </div>
                             </div>
                         </div>
@@ -203,6 +203,21 @@ include 'header.php';
                             </h4>
                         </div>
                         <div class="panel-body no-padding-bottom">
+                            <div class="form-group">
+                                <label class="control-label col-lg-4">Mobile<span class="req"> *</span></label>
+                                <div class="col-lg-8">
+                                    <input type="number" class="form-control" maxlength="10" name="mobile">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-4">Email<span class="req"> *</span></label>
+                                <div class="col-lg-8">
+                                    <input type="email" class="form-control" name="email" id="email">
+                                    <span class="error" id="emailstatus"></span>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="control-label col-lg-4">Address<span class="req"> *</span></label>
                                 <div class="col-lg-8">
@@ -225,7 +240,7 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">State<span class="req"> *</span></label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="state" id="state" required>
@@ -240,7 +255,7 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Country<span class="req"> *</span></label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="countryId" id="countryId">
@@ -255,32 +270,17 @@ include 'header.php';
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Pincode</label>
                                 <div class="col-lg-8">
                                     <input type="number" class="form-control" name="pincode" maxlength="10">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <label class="control-label col-lg-4">Telephone</label>
                                 <div class="col-lg-8">
                                     <input type="number" class="form-control" name=telephone"">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-lg-4">Mobile<span class="req"> *</span></label>
-                                <div class="col-lg-8">
-                                    <input type="number" class="form-control" maxlength="10" name="mobile">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-lg-4">Email<span class="req"> *</span></label>
-                                <div class="col-lg-8">
-                                    <input type="email" class="form-control" name="email" id="email">
-                                    <span class="error" id="emailstatus"></span>
                                 </div>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ include 'header.php';
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row hidden">
                 <div class="col-md-12">
                     <div class="panel panel-flat">
                         <div class="panel-heading">
@@ -365,7 +365,7 @@ include 'header.php';
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 
 <script>
     // Wait for the DOM to be ready
@@ -400,14 +400,6 @@ include 'header.php';
                 gender: {
                     required: true
                 },
-                nationality: {
-                    required: true
-                },
-                telephone: {
-                    number: true,
-                    minlength: 11,
-                    maxlength: 11
-                },
                 mobile: {
                     number: true,
                     minlength: 10,
@@ -416,14 +408,7 @@ include 'header.php';
                 email: {
                     required: true
                 },
-                pincode: {
-                    number: true,
-                    minlength: 6,
-                    maxlength: 6
-                },
                 cityId: "required",
-                state: "required",
-                countryId: "required",
                 address: "required"
             },
             // Specify validation error messages
@@ -444,10 +429,6 @@ include 'header.php';
                 gender: {
                     required: "Please provide the Gender"
                 },
-                telephone: {
-                    minlength: "Your Landline number must be 11 characters long",
-                    maxlength: "Your Landline number must be 11 characters long"
-                },
                 mobile: {
                     required: "Please provide the Mobile Number",
                     minlength: "Your mobile number must be 10 characters long",
@@ -456,13 +437,7 @@ include 'header.php';
                 email: {
                     required: "Please provide a valid email"
                 },
-                pincode: {
-                    minlength: "Your Pincode must be 6 characters long",
-                    maxlength: "Your Pincode must be 6 characters long"
-                },
                 cityId: "Please choose your City",
-                state: "Please choose your State",
-                countryId: "Please choose your Country",
                 address: "Please enter your Address"
             },
             // Make sure the form is submitted to the destination defined
