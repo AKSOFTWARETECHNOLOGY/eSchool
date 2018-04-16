@@ -37,7 +37,6 @@ include 'header.php';
 
 <!-- Page container -->
 <div class="page-container" style="min-height:700px">
-
     <!-- Page content -->
     <div class="page-content"><!-- Main sidebar -->
         <div class="sidebar sidebar-main hidden-xs">
@@ -57,6 +56,29 @@ include 'header.php';
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
                         <li class="active">Student List</li>
                     </ul>
+
+                    <?php
+                    if(isset($_REQUEST['succ'])) {
+                        if ($_REQUEST['succ'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Student Info updated Successfully</strong>
+                            </div>
+                        <?php
+                         }
+                    }
+                    if(isset($_REQUEST['suc'])) {
+                        if ($_REQUEST['suc'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Student Info added Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <!-- /page header -->
@@ -100,7 +122,7 @@ include 'header.php';
                                     <th>NAME</th>
                                     <th>PHONE NUMBER</th>
                                     <th>TODAY ATTENDANCE</th>
-                                    <th>ACTIONS</th>
+                                    <th class="text-center">ACTIONS</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -110,12 +132,14 @@ include 'header.php';
                                 ?>
                                     <tr>
                                         <td><input type="checkbox" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
-                                        <td><?php echo $stu_fet['firstname_person'] . $stu_fet['lastname_person']; ?></td>
+                                        <td><?php echo $stu_fet['firstname_person'] . " " . $stu_fet['lastname_person']; ?></td>
                                         <td><?php echo $stu_fet['mobile'] ?></td>
                                         <td>N/A </td>
                                         <td class="text-center">
                                             <ul class="icons-list">
-                                                <a href="stu-view.php?staff_id=<?php echo $stu_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>
+                                                <li><a href="student-view.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a></li>&nbsp;&nbsp;
+                                                <li><a href="student-edit.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></button></a></li>&nbsp;&nbsp;
+                                                <li><a href="student-delete.php?student_id=<?php echo $stu_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>&nbsp;&nbsp;
                                             </ul>
                                         </td>
                                     </tr>
@@ -155,16 +179,16 @@ include 'header.php';
                                     },
                                     {
                                         width: '30%',
-                                        targets: [1,2]
-                                    },
-                                    {
-                                        orderable: false,
-                                        width: '10%',
-                                        targets: 4
+                                        targets: 1
                                     },
                                     {
                                         width: '20%',
-                                        targets: 3
+                                        targets: [2,3]
+                                    },
+                                    {
+                                        orderable: false,
+                                        width: '20%',
+                                        targets: 4
                                     }
                                 ],
                                 order: [[ 0, 'desc' ]],

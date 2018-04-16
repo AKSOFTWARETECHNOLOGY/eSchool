@@ -19,11 +19,13 @@ $gender = $_REQUEST['gender'];
 
 if(isset($_FILES['staffPhoto'])){
     $info = pathinfo($_FILES['staffPhoto']['name']);
-    $staffName = basename($_FILES['staffPhoto']['name']);
-    $ext = $info['extension'];
-    $newname = "staff-".$ext;
-    $target = 'image/'.$staffName;
-    $moveFile = move_uploaded_file($_FILES['staffPhoto']['tmp_name'],$target);
+    $base = basename($_FILES['staffPhoto']['name']);
+    if(!empty($base)) {
+        $ext = $info['extension'];
+        $newname = "staffphoto-" . time() . "." . $ext;
+        $target = 'image/' . $newname;
+        $moveFile = move_uploaded_file($_FILES['staffPhoto']['tmp_name'], $target);
+    }
 }
 
 

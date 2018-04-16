@@ -2,20 +2,6 @@
 ob_start();
 include "config.php";
 
-$class_sql="SELECT * FROM `classes` where `class_status`=1";
-$class_exe=mysql_query($class_sql);
-$class_results = array();
-while($row = mysql_fetch_assoc($class_exe)) {
-    array_push($class_results, $row);
-}
-
-$section_sql="SELECT * FROM `section` where `section_status`=1";
-$section_exe=mysql_query($section_sql);
-$section_results = array();
-while($row = mysql_fetch_assoc($section_exe)) {
-    array_push($section_results, $row);
-}
-
 $city_sql="SELECT * FROM `cities` where `city_status`=1";
 $city_exe=mysql_query($city_sql);
 $city_results = array();
@@ -23,19 +9,29 @@ while($row = mysql_fetch_assoc($city_exe)) {
     array_push($city_results, $row);
 }
 
-$state_sql="SELECT * FROM `states` where `state_status`=1";
-$state_exe=mysql_query($state_sql);
-$state_results = array();
-while($row = mysql_fetch_assoc($state_exe)) {
-    array_push($state_results, $row);
+$class_sql="SELECT * FROM `classes` where `class_status`=1";
+$class_exe=mysql_query($class_sql);
+$class_results = array();
+while($row1 = mysql_fetch_assoc($class_exe)) {
+    array_push($class_results, $row1);
 }
 
-$country_sql="SELECT * FROM `countries` where `country_status`=1";
-$country_exe=mysql_query($country_sql);
-$country_results = array();
-while($row1 = mysql_fetch_assoc($country_exe)) {
-    array_push($country_results, $row1);
+$section_sql="SELECT * FROM `section` where `section_status`=1";
+$section_exe=mysql_query($section_sql);
+$section_results = array();
+while($row2 = mysql_fetch_assoc($section_exe)) {
+    array_push($section_results, $row2);
 }
+
+$studentId = $_REQUEST['student_id'];
+$stud_sql="SELECT si.*, c.city_name, cls.class_name as class, s.section_name FROM `student_info` as si
+LEFT JOIN `cities` as c ON c.id = si.city
+LEFT JOIN `classes` as cls ON cls.id = si.class_name
+LEFT JOIN `section` as s ON s.id = si.class_section_name
+LEFT JOIN `users` ON users.id = si.user_id
+where si.user_id=$studentId and users.delete_status=1";
+$stud_exe=mysql_query($stud_sql);
+$stud_fet=mysql_fetch_array($stud_exe);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +46,7 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MySkoo - Add Student</title>
+    <title>MySkoo - Edit Student</title>
     <?php include "head-inner.php"; ?>
 </head>
 <body>
@@ -76,12 +72,12 @@ include 'header.php';
             <div class="page-header">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="fa fa-pencil position-left"></i> ADD SUDENT</h4>
+                        <h4><i class="fa fa-pencil position-left"></i> EDIT STUDENT</h4>
                     </div>
                     <ul class="breadcrumb">
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
-                        <li><a href="student.php">Student</a></li>
-                        <li class="active">Add Student</li>
+                        <li><a href="staff.php">Student</a></li>
+                        <li class="active">Edit Student</li>
                     </ul>
                 </div>
             </div>
@@ -89,8 +85,7 @@ include 'header.php';
 
             <!-- Content area -->
             <div class="content">
-                <form class="form-horizontal" action="doaddstudent.php" id="addStudentForm" method="post" enctype="multipart/form-data">
-
+                <form role="form" id="addStaffForm" class="form-horizontal" method="post" action="doupdatestudent.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel panel-flat">
@@ -103,25 +98,25 @@ include 'header.php';
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">First Name<span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" placeholder="Enter your first name"name="firstName">
+                                            <input type="text" class="form-control"  value="<?php echo $stud_fet['firstname_person']; ?>" placeholder="Enter your first name" name="firstName">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Last Name</label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" placeholder="Enter your last name" name="lastName">
+                                            <input type="text" class="form-control" placeholder="Enter your last name" name="lastName"  value="<?php echo $stud_fet['lastname_person']; ?>">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-4">Class<span class="req"> *</span></label>
+                                        <label class="control-label col-lg-4">Class <span class="req"> *</span> </label>
                                         <div class="col-lg-8">
-                                            <select class="form-control" name="className" id="className">
+                                            <select class="form-control" name="class" id="class">
                                                 <option value="">Select Class</option>
                                                 <?php
                                                 foreach($class_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['class_name']; ?></option>
+                                                    <option value="<?php echo $value['id']; ?>" <?php if($stud_fet['class_name'] == $value['id']) echo "selected"; ?>><?php echo $value['class_name']; ?></option>
                                                 <?php
                                                 }
                                                 ?>
@@ -130,13 +125,13 @@ include 'header.php';
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-4">Section<span class="req"> *</span></label>
+                                        <label class="control-label col-lg-4">Section <span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <select class="form-control" name="sectionName" id="sectionName">
+                                            <select class="form-control" name="section" id="section">
                                                 <option value="">Select Section</option>
                                                 <?php
                                                 foreach($section_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['section_name']; ?></option>
+                                                    <option value="<?php echo $value['id']; ?>" <?php if($stud_fet['class_section_name'] == $value['id']) echo "selected"; ?>><?php echo $value['section_name']; ?></option>
                                                 <?php
                                                 }
                                                 ?>
@@ -147,7 +142,7 @@ include 'header.php';
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Date of Birth<span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <input type="date" class="form-control" name="dob"/>
+                                            <input type="date" class="form-control" name="dob" value="<?php echo $stud_fet['dob']; ?>">
                                         </div>
                                     </div>
 
@@ -155,59 +150,16 @@ include 'header.php';
                                         <label class="control-label col-lg-4">Gender<span class="req"> *</span></label>
                                         <div class="col-lg-8">
                                             <select name="gender" class="form-control">
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
+                                                <option value="Male" <?php if($stud_fet['gender'] == 'Male') echo "selected"; ?>>Male</option>
+                                                <option value="Female" <?php if($stud_fet['gender'] == 'Female') echo "selected"; ?>>Female</option>
                                             </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Blood Group</label>
-                                        <div class="col-lg-8">
-                                            <select name="bloodGroup" class="form-control">
-                                                <option>Select your Blood Group</option>
-                                                <option value="A+">A+</option>
-                                                <option value="A-">A-</option>
-                                                <option value="B+">B+</option>
-                                                <option value="B-">B-</option>
-                                                <option value="O+">O+</option>
-                                                <option value="O-">O-</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Nationality<span class="req"> *</span></label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" name="nationality" id="nationality">
-                                                <option value="">Select Country</option>
-                                                <?php
-                                                foreach($country_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Language</label>
-                                        <div class="col-lg-8">
-                                            <input type="text" class="form-control" name="language">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Religion<span class="req"> *</span></label>
-                                        <div class="col-lg-8">
-                                            <input type="text" class="form-control" name="religion">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Photo</label>
                                         <div class="col-lg-8">
+                                            <img style="height: 150px; width: 150px;" src="<?php echo $stud_fet['photo']; ?>" alt="<?php echo $stud_fet['firstname_person']; ?>" title="<?php echo $stud_fet['firstname_person']; ?>" />
                                             <input type="file" class="form-control" name="studPhoto">
                                         </div>
                                     </div>
@@ -222,19 +174,18 @@ include 'header.php';
                                         Contact Details
                                     </h4>
                                 </div>
-
                                 <div class="panel-body no-padding-bottom">
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Mobile<span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <input type="number" class="form-control" maxlength="10" name="mobile">
+                                            <input type="number" class="form-control" maxlength="10" name="mobile" value="<?php echo $stud_fet['mobile']; ?>">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Email<span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <input type="email" class="form-control" name="email">
+                                            <input type="email" class="form-control" name="email" id="email" value="<?php echo $stud_fet['email']; ?>"readonly>
                                             <span class="error" id="emailstatus"></span>
                                         </div>
                                     </div>
@@ -242,7 +193,7 @@ include 'header.php';
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Address<span class="req"> *</span></label>
                                         <div class="col-lg-8">
-                                            <textarea rows="5" cols="5" class="form-control" placeholder="Address" name="address"></textarea>
+                                            <textarea rows="5" cols="5" class="form-control" placeholder="Address" name="address"> <?php echo $stud_fet['address']; ?> </textarea>
                                         </div>
                                     </div>
 
@@ -253,55 +204,11 @@ include 'header.php';
                                                 <option value="">Select City</option>
                                                 <?php
                                                 foreach($city_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['city_name']; ?></option>
+                                                    <option value="<?php echo $value['id']; ?>" <?php if($stud_fet['city'] == $value['id']) echo "selected"; ?>><?php echo $value['city_name']; ?></option>
                                                 <?php
                                                 }
                                                 ?>
                                             </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">State<span class="req"> *</span></label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" name="state" id="state" required>
-                                                <option value="">Select State</option>
-                                                <?php
-                                                foreach($state_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['id']; ?>"><?php echo strtoupper($value['state_name']); ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Country<span class="req"> *</span></label>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" name="countryId" id="countryId">
-                                                <option value="">Select Country</option>
-                                                <?php
-                                                foreach($country_results as $key => $value){ ?>
-                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Pincode</label>
-                                        <div class="col-lg-8">
-                                            <input type="number" class="form-control" maxlength="10" name="pincode">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group hidden">
-                                        <label class="control-label col-lg-4">Telephone</label>
-                                        <div class="col-lg-8">
-                                            <input type="number" class="form-control" name="telephone">
                                         </div>
                                     </div>
 
@@ -313,7 +220,8 @@ include 'header.php';
                     <div class="row">
                         <div class="col-md-5"></div>
                         <div class="col-md-2">
-                            <input type="submit" value="ADD STUDENT" class="btn btn-info form-control"/>
+                            <input type="hidden" class="form-control" name="studentId" value="<?php echo $studentId; ?>">
+                            <input type="submit" value="SAVE" class="btn btn-info form-control"/>
                         </div>
                     </div>
                 </form>
@@ -326,23 +234,19 @@ include 'header.php';
 
             </div>
             <!-- /content area -->
-
         </div>
         <!-- /main content -->
-
     </div>
     <!-- /page content -->
-
 </div>
 <!-- /page container -->
 
-<?php /* ?>
 <script>
-    $("input#email1").change(function(){
+    $("input#email").change(function(){
         var email = $("input#email").val();
         var BASEURL = "http://localhost/eSchool/webapp/";
         var status = 1;
-        var callurl = BASEURL + 'ajax-check-student-email.php?email='+email;
+        var callurl = BASEURL + 'ajax-check-email.php?email='+email;
 
         $.ajax({
             url: callurl,
@@ -363,9 +267,8 @@ include 'header.php';
         });
     });
 </script>
-<?php */ ?>
 
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 
 <script>
     // Wait for the DOM to be ready
@@ -381,12 +284,18 @@ include 'header.php';
 
         // Initialize form validation on the registration form.
         // It has the name attribute "registration"
-        $("form#addStudentForm").validate({
+        $("form#addStaffForm").validate({
             // Specify validation rules
             rules: {
                 firstName: {
                     required: true,
                     lettersonly: true
+                },
+                jobType: {
+                    required: true
+                },
+                jobPosition: {
+                    required: true
                 },
                 dob: {
                     required: true
@@ -410,6 +319,12 @@ include 'header.php';
                 firstName: {
                     required: "Please enter your Name",
                     lettersonly: "Your Name must be of characters"
+                },
+                jobType: {
+                    required: "Please enter the Job Type"
+                },
+                jobPosition: {
+                    required: "Please provide the Job Position"
                 },
                 dob: {
                     required: "Please provide the DOB"
@@ -436,5 +351,6 @@ include 'header.php';
         });
     });
 </script>
+
 </body>
 </html>

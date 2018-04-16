@@ -56,7 +56,29 @@ include 'header.php';
 			<ul class="breadcrumb">
 				<li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
 				<li class="active">Staff List</li>
-			</ul>					
+			</ul>
+            <?php
+            if(isset($_REQUEST['succ'])) {
+                if ($_REQUEST['succ'] == 1) {
+                    ?>
+                    <div class="alert alert-success alert-dismessible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Staff Info updated Successfully</strong>
+                    </div>
+                <?php
+                }
+            }
+            if(isset($_REQUEST['suc'])) {
+                if ($_REQUEST['suc'] == 1) {
+                    ?>
+                    <div class="alert alert-success alert-dismessible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Staff Info added Successfully</strong>
+                    </div>
+                <?php
+                }
+            }
+            ?>
 		</div>
 	</div>
 	<!-- /page header -->

@@ -20,11 +20,17 @@ $gender = $_REQUEST['gender'];
 
 if(isset($_FILES['staffPhoto'])){
     $info = pathinfo($_FILES['staffPhoto']['name']);
-    $staffName = basename($_FILES['staffPhoto']['name']);
-    //$ext = $info['extension'];
-    //$newname = "staff-".$ext;
-    $target = 'image/'.$staffName;
-    $moveFile = move_uploaded_file($_FILES['staffPhoto']['tmp_name'],$target);
+    $base = basename($_FILES['staffPhoto']['name']);
+    if(!empty($base)) {
+        $ext = $info['extension'];
+        $newname = "staffphoto-" . time() . "." . $ext;
+        $target = 'image/' . $newname;
+        $moveFile = move_uploaded_file($_FILES['staffPhoto']['tmp_name'], $target);
+
+        $photo_sq1 = "UPDATE `staff_info` set photo = '$target', updated_by = '$username', updated_at='$date'
+where user_id = '$staffId'";
+        $photo_exe = mysql_query($photo_sq1);
+    }
 }
 
 $address = $_REQUEST['address'];
@@ -36,10 +42,10 @@ $username = $_SESSION['adminusername'];
 $date = date("Y-m-d");
 
 $insert_staff_sq1 = "UPDATE `staff_info` set firstname_person = '$firstName', lastname_person = '$lastName',job_type = '$jobType',
-job_position = '$jobType',dob = '$dob', gender = '$gender', address='$address', city = '$cityId', mobile = '$mobile', photo = '$target', updated_by = '$username', updated_at='$date'
+job_position = '$jobType',dob = '$dob', gender = '$gender', address='$address', city = '$cityId', mobile = '$mobile', updated_by = '$username', updated_at='$date'
 where user_id = '$staffId'";
 $insert_staff_exe = mysql_query($insert_staff_sq1);
 
-header("Location: staff.php?suc=1");
+header("Location: staff.php?succ=1");
 
 ?>
