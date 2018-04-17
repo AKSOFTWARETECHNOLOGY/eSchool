@@ -78,6 +78,16 @@ include 'header.php';
                         <?php
                         }
                     }
+                    if(isset($_REQUEST['del'])) {
+                        if ($_REQUEST['del'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Student Info deleted Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                    }
                     ?>
                 </div>
             </div>

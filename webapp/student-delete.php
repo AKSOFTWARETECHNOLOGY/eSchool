@@ -8,11 +8,11 @@ if(!isset($_SESSION['adminuserid']))
 
 include "config.php";
 
-$staffId = $_REQUEST['staff_id'];
+$studentId = $_REQUEST['student_id'];
 
-$insert_staff_sq1 = "UPDATE `users` set delete_status = 0 where id = '$staffId'";
+$insert_staff_sq1 = "UPDATE `users` set delete_status = 0 where id = '$studentId'";
 $insert_staff_exe = mysql_query($insert_staff_sq1);
 
-header("Location: staff.php?del=1");
+header("Location: student.php?del=1");
 
 ?>
