@@ -60,6 +60,29 @@ include 'header.php';
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
                         <li class="active">Class List</li>
                     </ul>
+
+                    <?php
+                    if(isset($_REQUEST['suc'])) {
+                        if ($_REQUEST['suc'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Class Info added Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                    }
+                    if(isset($_REQUEST['del'])) {
+                        if ($_REQUEST['del'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Class Info deleted Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <!-- /page header -->
@@ -97,7 +120,7 @@ include 'header.php';
                                     <th>CLASS ROOM</th>
                                     <th>CLASS TEACHER NAME</th>
                                     <th>NUMBER OF STUDENTS</th>
-                                    <th>ACTIONS</th>
+                                    <th class="text-center">ACTIONS</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -112,8 +135,8 @@ include 'header.php';
                                             <td><?php echo $staff_fet['num_of_students']; ?></td>
                                             <td class="text-center">
                                                 <ul class="icons-list">
-                                                    <li><a href="datatable_basic.htm#" data-toggle="modal"
-                                                           data-target="#invoice"><i class="fa fa-eye"></i></a></li>
+                                                    <li><a href="class-view.php?class_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>&nbsp;&nbsp;</li>
+                                                    <li><a href="class-delete.php?class_id=<?php echo $staff_fet['id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a>&nbsp;&nbsp;</li>
                                                 </ul>
                                             </td>
                                         </tr>
@@ -151,21 +174,22 @@ include 'header.php';
                                 autoWidth: false,
                                 columnDefs: [
                                     {
+                                        orderable: false,
                                         width: '10%',
                                         targets: 0
                                     },
                                     {
                                         width: '30%',
-                                        targets: [1,2]
+                                        targets: 2
                                     },
                                     {
                                         orderable: false,
-                                        width: '10%',
+                                        width: '20%',
                                         targets: 4
                                     },
                                     {
                                         width: '20%',
-                                        targets: 3
+                                        targets: [1,3]
                                     }
                                 ],
                                 order: [[ 0, 'desc' ]],
