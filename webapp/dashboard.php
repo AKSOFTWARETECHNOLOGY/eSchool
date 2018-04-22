@@ -5,6 +5,34 @@ if(!isset($_SESSION['adminuserid']))
 {
     header("Location: index.php");
 }
+
+include "config.php";
+
+$user_id=$_SESSION['adminuserid'];
+$user_role=$_SESSION['adminuserrole'];
+$user_name=$_SESSION['adminusername'];
+$user_email=$_SESSION['adminuseremail'];
+
+$staff_sql="SELECT * FROM `staff_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+where school_id=$user_id and users.delete_status=1";
+$staff_exe=mysql_query($staff_sql);
+$staff_cnt=mysql_num_rows($staff_exe);
+
+$stu_sql="SELECT * FROM `student_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+where school_id=$user_id and users.delete_status=1";
+$stu_exe=mysql_query($stu_sql);
+$stu_cnt=mysql_num_rows($stu_exe);
+
+$class_sql="SELECT * FROM `class_section` as cs
+ LEFT JOIN `classes` ON classes.id = cs.class_id
+ LEFT JOIN `section` ON section.id = cs.section_id
+ LEFT JOIN `users` ON users.id = cs.staff_id
+ where school_id=$user_id and cs.class_section_status=1";
+$class_exe=mysql_query($class_sql);
+$class_cnt=mysql_num_rows($class_exe);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,19 +84,60 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-indigo">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Staff</h6>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6 class="panel-title text-uppercase pl-10"><a href="staff.php">Staff</a></h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="panel-title text-uppercase pl-10"><?php echo $staff_cnt; ?></h6>
+                            </div>
+                        </div>
+
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="staff-list.php">
+                            <div class="row">
+                                <div class="col-md-1">  </div>
+                                <div class="col-md-7">
+                                <input type="text" class="form-control" name="staffName" required/>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="form-control btn btn-primary" type="submit" value="search" name="staffSearch"/>
+                                </div>
+                                <div class="col-md-1">  </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="p-10">
                         <!--
-                        <div class="chart" id="google-area"></div>
+                        <div class="chart" id="google-column"></div>
                         -->
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-pink">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Student</h6>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6 class="panel-title text-uppercase pl-10"><a href="student.php">Student</a></h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="panel-title text-uppercase pl-10"><?php echo $stu_cnt; ?></h6>
+                            </div>
+                        </div>
+
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="student-list.php">
+                            <div class="row">
+                                <div class="col-md-1">  </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" name="studName" required/>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="form-control btn btn-primary" type="submit" value="search" name="studentSearch"/>
+                                </div>
+                                <div class="col-md-1">  </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="p-10">
                         <!--
@@ -80,7 +149,27 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-purple">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Classes</h6>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6 class="panel-title text-uppercase pl-10"><a href="class.php">Classes</a></h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="panel-title text-uppercase pl-10"><?php echo $class_cnt; ?></h6>
+                            </div>
+                        </div>
+
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="class-list.php">
+                            <div class="row">
+                                <div class="col-md-1">  </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" name="className" required/>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                                </div>
+                                <div class="col-md-1">  </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="p-10">
                         <!--
@@ -95,8 +184,20 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-indigo">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Staff</h6>
+                        <h6 class="panel-title text-uppercase pl-10">Message</h6>
                     </div>
+                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
                     <div class="p-10">
                         <!--
                         <div class="chart" id="google-area"></div>
@@ -107,8 +208,20 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-pink">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Student</h6>
+                        <h6 class="panel-title text-uppercase pl-10">Email</h6>
                     </div>
+                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
                     <div class="p-10">
                         <!--
                         <div class="chart" id="google-area-intervals"></div>
@@ -119,8 +232,20 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-purple">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Classes</h6>
+                        <h6 class="panel-title text-uppercase pl-10">Report</h6>
                     </div>
+                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
                     <div class="p-10">
                         <!--
                         <div class="chart" id="google-column"></div>
