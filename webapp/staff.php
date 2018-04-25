@@ -88,6 +88,16 @@ include 'header.php';
                 <?php
                 }
             }
+            if(isset($_REQUEST['import'])) {
+                if ($_REQUEST['import'] == 1) {
+                    ?>
+                    <div class="alert alert-success alert-dismessible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Staff Info imported Successfully</strong>
+                    </div>
+                <?php
+                }
+            }
             ?>
 		</div>
 	</div>

@@ -51,12 +51,11 @@ include 'header.php';
                                 <h4 class="panel-title">Import Student</h4>
                             </div>
                             <div class="panel-body">
-                                <form>
+                                <form class="form-horizontal" action="doimportstudent.php" method="POST" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="form-group">
-                                            <label class="control-label col-lg-2">PICTURE</label>
-                                            <div class="col-lg-8">
-                                                <input type="file" class="file-styled-primary">
+                                            <div class="col-lg-12">
+                                                <input type="file" name="file" class="file-styled-primary" accept=".xlsx" />
                                             </div>
                                         </div>
                                     </div>
@@ -64,10 +63,10 @@ include 'header.php';
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-lg-1">
-                                                <input type="submit" class="btn btn-info" value="Import">
+                                                <input type="reset" name="reset" class="btn btn-info" value="Cancel">
                                             </div>
                                             <div class="col-lg-1">
-                                                <input type="submit" class="btn btn-info" value="Cancel">
+                                                <input type="submit" name="submit" class="btn btn-info" value="Upload">
                                             </div>
                                         </div>
                                     </div>
