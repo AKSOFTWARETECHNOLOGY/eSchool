@@ -441,3 +441,27 @@ insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`confirmati
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+/*Table structure for table `class_section` */
+
+DROP TABLE IF EXISTS `class_section`;
+
+CREATE TABLE `class_section` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `class_id` int(10) unsigned DEFAULT NULL,
+  `section_id` int(10) unsigned DEFAULT NULL,
+  `staff_id` int(10) unsigned DEFAULT NULL,
+  `school_id` int(10) unsigned DEFAULT NULL,
+  `num_of_students` int(11) DEFAULT NULL,
+  `class_section_status` tinyint(1) DEFAULT '1',
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `class_section` */
+
+insert  into `class_section`(`id`,`class_id`,`section_id`,`staff_id`,`school_id`,`num_of_students`,`class_section_status`,`created_by`,`updated_by`,`created_at`,`updated_at`) values (2,1,2,8,4,25,0,'K V School','K V School','2018-04-17 21:53:49','2018-03-19 00:00:00'),(3,1,1,8,4,25,1,'K V School','K V School','2018-03-20 23:12:27','2018-03-19 00:00:00'),(4,4,1,10,4,40,1,'K V School','K V School','2018-04-08 22:20:27','2018-03-20 00:00:00'),(5,4,2,10,4,38,1,'K V School','K V School','2018-04-08 22:20:32','2018-03-20 00:00:00'),(6,5,1,10,4,42,1,'K V School','K V School','2018-03-20 00:00:00','2018-03-20 00:00:00'),(7,1,8,14,4,20,1,'K V School','K V School','2018-04-17 00:00:00','2018-04-17 00:00:00');
+

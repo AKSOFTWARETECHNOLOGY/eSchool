@@ -317,8 +317,8 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
                 },
                 schoolcode: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10
+                    //minlength: 10,
+                    //maxlength: 10
                 },
                 personName: {
                     required: true,
@@ -357,8 +357,8 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
                 },
                 schoolcode: {
                     required: "Please provide a valid School code",
-                    minlength: "Your School code must be 10 characters long",
-                    maxlength: "Your School code must be 10 characters long"
+                    //minlength: "Your School code must be 10 characters long",
+                    //maxlength: "Your School code must be 10 characters long"
                 },
                 personName: {
                     required: "Please enter the person name",
