@@ -93,7 +93,7 @@ include 'header.php';
                             </div>
                         </div>
 
-                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="staff-list.php">
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="staff-list.php" style="padding: 20px 0px;">
                             <div class="row">
                                 <div class="col-md-1">  </div>
                                 <div class="col-md-7">
@@ -126,7 +126,7 @@ include 'header.php';
                             </div>
                         </div>
 
-                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="student-list.php">
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="student-list.php" style="padding: 20px 0px;">
                             <div class="row">
                                 <div class="col-md-1">  </div>
                                 <div class="col-md-7">
@@ -158,7 +158,7 @@ include 'header.php';
                             </div>
                         </div>
 
-                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="class-list.php">
+                        <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="class-list.php" style="padding: 20px 0px;">
                             <div class="row">
                                 <div class="col-md-1">  </div>
                                 <div class="col-md-7">
@@ -186,7 +186,7 @@ include 'header.php';
                     <div class="panel-heading heading-condensed">
                         <h6 class="panel-title text-uppercase pl-10">Message</h6>
                     </div>
-                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
                         <div class="row">
                             <div class="col-md-1">  </div>
                             <div class="col-md-7">
@@ -210,7 +210,7 @@ include 'header.php';
                     <div class="panel-heading heading-condensed">
                         <h6 class="panel-title text-uppercase pl-10">Email</h6>
                     </div>
-                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
                         <div class="row">
                             <div class="col-md-1">  </div>
                             <div class="col-md-7">
@@ -234,7 +234,7 @@ include 'header.php';
                     <div class="panel-heading heading-condensed">
                         <h6 class="panel-title text-uppercase pl-10">Report</h6>
                     </div>
-                    <form role="form" id="staffSearchForm" class="form-horizontal" method="post" action="#">
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
                         <div class="row">
                             <div class="col-md-1">  </div>
                             <div class="col-md-7">
