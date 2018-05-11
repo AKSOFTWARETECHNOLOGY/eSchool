@@ -65,6 +65,14 @@ include 'header.php';
 
             <!-- Content area -->
             <div class="content">
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-md-10 col-sm-6 col-lg-10"></div>
+                    <div class="col-md-2 col-sm-6 col-lg-2">
+                        <a href="student-edit.php?student_id=<?php echo $stud_fet['user_id']; ?>">
+                            <button type="button" class="form-control btn btn-info">Edit Student</button>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-md-6">
