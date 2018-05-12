@@ -76,7 +76,7 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
                             <h3 class="box-title">Add New School</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" id="createProfileForm" action="docreateprofile.php" method="post">
+                        <form role="form" id="createProfileForm" action="docreateprofile.php" method="post" enctype="multipart/form-data">
                             <div class="box-body">
 
                                 <div class="col-md-12">
@@ -185,6 +185,12 @@ while($row1 = mysql_fetch_assoc($country_exe)) {
                                         <label class="col-sm-3 control-label">Password <span class="req"> *</span></label>
                                         <div class="col-sm-9">
                                             <input class="form-control" type="password" name="password" id="password" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label class="col-sm-3 control-label">Photo</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" name="staffPhoto">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">

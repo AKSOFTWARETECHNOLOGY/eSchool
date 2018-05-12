@@ -147,6 +147,19 @@ $school_fet=mysql_fetch_array($school_exe);
                                             <label class="col-sm-5 control-label">School Code</label>
                                             <div class="col-sm-7"><div class=""> <?php echo $school_fet['school_code']; ?></div></div>
                                         </div>
+                                        <?php
+                                        if(!empty($school_fet['school_photo']))
+                                        {
+                                            ?>
+                                            <div class="form-group col-md-12">
+                                                <label class="control-label col-sm-5">Photo</label>
+                                                <div class="col-sm-7">
+                                                    <img style="height: 150px; width: 150px;" src="<?php echo $school_fet['school_photo']; ?>" alt="<?php echo $staff_fet['firstname_person']; ?>" title="<?php echo $staff_fet['firstname_person']; ?>" />
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        ?>
                                         <div class="form-group col-md-12">
                                             <label class="col-sm-5 control-label">Status</label>
                                             <div class="col-sm-7"><div class="">
