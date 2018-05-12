@@ -31,7 +31,7 @@ if(isset($_FILES['staffPhoto'])){
     //echo $_FILES['staffPhoto']['tmp_name']; exit;
     if(!empty($base)) {
         $ext = $info['extension'];
-        $newname = "staffphoto-" . time() . "." . $ext;
+        $newname = "schoolphoto-" . time() . "." . $ext;
         $target = 'image/' . $newname;
         $moveFile = move_uploaded_file($_FILES['staffPhoto']['tmp_name'], $target);
     }

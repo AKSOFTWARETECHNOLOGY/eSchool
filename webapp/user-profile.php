@@ -13,6 +13,12 @@ $user_role=$_SESSION['adminuserrole'];
 $user_name=$_SESSION['adminusername'];
 $user_email=$_SESSION['adminuseremail'];
 
+$school_sql="SELECT si.* FROM `school_info` AS `si`
+WHERE `si`.user_id = $user_id";
+$school_exe=mysql_query($school_sql);
+$school_cnt=@mysql_num_rows($school_exe);
+$school_fet=mysql_fetch_array($school_exe);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +26,7 @@ $user_email=$_SESSION['adminuseremail'];
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MySkoo - Student</title>
+    <title>MySkoo - Profile</title>
     <?php include "head-inner.php"; ?>
 </head>
 <body>
@@ -52,6 +58,19 @@ include 'header.php';
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
                         <li class="active">User Profile</li>
                     </ul>
+
+                    <?php
+                    if(isset($_REQUEST['succ'])) {
+                    if ($_REQUEST['succ'] == 1) {
+                    ?>
+                    <div class="alert alert-success alert-dismessible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Profile Updated Successfully</strong>
+                    </div>
+                    <?php
+                    }
+                    }
+                    ?>
                 </div>
             </div>
             <!-- /page header -->
@@ -65,18 +84,38 @@ include 'header.php';
                         <div class="panel panel-flat">
                             <div class="panel-heading">
                                 <h4 class="panel-title">User Profile</h4>
+                                <div class="row">
+                                    <a href="edit-profile.php">
+                                        <button class="btn btn-info" style="float: right;">Edit Profile</button>
+                                    </a>
+                                </div>
                             </div>
+
                             <div class="panel-body">
                                 <table id="example2" class="table table-bordered table-hover">
                                     <tr>
                                         <th>User Name</th>
-                                        <td><?php echo $user_name; ?></td>
+                                        <td><?php echo $school_fet['name_school']; ?></td>
                                     </tr>
 
                                     <tr>
                                         <th>User Email</th>
                                         <td><?php echo $user_email; ?></td>
                                     </tr>
+
+                                    <?php
+                                    if(!empty($school_fet['school_photo']))
+                                    {
+                                    ?>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <td>
+                                            <img style="height: 150px; width: 150px;" src="<?php echo $school_fet['school_photo']; ?>" alt="<?php echo $school_fet['name_school']; ?>" title="<?php echo $school_fet['name_school']; ?>" />
+                                        </td>
+                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
 
                                     <tr>
                                         <td colspan="2">

@@ -1,14 +1,26 @@
+<?php
+$user_name=$_SESSION['adminusername'];
+$user_id=$_SESSION['adminuserid'];
+
+$school_sql="SELECT si.* FROM `school_info` AS `si`
+WHERE `si`.user_id = $user_id";
+$school_exe=mysql_query($school_sql);
+$school_cnt=@mysql_num_rows($school_exe);
+$school_fet=mysql_fetch_array($school_exe);
+?>
 <div class="sidebar-content">
 
     <!-- User menu -->
     <div class="sidebar-user">
         <div class="category-content">
             <div class="media">
-                <a href="dashboard.php#" class="media-left"><img src="assets/images/users/user6.png" class="img-circle img-sm" alt=""></a>
+                <a href="dashboard.php" class="media-left">
+                    <img src="<?php echo $school_fet['school_photo']; ?>" alt="<?php echo $school_fet['name_school']; ?>" title="<?php echo $school_fet['name_school']; ?>" class="img-circle img-sm">
+                </a>
                 <div class="media-body">
                     <span class="media-heading text-semibold">School Admin</span>
                     <div class="text-size-mini text-muted">
-                        Admin User
+                        <?php echo $user_name; ?>
                     </div>
                 </div>
 
