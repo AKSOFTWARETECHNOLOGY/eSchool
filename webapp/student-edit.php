@@ -1,6 +1,7 @@
 <?php session_start();
 ob_start();
 include "config.php";
+$user_id=$_SESSION['adminuserid'];
 
 $city_sql="SELECT * FROM `cities` where `city_status`=1";
 $city_exe=mysql_query($city_sql);
@@ -9,18 +10,22 @@ while($row = mysql_fetch_assoc($city_exe)) {
     array_push($city_results, $row);
 }
 
-$class_sql="SELECT * FROM `classes` where `class_status`=1";
+$class_sql="SELECT DISTINCT c.* FROM `classes` as c
+LEFT JOIN `class_section` as cs ON cs.class_id = c.id
+where c.class_status=1 and cs.class_section_status=1 and cs.school_id=$user_id";
 $class_exe=mysql_query($class_sql);
 $class_results = array();
-while($row1 = mysql_fetch_assoc($class_exe)) {
-    array_push($class_results, $row1);
+while($row = mysql_fetch_assoc($class_exe)) {
+    array_push($class_results, $row);
 }
 
-$section_sql="SELECT * FROM `section` where `section_status`=1";
+$section_sql="SELECT DISTINCT s.* FROM `section` as s
+LEFT JOIN `class_section` as cs ON cs.section_id = s.id
+where s.section_status=1 and cs.class_section_status=1 and cs.school_id=$user_id";
 $section_exe=mysql_query($section_sql);
 $section_results = array();
-while($row2 = mysql_fetch_assoc($section_exe)) {
-    array_push($section_results, $row2);
+while($row = mysql_fetch_assoc($section_exe)) {
+    array_push($section_results, $row);
 }
 
 $studentId = $_REQUEST['student_id'];

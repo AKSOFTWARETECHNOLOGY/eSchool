@@ -2,14 +2,20 @@
 ob_start();
 include "config.php";
 
-$class_sql="SELECT * FROM `classes` where `class_status`=1";
+$user_id=$_SESSION['adminuserid'];
+
+$class_sql="SELECT DISTINCT c.* FROM `classes` as c
+LEFT JOIN `class_section` as cs ON cs.class_id = c.id
+where c.class_status=1 and cs.class_section_status=1 and cs.school_id=$user_id";
 $class_exe=mysql_query($class_sql);
 $class_results = array();
 while($row = mysql_fetch_assoc($class_exe)) {
     array_push($class_results, $row);
 }
 
-$section_sql="SELECT * FROM `section` where `section_status`=1";
+$section_sql="SELECT DISTINCT s.* FROM `section` as s
+LEFT JOIN `class_section` as cs ON cs.section_id = s.id
+where s.section_status=1 and cs.class_section_status=1 and cs.school_id=$user_id";
 $section_exe=mysql_query($section_sql);
 $section_results = array();
 while($row = mysql_fetch_assoc($section_exe)) {
