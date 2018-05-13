@@ -16,6 +16,16 @@ LEFT JOIN `users` ON users.id = si.user_id
 where users.delete_status=1 and si.firstname_person  like '%$studName%'";
 $stu_exe = mysql_query($stu_sql);
 $stu_cnt = @mysql_num_rows($stu_exe);
+
+$class_sql="SELECT s.section_name, c.class_name, cs.id as class_section_id FROM `class_section` as cs
+LEFT JOIN `classes` as c ON cs.class_id = c.id
+LEFT JOIN `section` as s ON s.id = cs.section_id
+where `class_section_status`=1";
+$class_exe=mysql_query($class_sql);
+$class_results = array();
+while($row = mysql_fetch_assoc($class_exe)) {
+    array_push($class_results, $row);
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,6 +104,24 @@ include 'header.php';
 
             <!-- Content area -->
             <div class="content">
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-lg-10 col-md-10 col-sm-6 col-xs-6">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                        <form>
+                            <select class="form-control" name="classSearch" id="classSearch">
+                                <option value="0">All</option>
+                                <?php
+                                foreach($class_results as $key => $value){ ?>
+                                    <option value="<?php echo $value['class_section_id']; ?>"><?php echo $value['class_name'] . " - " . $value['section_name']; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -124,39 +152,41 @@ include 'header.php';
                                 if($stu_cnt>0)
                                 {
                                     ?>
-                                    <table class="table datatable">
-                                        <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>NAME</th>
-                                            <th>PHONE NUMBER</th>
-                                            <th>TODAY ATTENDANCE</th>
-                                            <th class="text-center">ACTIONS</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        while($stu_fet=mysql_fetch_array($stu_exe))
-                                        {
-                                            ?>
+                                    <span id="studentTable">
+                                        <table class="table datatable">
+                                            <thead>
                                             <tr>
-                                                <td><input type="checkbox" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
-                                                <td><?php echo $stu_fet['firstname_person'] . " " . $stu_fet['lastname_person']; ?></td>
-                                                <td><?php echo $stu_fet['mobile'] ?></td>
-                                                <td>N/A </td>
-                                                <td class="text-center">
-                                                    <ul class="icons-list">
-                                                        <li><a href="student-view.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a></li>&nbsp;&nbsp;
-                                                        <li><a href="student-edit.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></button></a></li>&nbsp;&nbsp;
-                                                        <li><a href="student-delete.php?student_id=<?php echo $stu_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>&nbsp;&nbsp;
-                                                    </ul>
-                                                </td>
+                                                <th></th>
+                                                <th>NAME</th>
+                                                <th>PHONE NUMBER</th>
+                                                <th>TODAY ATTENDANCE</th>
+                                                <th class="text-center">ACTIONS</th>
                                             </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+                                            while($stu_fet=mysql_fetch_array($stu_exe))
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><input type="checkbox" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
+                                                    <td><?php echo $stu_fet['firstname_person'] . " " . $stu_fet['lastname_person']; ?></td>
+                                                    <td><?php echo $stu_fet['mobile'] ?></td>
+                                                    <td>N/A </td>
+                                                    <td class="text-center">
+                                                        <ul class="icons-list">
+                                                            <li><a href="student-view.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a></li>&nbsp;&nbsp;
+                                                            <li><a href="student-edit.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></button></a></li>&nbsp;&nbsp;
+                                                            <li><a href="student-delete.php?student_id=<?php echo $stu_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>&nbsp;&nbsp;
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </span>
                                 <?php
                                 }
                                 else{
@@ -235,5 +265,25 @@ include 'header.php';
 
 </div>
 <!-- /page container -->
+<script>
+    $(document).ready(function(){
+        $("#classSearch").change(function(){
+            var BASEURL = "http://localhost/eSchool/webapp/";
+            var BASEURL = "";
+            var classId = $(this).val();
+            var callurl = BASEURL + 'ajax-student-filter.php?id=' + classId;
+            $.ajax({
+                url: callurl,
+                type: "get",
+                data: {"id": classId},
+                success: function (data) {
+                    $('#studentTable').html(data);
+                }
+            });
+        });
+    });
+
+</script>
+
 </body>
 </html>

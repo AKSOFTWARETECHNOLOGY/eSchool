@@ -76,7 +76,7 @@ include 'header.php';
             <div class="page-header">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="fa fa-pencil position-left"></i> ADD SUDENT</h4>
+                        <h4><i class="fa fa-pencil position-left"></i> ADD STUDENT</h4>
                     </div>
                     <ul class="breadcrumb">
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
