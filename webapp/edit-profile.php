@@ -58,6 +58,19 @@ include 'header.php';
                         <li><a href="dashboard.php"><i class="fa fa-home"></i>Home</a></li>
                         <li class="active">Edit User Profile</li>
                     </ul>
+
+                    <?php
+                    if(isset($_REQUEST['err'])) {
+                        if ($_REQUEST['err'] == 1) {
+                            ?>
+                            <div class="alert alert-warning alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Profile Photo should be of image type.</strong>
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <!-- /page header -->
