@@ -1,6 +1,16 @@
 <?php session_start();
 ob_start();
 include "config.php";
+
+/* if(isset($_GET["studId"])){
+    $studentId = [];
+    $studentIds = [];
+    $studentId = explode(",", $_GET["studId"]);
+    $cnt = count($studentId);
+    for ($i = 0; $i < $cnt-1; $i++) {
+        $studentIds = $studentId;
+    }
+} */
 ?>
 
 <!DOCTYPE html>
@@ -58,10 +68,14 @@ include 'header.php';
                                 </h4>
                             </div>
                             <div class="panel-body no-padding-bottom">
-                                <form class="form-horizontal" action="form_basic.htm#">
+                                <form class="form-horizontal" action="dosendsms.php">
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Send SMS to</label>
                                         <div class="col-lg-8">
+                                            <?php if(isset($_REQUEST['mobile'])){?>
+                                            <input type="text" class="form-control" name="mobileNum" value="<?php echo $_REQUEST['mobile']; ?>" />
+                                            <?php }
+                                            else { ?>
                                             <select name="jobtype" class="form-control">
                                                 <option value="opt1">Staffs</option>
                                                 <option value="opt2">Parents of students in Pre-KG(A)</option>
@@ -76,13 +90,14 @@ include 'header.php';
                                                 <option value="opt3">Parents of students in II(A)</option>
                                                 <option value="opt3">Parents of students in II(B)</option>
                                             </select>
+                                            <?php } ?>
                                             <input type="checkbox" name="staff"/> Important Message - Send even if the parent has opted not to receive sms.
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <textarea rows="5" cols="5" class="form-control" placeholder="Compose Your Text Message (SMS) Here"></textarea>
+                                            <textarea rows="5" cols="5" name="message" class="form-control" placeholder="Compose Your Text Message (SMS) Here"></textarea>
                                         </div>
                                     </div>
 
@@ -95,6 +110,15 @@ include 'header.php';
                                             <input type="checkbox" name="staff"/> Send in other language
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <input type="submit" value="SEND TEXT MESSAGE" class="btn btn-info form-control"/>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="submit" value="CLEAR" class="btn btn-info form-control"/>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -102,14 +126,6 @@ include 'header.php';
 
                 </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <input type="submit" value="SEND TEXT MESSAGE" class="btn btn-info form-control"/>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="submit" value="CLEAR" class="btn btn-info form-control"/>
-                    </div>
-                </div>
 
                 <!-- /form horizontal -->
                 <!-- Content area -->

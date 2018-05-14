@@ -7,16 +7,27 @@ if(!isset($_SESSION['adminuserid']))
 }
 
 include "config.php";
+$sendmsg= $_POST["sendMessage"];
 
 if(isset($_POST["student"])) {
     $cnt = count($_POST["student"]);
-    for ($i = 0; $i < $cnt; $i++) {
-        $delete_class_sql = "UPDATE users set delete_status = 0 WHERE id =". $_POST["student"][$i];
-        $delete_class_exe = mysql_query($delete_class_sql);
+    if($sendmsg == 1){
+        $studId = [];
+        /* $studId = $_POST["student"];
+        $studentId = null;
+        for ($i = 0; $i < $cnt; $i++) {
+            $studentId = $studentId . $studId[$i] . ",";
+        }
+        header("Location: sms.php?studId=$studentId"); */
     }
-    header("Location: student.php?suc=1");
+    else{
+        for ($i = 0; $i < $cnt; $i++) {
+            $delete_class_sql = "UPDATE users set delete_status = 0 WHERE id =". $_POST["student"][$i];
+            $delete_class_exe = mysql_query($delete_class_sql);
+        }
+        header("Location: student.php?suc=1");
+    }
 }
-
 else{
     header("Location: student.php?err=1");
 }
