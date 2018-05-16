@@ -1,6 +1,7 @@
 <?php session_start();
 ob_start();
 include "config.php";
+$user_id=$_SESSION['adminuserid'];
 
 $mobile = [];
 if(isset($_REQUEST["student_id"])) {
@@ -26,6 +27,15 @@ if(isset($_GET["studId"])){
         $mobile[$i] = $stu_fet['mobile'];
         $phone = $phone . $mobile[$i] . ",";
     }
+}
+
+$group_sql="SELECT DISTINCT grp.group_name, grp.id FROM `group_info` as gi
+LEFT JOIN group_master as grp on grp.id = gi.group_id
+where gi.school_id=$user_id and grp.group_status=1";
+$group_exe=mysql_query($group_sql);
+$group_results = array();
+while($row = mysql_fetch_assoc($group_exe)) {
+    array_push($group_results, $row);
 }
 ?>
 
@@ -96,19 +106,14 @@ include 'header.php';
                                             <!-- <input type="text" class="form-control" name="mobileNum" value="<?php echo $phone; ?>" />-->
                                             <?php }
                                             else { ?>
-                                            <select name="jobtype" class="form-control">
-                                                <option value="opt1">Staffs</option>
-                                                <option value="opt2">Parents of students in Pre-KG(A)</option>
-                                                <option value="opt3">Parents of students in LKG(A)</option>
-                                                <option value="opt3">Parents of students in LKG(B)</option>
-                                                <option value="opt3">Parents of students in LKG(C)</option>
-                                                <option value="opt3">Parents of students in UKG(A)</option>
-                                                <option value="opt3">Parents of students in UKG(B)</option>
-                                                <option value="opt3">Parents of students in UKG(C)</option>
-                                                <option value="opt3">Parents of students in I(A)</option>
-                                                <option value="opt3">Parents of students in I(B)</option>
-                                                <option value="opt3">Parents of students in II(A)</option>
-                                                <option value="opt3">Parents of students in II(B)</option>
+                                            <select name="smsGroup" class="form-control">
+                                                <option value="">Select the Group</option>
+                                                <?php
+                                                foreach($group_results as $key => $value){ ?>
+                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['group_name']; ?></option>
+                                                <?php
+                                                }
+                                                ?>
                                             </select>
                                             <?php } ?>
                                             <input type="checkbox" name="staff"/> Important Message - Send even if the parent has opted not to receive sms.

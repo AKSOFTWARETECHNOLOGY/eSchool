@@ -15,12 +15,27 @@ if(isset($_REQUEST['mobileNum'])){
     $mobileNum = explode(",",$mobNum);
 }
 
-if(isset($_REQUEST['message'])) {
-    if(!empty($_REQUEST['message'])){
-        $message = $_REQUEST['message'];
-    }
-    else{
-        $message = "Test Msg";
+if(!empty($_REQUEST['message'])){
+    $message = $_REQUEST['message'];
+}
+else{
+    $message = "Test Msg";
+}
+
+if(isset($_REQUEST['smsGroup'])) {
+    if(!empty($_REQUEST['smsGroup'])){
+        $grpId = $_REQUEST['smsGroup'];
+        $group_sql="SELECT gi.mobile_num FROM `group_info` as gi
+LEFT JOIN group_master as grp on grp.id = gi.group_id
+where gi.group_id=$grpId and gi.group_info_status=1";
+        $group_exe=mysql_query($group_sql);
+        $group_results = array();
+        while($row = mysql_fetch_assoc($group_exe)) {
+            array_push($group_results, $row);
+        }
+        for($j= 0; $j<count($group_results); $j++){
+            $mobileNum[$j] = $group_results[$j]['mobile_num'];
+        }
     }
 }
 
@@ -28,6 +43,7 @@ if(isset($_REQUEST['message'])) {
 $mobileNum[1] = '9444293520';
 $mobileNum[2] = '9841486644';*/
 $cnt = count($mobileNum);
+
 for($i=0;$i<$cnt;$i++){
     $xml_data ='<?xml version="1.0"?>
 <parent>

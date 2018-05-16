@@ -462,6 +462,47 @@ CREATE TABLE `class_section` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `class_section` */
-
 insert  into `class_section`(`id`,`class_id`,`section_id`,`staff_id`,`school_id`,`num_of_students`,`class_section_status`,`created_by`,`updated_by`,`created_at`,`updated_at`) values (2,1,2,8,4,25,0,'K V School','K V School','2018-04-17 21:53:49','2018-03-19 00:00:00'),(3,1,1,8,4,25,1,'K V School','K V School','2018-03-20 23:12:27','2018-03-19 00:00:00'),(4,4,1,10,4,40,1,'K V School','K V School','2018-04-08 22:20:27','2018-03-20 00:00:00'),(5,4,2,10,4,38,1,'K V School','K V School','2018-04-08 22:20:32','2018-03-20 00:00:00'),(6,5,1,10,4,42,1,'K V School','K V School','2018-03-20 00:00:00','2018-03-20 00:00:00'),(7,1,8,14,4,20,1,'K V School','K V School','2018-04-17 00:00:00','2018-04-17 00:00:00');
+
+
+/*Table structure for table `group_info` */
+
+DROP TABLE IF EXISTS `group_info`;
+
+CREATE TABLE `group_info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `school_id` int(10) unsigned NOT NULL,
+  `mobile_num` varchar(255) DEFAULT NULL,
+  `group_info_status` tinyint(1) DEFAULT '1',
+  `created_by` varchar(255) DEFAULT 'Admin',
+  `updated_by` varchar(255) DEFAULT 'Admin',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `group_info` */
+insert  into `group_info`(`id`,`group_id`,`user_id`,`school_id`,`mobile_num`,`group_info_status`,`created_by`,`updated_by`,`created_at`,`updated_at`) values (1,2,25,4,'9841486644',1,NULL,NULL,'2018-05-16 16:24:15','0000-00-00 00:00:00'),(2,2,40,4,'9444295429',1,NULL,NULL,'2018-05-16 16:08:19','0000-00-00 00:00:00'),(3,3,13,4,'9444295427',1,'Admin','Admin','2018-05-16 16:22:53','0000-00-00 00:00:00'),(4,3,21,4,'9444295429',1,'Admin','Admin','2018-05-16 16:22:35','0000-00-00 00:00:00');
+
+
+/*Table structure for table `group_master` */
+
+DROP TABLE IF EXISTS `group_master`;
+
+CREATE TABLE `group_master` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group_name` varchar(255) NOT NULL,
+  `group_type` varchar(255) NOT NULL,
+  `group_status` tinyint(1) DEFAULT '1',
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `group_master` */
+insert  into `group_master`(`id`,`group_name`,`group_type`,`group_status`,`created_by`,`updated_by`,`created_at`,`updated_at`) values (1,'Staffs','Staffs',1,NULL,NULL,'2018-05-16 15:39:54','0000-00-00 00:00:00'),(2,'Parents of Students of PreKG(A)','Parents',1,NULL,NULL,'2018-05-16 15:40:16','0000-00-00 00:00:00'),(3,'Parents of Students of PreKG(B)','Parents',1,NULL,NULL,'2018-05-16 15:40:25','0000-00-00 00:00:00'),(4,'Parents of Students of LKG(A)','Parents',1,NULL,NULL,'2018-05-16 15:40:45','0000-00-00 00:00:00'),(5,'Parents of Students of LKG(B)','Parents',1,NULL,NULL,'2018-05-16 15:41:02','0000-00-00 00:00:00'),(6,'Parents of Students of UKG(A)','Parents',1,NULL,NULL,'2018-05-16 15:41:12','0000-00-00 00:00:00'),(7,'Parents of Students of UKG(B)','Parents',1,NULL,NULL,'2018-05-16 15:41:35','0000-00-00 00:00:00');
 
