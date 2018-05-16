@@ -122,7 +122,7 @@ include 'header.php';
 
                                     <div class="form-group">
                                         <div class="col-lg-12">
-                                            <textarea rows="5" cols="5" name="message" class="form-control" placeholder="Compose Your Text Message (SMS) Here"></textarea>
+                                            <textarea rows="5" cols="5" name="message" id="message" class="form-control" placeholder="Compose Your Text Message (SMS) Here"></textarea>
                                         </div>
                                     </div>
 
@@ -141,7 +141,7 @@ include 'header.php';
                                             <input type="submit" value="SEND TEXT MESSAGE" class="btn btn-info form-control"/>
                                         </div>
                                         <div class="col-md-2">
-                                            <input type="submit" value="CLEAR" class="btn btn-info form-control"/>
+                                            <input type="button" value="CLEAR" id="clearBtn" class="btn btn-info form-control"/>
                                         </div>
                                     </div>
                                 </form>
@@ -197,5 +197,13 @@ include 'header.php';
 
 </div>
 <!-- /page container -->
+
+<script>
+    $(document).ready(function(){
+        $("#clearBtn").click(function(){
+            $("#message").val(" ");
+        });
+    });
+</script>
 </body>
 </html>
