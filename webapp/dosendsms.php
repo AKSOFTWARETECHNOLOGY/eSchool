@@ -22,14 +22,17 @@ else{
     $message = "Test Msg";
 }
 
+$group_results = array();
 if(isset($_REQUEST['smsGroup'])) {
     if(!empty($_REQUEST['smsGroup'])){
         $grpId = $_REQUEST['smsGroup'];
+        $grpIds = implode(',', $grpId);
         $group_sql="SELECT gi.mobile_num FROM `group_info` as gi
 LEFT JOIN group_master as grp on grp.id = gi.group_id
-where gi.group_id=$grpId and gi.group_info_status=1";
+where gi.group_id in ($grpIds) and gi.group_info_status=1";
+        //echo $group_sql; exit;
         $group_exe=mysql_query($group_sql);
-        $group_results = array();
+
         while($row = mysql_fetch_assoc($group_exe)) {
             array_push($group_results, $row);
         }
@@ -43,6 +46,8 @@ where gi.group_id=$grpId and gi.group_info_status=1";
 $mobileNum[1] = '9444293520';
 $mobileNum[2] = '9841486644';*/
 $cnt = count($mobileNum);
+echo $cnt;
+exit;
 
 for($i=0;$i<$cnt;$i++){
     $xml_data ='<?xml version="1.0"?>

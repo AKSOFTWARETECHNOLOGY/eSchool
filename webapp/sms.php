@@ -106,7 +106,7 @@ include 'header.php';
                                             <!-- <input type="text" class="form-control" name="mobileNum" value="<?php echo $phone; ?>" />-->
                                             <?php }
                                             else { ?>
-                                            <select name="smsGroup" class="form-control">
+                                            <select name="smsGroup[]" class="form-control" multiple="multiple" style="height:100px;">
                                                 <option value="">Select the Group</option>
                                                 <?php
                                                 foreach($group_results as $key => $value){ ?>
