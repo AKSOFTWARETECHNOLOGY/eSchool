@@ -196,7 +196,7 @@ include 'header.php';
                                                         <li><a href="student-delete.php?student_id=<?php echo $stu_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>&nbsp;&nbsp;
                                                     </ul>
                                                 </td>
-                                                <td><a href="sms.php?mobile=9444295429"><button type="button" class="btn btn-info">Send SMS</button></a></td>
+                                                <td><a href="sms.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info">Send SMS</button></a></td>
                                             </tr>
                                         <?php
                                         }

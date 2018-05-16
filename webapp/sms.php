@@ -2,15 +2,31 @@
 ob_start();
 include "config.php";
 
-/* if(isset($_GET["studId"])){
+$mobile = [];
+if(isset($_REQUEST["student_id"])) {
+    $studId = $_REQUEST['student_id'];
+
+    $stu_sql="SELECT * FROM `student_info` where user_id=$studId";
+    $stu_exe=mysql_query($stu_sql);
+    $stu_cnt=@mysql_num_rows($stu_exe);
+    $stu_fet=mysql_fetch_array($stu_exe);
+}
+
+if(isset($_GET["studId"])){
+    $phone = null;
     $studentId = [];
     $studentIds = [];
     $studentId = explode(",", $_GET["studId"]);
     $cnt = count($studentId);
     for ($i = 0; $i < $cnt-1; $i++) {
         $studentIds = $studentId;
+        $stu_sql="SELECT mobile FROM `student_info` where user_id =$studentIds[$i]";
+        $stu_exe=mysql_query($stu_sql);
+        $stu_fet=mysql_fetch_array($stu_exe);
+        $mobile[$i] = $stu_fet['mobile'];
+        $phone = $phone . $mobile[$i] . ",";
     }
-} */
+}
 ?>
 
 <!DOCTYPE html>
@@ -68,12 +84,16 @@ include 'header.php';
                                 </h4>
                             </div>
                             <div class="panel-body no-padding-bottom">
-                                <form class="form-horizontal" action="dosendsms.php">
+                                <form class="form-horizontal" action="dosendsms.php" method="post">
                                     <div class="form-group">
                                         <label class="control-label col-lg-4">Send SMS to</label>
                                         <div class="col-lg-8">
-                                            <?php if(isset($_REQUEST['mobile'])){?>
-                                            <input type="text" class="form-control" name="mobileNum" value="<?php echo $_REQUEST['mobile']; ?>" />
+                                            <?php if(isset($stu_cnt)){?>
+                                            <select name="mobileNum" class="form-control">
+                                                <option value="<?php echo $stu_fet['mobile']; ?>"><?php echo $stu_fet['firstname_person'] . " " . $stu_fet['lastname_person']; ?></option>
+                                            </select>
+
+                                            <!-- <input type="text" class="form-control" name="mobileNum" value="<?php echo $phone; ?>" />-->
                                             <?php }
                                             else { ?>
                                             <select name="jobtype" class="form-control">

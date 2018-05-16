@@ -13,12 +13,12 @@ if(isset($_POST["student"])) {
     $cnt = count($_POST["student"]);
     if($sendmsg == 1){
         $studId = [];
-        /* $studId = $_POST["student"];
+        $studId = $_POST["student"];
         $studentId = null;
         for ($i = 0; $i < $cnt; $i++) {
             $studentId = $studentId . $studId[$i] . ",";
         }
-        header("Location: sms.php?studId=$studentId"); */
+        header("Location: sms.php?studId=$studentId");
     }
     else{
         for ($i = 0; $i < $cnt; $i++) {
