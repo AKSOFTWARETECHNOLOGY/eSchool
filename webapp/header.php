@@ -6,7 +6,7 @@
 		</a>
 		<a class="sidebar-control sidebar-toggle hidden-xs pull-right"><i class="fa fa-bars"></i></a>
 	</div>
-		<ul class="navbar-right">
+		<ul class="navbar-right hidden">
 		<li class="dropdown clearfix"> 
 			<a class="dropdown-toggle" id="settings" data-toggle="dropdown" aria-expanded="false"> <i class="fa fa-cog"></i></a> 
 			<ul class="dropdown-menu dropdown-menu-themes" aria-labelledby="settings"> 

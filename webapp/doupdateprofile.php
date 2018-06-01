@@ -22,7 +22,7 @@ if(isset($_FILES['profilePhoto'])) {
 
     if (!empty($base)) {
         $ext = $info['extension'];
-        if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/png")) && in_array($ext, $allowedExts))
+        if ((($_FILES["profilePhoto"]["type"] == "image/gif") || ($_FILES["profilePhoto"]["type"] == "image/jpeg") || ($_FILES["profilePhoto"]["type"] == "image/jpg") || ($_FILES["profilePhoto"]["type"] == "image/png")) && in_array($ext, $allowedExts))
         {
             $newname = "schoolphoto-" . time() . "." . $ext;
             $target = 'image/' . $newname;

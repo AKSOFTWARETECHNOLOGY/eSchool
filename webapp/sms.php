@@ -84,7 +84,18 @@ include 'header.php';
 
             <!-- Content area -->
             <div class="content">
-
+                <?php
+                if(isset($_REQUEST['succ'])) {
+                    if ($_REQUEST['succ'] == 1) {
+                        ?>
+                        <div class="alert alert-success alert-dismessible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>SMS sent Successfully</strong>
+                        </div>
+                    <?php
+                    }
+                }
+                ?>
                 <div class="row">
                     <div class="col-md-9">
                         <div class="panel panel-flat">

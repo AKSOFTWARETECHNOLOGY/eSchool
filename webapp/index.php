@@ -70,7 +70,7 @@ if(isset($_SESSION['adminuserid']))
 							</div>
 
 							<div class="form-group">
-								<button type="submit" name="login" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block"><b><i class="fa fa-sign-in"></i></b> Sign in</button>
+								<button type="submit" name="login" class="btn btn-info btn-lg btn-labeled btn-labeled-right btn-block" value="Sign In"><b><i class="fa fa-sign-in"></i></b> Sign in</button>
 							</div>						
 						</div>
 						

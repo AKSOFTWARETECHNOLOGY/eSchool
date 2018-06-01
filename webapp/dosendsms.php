@@ -46,8 +46,6 @@ where gi.group_id in ($grpIds) and gi.group_info_status=1";
 $mobileNum[1] = '9444293520';
 $mobileNum[2] = '9841486644';*/
 $cnt = count($mobileNum);
-echo $cnt;
-exit;
 
 for($i=0;$i<$cnt;$i++){
     $xml_data ='<?xml version="1.0"?>
@@ -75,7 +73,9 @@ for($i=0;$i<$cnt;$i++){
     $output = curl_exec($ch);
     curl_close($ch);
 
-    print_r($output);
+    //print_r($output);
 }
+
+header("Location: sms.php?succ=1");
 
 ?>

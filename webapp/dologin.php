@@ -1,4 +1,6 @@
-<?php session_start();
+<?php
+error_reporting(0);
+session_start();
 ob_start();
 
 if(isset($_SESSION['adminuserid']))
@@ -10,7 +12,6 @@ if(isset($_SESSION['adminuserid']))
 $_SESSION['scaleuppuser']="1";
 header("Location: index.php");
 */
-
 
 include "config.php";
 
