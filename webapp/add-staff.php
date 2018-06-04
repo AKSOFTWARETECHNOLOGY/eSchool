@@ -100,9 +100,10 @@ include 'header.php';
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">Job Type <span class="req"> *</span> </label>
+                                <label class="control-label col-lg-4">Job Type </label>
                                 <div class="col-lg-8">
                                     <select name="jobType" class="form-control">
+                                        <option value="">Select Job Type</option>
                                         <option value="1">Teaching Staff</option>
                                         <option value="2">Non Teaching Staff</option>
                                         <option value="3">Office Clerk</option>
@@ -111,9 +112,10 @@ include 'header.php';
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">Job Position <span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Job Position </label>
                                 <div class="col-lg-8">
                                     <select name="jobPosition" class="form-control">
+                                        <option value="">Select Job Position</option>
                                         <option value="1">Principal</option>
                                         <option value="2">Junior Staff</option>
                                         <option value="3">Senior Staff</option>
@@ -122,16 +124,17 @@ include 'header.php';
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">Date of Birth<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Date of Birth</label>
                                 <div class="col-lg-8">
                                     <input type="date" class="form-control" name="dob">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">Gender<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Gender</label>
                                 <div class="col-lg-8">
                                     <select name="gender" class="form-control">
+                                        <option value=" ">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
@@ -156,7 +159,7 @@ include 'header.php';
                             </div>
 
                             <div class="form-group hidden">
-                                <label class="control-label col-lg-4">Nationality<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Nationality</label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="nationality" id="nationality">
                                         <option value="">Select Country</option>
@@ -219,14 +222,14 @@ include 'header.php';
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">Address<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Address</label>
                                 <div class="col-lg-8">
                                     <textarea rows="5" cols="5" class="form-control" placeholder="Address" name="address"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-lg-4">City<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">City</label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="cityId" id="cityId">
                                         <option value="">Select City</option>
@@ -241,9 +244,9 @@ include 'header.php';
                             </div>
 
                             <div class="form-group hidden">
-                                <label class="control-label col-lg-4">State<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">State</label>
                                 <div class="col-lg-8">
-                                    <select class="form-control" name="state" id="state" required>
+                                    <select class="form-control" name="state" id="state">
                                         <option value="">Select State</option>
                                         <?php
                                         foreach($state_results as $key => $value){ ?>
@@ -256,7 +259,7 @@ include 'header.php';
                             </div>
 
                             <div class="form-group hidden">
-                                <label class="control-label col-lg-4">Country<span class="req"> *</span></label>
+                                <label class="control-label col-lg-4">Country</label>
                                 <div class="col-lg-8">
                                     <select class="form-control" name="countryId" id="countryId">
                                         <option value="">Select Country</option>
@@ -388,46 +391,21 @@ include 'header.php';
                     required: true,
                     lettersonly: true
                 },
-                jobType: {
-                    required: true
-                },
-                jobPosition: {
-                    required: true
-                },
-                dob: {
-                    required: true
-                },
-                gender: {
-                    required: true
-                },
                 mobile: {
+                    required: true,
                     number: true,
                     minlength: 10,
                     maxlength: 10
                 },
                 email: {
                     required: true
-                },
-                cityId: "required",
-                address: "required"
+                }
             },
             // Specify validation error messages
             messages: {
                 firstName: {
                     required: "Please enter your Name",
                     lettersonly: "Your Name must be of characters"
-                },
-                jobType: {
-                    required: "Please enter the Job Type"
-                },
-                jobPosition: {
-                    required: "Please provide the Job Position"
-                },
-                dob: {
-                    required: "Please provide the DOB"
-                },
-                gender: {
-                    required: "Please provide the Gender"
                 },
                 mobile: {
                     required: "Please provide the Mobile Number",
@@ -436,9 +414,7 @@ include 'header.php';
                 },
                 email: {
                     required: "Please provide a valid email"
-                },
-                cityId: "Please choose your City",
-                address: "Please enter your Address"
+                }
             },
             // Make sure the form is submitted to the destination defined
             // in the "action" attribute of the form when valid

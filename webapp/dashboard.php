@@ -184,7 +184,7 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-indigo">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Message</h6>
+                        <h6 class="panel-title text-uppercase pl-10"><a href="sms.php">Message</a></h6>
                     </div>
                     <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
                         <div class="row">
@@ -208,7 +208,7 @@ include 'header.php';
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-flat bg-pink">
                     <div class="panel-heading heading-condensed">
-                        <h6 class="panel-title text-uppercase pl-10">Email</h6>
+                        <h6 class="panel-title text-uppercase pl-10"><a href="email.php">Email</a></h6>
                     </div>
                     <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
                         <div class="row">

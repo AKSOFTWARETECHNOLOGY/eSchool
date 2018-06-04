@@ -15,7 +15,7 @@ $staff_sql="SELECT cs.*, classes.class_name, section.section_name, users.name as
  LEFT JOIN `classes` ON classes.id = cs.class_id
  LEFT JOIN `section` ON section.id = cs.section_id
  LEFT JOIN `users` ON users.id = cs.staff_id
- where cs.class_section_status=1 and classes.class_name like '%$className%'";
+ where cs.class_section_status=1 and classes.class_name like '%$className%' order by classes.id ASC";
 $staff_exe = mysql_query($staff_sql);
 $staff_cnt = @mysql_num_rows($staff_exe);
 ?>
@@ -27,6 +27,7 @@ $staff_cnt = @mysql_num_rows($staff_exe);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MySkoo - Class</title>
+
     <?php include "head-inner.php"; ?>
 </head>
 <body>
@@ -198,7 +199,7 @@ include 'header.php';
                                     paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
                                 },
                                 lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
-                                displayLength: 5,
+                                displayLength: 100
                             });
 
                             $('.dataTables_filter input[type=search]').attr('placeholder','Type to filter...');

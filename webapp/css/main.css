@@ -308,7 +308,7 @@ ul.dropdown-menu-themes ul li.color-option.theme.default{background:#EF5350;}
 
 /* Page header */
 
-.page-title{padding:20px 10px 10px 0;display:block;position:relative}
+.page-title{padding:0px;display:block;position:relative}
 .page-header{margin:60px 0 20px;padding-bottom:0;border:none;}
 .page-header h4{font-size:28px;font-family:open_sanslight;padding-left: 5px;}
 .page-header h4 i{margin-top: -5px;}

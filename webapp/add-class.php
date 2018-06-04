@@ -80,7 +80,7 @@ include 'header.php';
 
             <!-- Content area -->
             <div class="content">
-                <form class="form-horizontal" action="doaddclass.php">
+                <form class="form-horizontal" action="doaddclass.php" id="addclassform">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-flat">
@@ -135,7 +135,7 @@ include 'header.php';
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group hidden">
                                         <label class="control-label col-lg-4">Num of Students</label>
                                         <div class="col-lg-8">
                                             <input type="number" class="form-control" name="numOfStudents">
@@ -188,88 +188,30 @@ include 'header.php';
 
         // Initialize form validation on the registration form.
         // It has the name attribute "registration"
-        $("form#addStaffForm").validate({
+        $("form#addclassform").validate({
             // Specify validation rules
             rules: {
                 classlevel: {
                     required: true
                 },
-                jobType: {
+                classsection: {
                     required: true
                 },
-                jobPosition: {
+                classTeacher: {
                     required: true
-                },
-                dob: {
-                    required: true
-                },
-                gender: {
-                    required: true
-                },
-                nationality: {
-                    required: true
-                },
-                telephone: {
-                    number: true,
-                    minlength: 11,
-                    maxlength: 11
-                },
-                mobile: {
-                    number: true,
-                    minlength: 10,
-                    maxlength: 10
-                },
-                email: {
-                    required: true
-                },
-                pincode: {
-                    number: true,
-                    minlength: 6,
-                    maxlength: 6
-                },
-                cityId: "required",
-                state: "required",
-                countryId: "required",
-                address: "required"
+                }
             },
             // Specify validation error messages
             messages: {
-                firstName: {
-                    required: "Please enter your Name",
-                    lettersonly: "Your Name must be of characters"
+                classlevel: {
+                    required: "Please select the class level"
                 },
-                jobType: {
-                    required: "Please enter the Job Type"
+                classsection: {
+                    required: "Please select the class section"
                 },
-                jobPosition: {
-                    required: "Please provide the Job Position"
-                },
-                dob: {
-                    required: "Please provide the DOB"
-                },
-                gender: {
-                    required: "Please provide the Gender"
-                },
-                telephone: {
-                    minlength: "Your Landline number must be 11 characters long",
-                    maxlength: "Your Landline number must be 11 characters long"
-                },
-                mobile: {
-                    required: "Please provide the Mobile Number",
-                    minlength: "Your mobile number must be 10 characters long",
-                    maxlength: "Your mobile number must be 10 characters long"
-                },
-                email: {
-                    required: "Please provide a valid email"
-                },
-                pincode: {
-                    minlength: "Your Pincode must be 6 characters long",
-                    maxlength: "Your Pincode must be 6 characters long"
-                },
-                cityId: "Please choose your City",
-                state: "Please choose your State",
-                countryId: "Please choose your Country",
-                address: "Please enter your Address"
+                classTeacher: {
+                    required: "Please select the class teacher"
+                }
             },
             // Make sure the form is submitted to the destination defined
             // in the "action" attribute of the form when valid

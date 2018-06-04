@@ -7,6 +7,7 @@ if(!isset($_SESSION['adminuserid']))
 }
 
 include "config.php";
+$date = date("Y-m-d");
 $sendmsg= $_POST["sendMessage"];
 
 if(isset($_POST["student"])) {
@@ -22,10 +23,10 @@ if(isset($_POST["student"])) {
     }
     else{
         for ($i = 0; $i < $cnt; $i++) {
-            $delete_class_sql = "UPDATE users set delete_status = 0 WHERE id =". $_POST["student"][$i];
+            $delete_class_sql = "UPDATE users set delete_status = 0, updated_at='$date' WHERE id =". $_POST["student"][$i];
             $delete_class_exe = mysql_query($delete_class_sql);
         }
-        header("Location: student.php?suc=1");
+        header("Location: student.php?del=1");
     }
 }
 else{
