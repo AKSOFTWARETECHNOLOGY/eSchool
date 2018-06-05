@@ -52,7 +52,7 @@ $date = date("Y-m-d");
 $pwdtime = time();
 $pwd = md5('123456');
 
-$uName = $firstName . $lastName;
+$uName = $firstName . " " . $lastName;
 
 $sql = "INSERT INTO `users` (name, email, password, confirmed, delete_status, created_at, updated_at) VALUES ('$uName','$email','$pwd','0','1','$date','$date')";
 $exe = mysql_query($sql);

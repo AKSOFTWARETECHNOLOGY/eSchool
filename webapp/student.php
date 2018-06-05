@@ -244,7 +244,7 @@ include 'header.php';
                                     {
                                         orderable: false,
                                         width: '20%',
-                                        targets: 4
+                                        targets: [4,5]
                                     }
                                 ],
                                 order: [[ 0, 'desc' ]],

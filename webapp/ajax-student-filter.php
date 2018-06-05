@@ -34,6 +34,7 @@ $stu_cnt=@mysql_num_rows($stu_exe);
         <th>PHONE NUMBER</th>
         <th>TODAY ATTENDANCE</th>
         <th class="text-center">ACTIONS</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -53,6 +54,7 @@ $stu_cnt=@mysql_num_rows($stu_exe);
                     <li><a href="student-delete.php?student_id=<?php echo $stu_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>&nbsp;&nbsp;
                 </ul>
             </td>
+            <td><a href="sms.php?student_id=<?php echo $stu_fet['user_id']; ?>"><button type="button" class="btn btn-info">Send SMS</button></a></td>
         </tr>
     <?php
     }
@@ -86,7 +88,7 @@ $stu_cnt=@mysql_num_rows($stu_exe);
                     {
                         orderable: false,
                         width: '20%',
-                        targets: 4
+                        targets: [4, 5]
                     }
                 ],
                 order: [[ 0, 'desc' ]],

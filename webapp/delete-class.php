@@ -14,7 +14,7 @@ if(isset($_POST["class"])) {
         $delete_class_sql = "UPDATE class_section set class_section_status = 0 WHERE id =". $_POST["class"][$i];
         $delete_class_exe = mysql_query($delete_class_sql);
     }
-    header("Location: class.php?suc=1");
+    header("Location: class.php?del=1");
 }
 
 else{
