@@ -230,7 +230,6 @@ include 'header.php';
                                         orderable: false,
                                         width: '20%',
                                         targets: [4,5]
-                                    }
                                 ],
                                 order: [[ 0, 'desc' ]],
                                 dom: '<"datatable-header"fl><"datatable-scroll-lg"t><"datatable-footer"ip>',
@@ -240,7 +239,7 @@ include 'header.php';
                                     paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
                                 },
                                 lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
-                                displayLength: 5,
+                                displayLength: 100
                             });
 
                             $('.dataTables_filter input[type=search]').attr('placeholder','Type to filter...');

@@ -255,7 +255,7 @@ include 'header.php';
                                     paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
                                 },
                                 lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
-                                displayLength: 5
+                                displayLength: 100
                             });
 
                             $('.dataTables_filter input[type=search]').attr('placeholder','Type to filter...');
