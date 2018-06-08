@@ -131,7 +131,7 @@ include 'header.php';
                                                 <td><input type="checkbox" name="class[]" value="<?php echo $staff_fet['id'] ?>"/></td>
                                                 <td><?php echo $staff_fet['class_name'] . '(' .$staff_fet['section_name'] . ')'; ?></td>
                                                 <td><?php echo $staff_fet['staff_name']; ?></td>
-                                                <td><?php echo $staff_fet['num_of_students']; ?></td>
+                                                <td><?php calculateNumOfStudents($staff_fet['class_id'], $staff_fet['section_id']); ?></td>
                                                 <td class="text-center">
                                                     <ul class="icons-list">
                                                         <li><a href="class-view.php?class_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>&nbsp;&nbsp;</li>
@@ -160,6 +160,19 @@ include 'header.php';
 
                     </div>
                 </div>
+
+                <?php
+                function calculateNumOfStudents($cid, $sid){
+                    $stu_sql="SELECT * FROM `student_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+ where si.class_name=$cid and si.class_section_name=$sid and users.delete_status=1";
+                    $stu_exe=mysql_query($stu_sql);
+                    $stu_cnt=@mysql_num_rows($stu_exe);
+                    if($stu_cnt != 0){
+                        echo $stu_cnt;
+                    }
+                }
+                ?>
 
                 <script type='text/javascript'>
                     $(document).ready(function() {

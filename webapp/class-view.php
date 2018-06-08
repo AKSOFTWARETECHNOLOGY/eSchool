@@ -91,9 +91,22 @@ include 'header.php';
                                 <div class="form-group">
                                     <label class="control-label col-lg-4">Number of Students</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" value="<?php echo $class_fet['num_of_students']; ?>" readonly/>
+                                        <input type="text" class="form-control" value="<?php calculateNumOfStudents($class_fet['class_id'], $class_fet['section_id']); ?>" readonly/>
                                     </div>
                                 </div>
+
+                                <?php
+                                function calculateNumOfStudents($cid, $sid){
+                                    $stu_sql="SELECT * FROM `student_info` as si
+LEFT JOIN `users` ON users.id = si.user_id
+ where si.class_name=$cid and si.class_section_name=$sid and users.delete_status=1";
+                                    $stu_exe=mysql_query($stu_sql);
+                                    $stu_cnt=@mysql_num_rows($stu_exe);
+                                    if($stu_cnt != 0){
+                                        echo $stu_cnt;
+                                    }
+                                }
+                                ?>
 
                             </div>
                         </div>

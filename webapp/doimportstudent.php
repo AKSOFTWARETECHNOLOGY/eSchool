@@ -57,13 +57,15 @@ if($uploadedStatus==1) {
         $firstName = trim($allDataInSheet[$i]["B"]);
         $lastName = trim($allDataInSheet[$i]["C"]);
         $email = trim($allDataInSheet[$i]["D"]);
-        $className = trim($allDataInSheet[$i]["E"]);
-        $sectionName = trim($allDataInSheet[$i]["F"]);
-        $dob = trim($allDataInSheet[$i]["G"]);
-        $gender = trim($allDataInSheet[$i]["H"]);
-        $address = trim($allDataInSheet[$i]["I"]);
-        $cityId = trim($allDataInSheet[$i]["J"]);
-        $mobile = trim($allDataInSheet[$i]["K"]);
+        $dob = trim($allDataInSheet[$i]["E"]);
+        $gender = trim($allDataInSheet[$i]["F"]);
+        $address = trim($allDataInSheet[$i]["G"]);
+        $cityId = trim($allDataInSheet[$i]["H"]);
+        $mobile = trim($allDataInSheet[$i]["I"]);
+
+        $className = $_REQUEST['className'];
+        $sectionName = $_REQUEST['section'];
+
 
         $pwd = md5('123456');
         $username = $_SESSION['adminusername'];
