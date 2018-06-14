@@ -88,6 +88,16 @@ include 'header.php';
                 <?php
                 }
             }
+            if(isset($_REQUEST['error'])) {
+                if ($_REQUEST['error'] == 1) {
+                    ?>
+                    <div class="alert alert-success alert-dismessible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Unable to delete the staff</strong>
+                    </div>
+                <?php
+                }
+            }
             if(isset($_REQUEST['import'])) {
                 if ($_REQUEST['import'] == 1) {
                     ?>
