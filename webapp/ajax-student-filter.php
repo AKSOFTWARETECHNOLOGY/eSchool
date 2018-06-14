@@ -29,7 +29,7 @@ $stu_cnt=@mysql_num_rows($stu_exe);
 <table class="table datatable">
     <thead>
     <tr>
-        <th></th>
+        <th><input type="checkbox" onClick="toggle(this)" /> Select All</th>
         <th>NAME</th>
         <th>PHONE NUMBER</th>
         <th>TODAY ATTENDANCE</th>
@@ -62,6 +62,15 @@ $stu_cnt=@mysql_num_rows($stu_exe);
     </tbody>
 </table>
 
+<script>
+    function toggle(source) {
+        checkboxes = document.getElementsByName('student[]');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+
 <script type='text/javascript'>
     $(document).ready(function() {
         $(function() {
@@ -74,11 +83,11 @@ $stu_cnt=@mysql_num_rows($stu_exe);
                 autoWidth: false,
                 columnDefs: [
                     {
-                        width: '10%',
+                        width: '15%',
                         targets: 0
                     },
                     {
-                        width: '30%',
+                        width: '25%',
                         targets: 1
                     },
                     {
