@@ -143,6 +143,7 @@ include 'header.php';
 								<th>POSITION</th>
 								<th>PHONE NUMBER</th>
                                 <th class="text-center">ACTIONS</th>
+                                <th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -173,6 +174,7 @@ include 'header.php';
                                     <li><a href="staff-delete.php?staff_id=<?php echo $staff_fet['user_id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a>&nbsp;&nbsp;</li>
                                 </ul>
                             </td>
+                            <td><a href="sms.php?staff_id=<?php echo $staff_fet['user_id']; ?>"><button type="button" class="btn btn-info">Send SMS</button></a></td>
                         </tr>
                         <?php
                         }

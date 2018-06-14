@@ -13,6 +13,15 @@ if(isset($_REQUEST["student_id"])) {
     $stu_fet=mysql_fetch_array($stu_exe);
 }
 
+if(isset($_REQUEST["staff_id"])) {
+    $staffId = $_REQUEST['staff_id'];
+
+    $staff_sql="SELECT * FROM `staff_info` where user_id=$staffId";
+    $staff_exe=mysql_query($staff_sql);
+    $staff_cnt=@mysql_num_rows($staff_exe);
+    $staff_fet=mysql_fetch_array($staff_exe);
+}
+
 if(isset($_GET["studId"])){
     $phone = null;
     $studentId = [];
@@ -115,6 +124,12 @@ include 'header.php';
                                             </select>
 
                                             <!-- <input type="text" class="form-control" name="mobileNum" value="<?php echo $phone; ?>" />-->
+                                            <?php }
+                                            else if(isset($staff_cnt)){
+                                                ?>
+                                                <select name="mobileNum" class="form-control">
+                                                    <option value="<?php echo $staff_fet['mobile']; ?>"><?php echo $staff_fet['firstname_person'] . " " . $staff_fet['lastname_person']; ?></option>
+                                                </select>
                                             <?php }
                                             else { ?>
                                             <select name="smsGroup[]" class="form-control" multiple="multiple" style="height:100px;">
