@@ -255,6 +255,81 @@ include 'header.php';
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-indigo">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10"><a href="staff-group-list.php">Staff Groups</a></h6>
+                    </div>
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-flat bg-pink">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10"><a href="student-group-list.php">Student Groups</a></h6>
+                    </div>
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-area-intervals"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 hidden">
+                <div class="panel panel-flat bg-purple">
+                    <div class="panel-heading heading-condensed">
+                        <h6 class="panel-title text-uppercase pl-10">Report</h6>
+                    </div>
+                    <form role="form" id="staffSearchForm" class="hidden form-horizontal" method="post" action="#">
+                        <div class="row">
+                            <div class="col-md-1">  </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="className"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control btn btn-primary" type="submit" value="search" name="classSearch"/>
+                            </div>
+                            <div class="col-md-1">  </div>
+                        </div>
+                    </form>
+                    <div class="p-10">
+                        <!--
+                        <div class="chart" id="google-column"></div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="row hidden">
 			<div class="col-md-4 col-sm-4">

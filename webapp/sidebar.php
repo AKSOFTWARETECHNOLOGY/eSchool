@@ -84,6 +84,14 @@ $school_fet=mysql_fetch_array($school_exe);
                 </li>
 
                 <li>
+                    <a href="index.htm#"><i class="fa fa-users"></i> <span>Groups</span></a>
+                    <ul>
+                        <li><a href="staff-group-list.php"><i class="fa fa-users"></i> <span>Staff Group</span></a></li>
+                        <li><a href="student-group-list.php"><i class="fa fa-user-plus"></i> <span>Student Group</span></a></li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href="index.htm#"><i class="fa fa-users"></i> <span>Profile</span></a>
                     <ul>
                         <li><a href="user-profile.php"><i class="fa fa-users"></i> <span>My Profile</span></a></li>
