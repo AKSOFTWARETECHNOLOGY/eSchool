@@ -8,16 +8,16 @@ if(!isset($_SESSION['adminuserid']))
 
 include "config.php";
 
-if(!empty($_REQUEST['staffId'])){
+if(!empty($_REQUEST['studId'])){
     $groupName = $_REQUEST['groupName'];
-    $staffId = $_REQUEST['staffId'];
-    $staff = explode(",",$staffId);
+    $studId = $_REQUEST['studId'];
+    $staff = explode(",",$studId);
     $cnt = sizeof($staff);
     $user_id=$_SESSION['adminuserid'];
     $date = date("Y-m-d");
 
     if($cnt > 0){
-        $insert_group_sql = "INSERT INTO `group_master` (group_name, group_type, group_status) values ('$groupName', 'Staffs','1')";
+        $insert_group_sql = "INSERT INTO `group_master` (group_name, group_type, group_status) values ('$groupName', 'Parents','1')";
         $insert_group_exe = mysql_query($insert_group_sql);
         $group_id = mysql_insert_id();
 
@@ -26,14 +26,14 @@ if(!empty($_REQUEST['staffId'])){
             $insert_group_info_exe = mysql_query($insert_group_info_sql);
         }
 
-        header("Location: staff-group-list.php?suc=1");
+        header("Location: student-group-list.php?suc=1");
     }
     else{
-        header("Location: staff.php?err=1");
+        header("Location: student.php?err=1");
     }
 }
 else{
-    header("Location: staff.php?err=2");
+    header("Location: student.php?err=2");
 }
 
 ?>

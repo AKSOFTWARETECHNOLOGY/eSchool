@@ -39,6 +39,47 @@ while($row = mysql_fetch_assoc($class_exe)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MySkoo - Student</title>
     <?php include "head-inner.php"; ?>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 40px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 50%; /* Full width */
+            height: 50%; /* Full height */
+            margin: 0px auto;
+            overflow: hidden; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            height: 100%;
+            margin: auto;
+            border: 1px solid #888;
+            width: 100%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <!-- Main navbar -->
@@ -155,7 +196,7 @@ include 'header.php';
                                         <input type="hidden" name="sendMessage" id="sendMessage" value="0"/>
                                     </div>
                                     <div class="col-md-3">
-                                        <button type="button" class="form-control btn btn-info">Add To Groups</button>
+                                        <button type="button" class="form-control btn btn-info" id="myBtn">Add To Groups</button>
                                     </div>
 
                                     <div class="col-md-3">
@@ -185,7 +226,7 @@ include 'header.php';
                                         {
                                             ?>
                                             <tr>
-                                                <td><input type="checkbox" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
+                                                <td><input type="checkbox" class="stuCheck" name="student[]" value="<?php echo $stu_fet['user_id'] ?>"/> </td>
                                                 <td><?php echo $stu_fet['firstname_person'] . " " . $stu_fet['lastname_person']; ?></td>
                                                 <td><?php echo $stu_fet['mobile'] ?></td>
                                                 <td>N/A </td>
@@ -215,6 +256,72 @@ include 'header.php';
                             </form>
                         </div>
                         <!-- /basic datatable -->
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-header" style="padding-top: 0px;">
+                                    <span class="close">&times;</span>
+                                    <h2>Add To Groups</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="modalForm" class="modalForm" action="doAddStudentGroup.php" method="post" >
+                                        <div class="col-md-12">
+                                            <label class="col-md-5">Group Name:<span style="color:red">*</span> </label>
+                                            <input type="text" class="form-control col-md-7" name="groupName" required />
+                                        </div>
+
+                                        <div class="col-md-12" style="height:15px"></div>
+
+                                        <div class="col-md-4">
+                                            <input type="hidden" name="studId" class="studId" value=""/>
+                                            <input type="submit" class="btn btn-info form-control" name="" value="Add" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            $("#myBtn").click(function(){
+                                var staff = [];
+                                $.each($(".stuCheck:checked"), function(){
+                                    staff.push($(this).val());
+                                });
+                                var staf = staff.join(", ");
+                                //alert(staf);
+                                $(".studId").val(staf);
+                            });
+                        </script>
+
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById('myModal');
+
+                            // Get the button that opens the modal
+                            var btn = document.getElementById("myBtn");
+
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+
+                            // When the user clicks the button, open the modal
+                            btn.onclick = function() {
+                                modal.style.display = "block";
+                            }
+
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function() {
+                                modal.style.display = "none";
+                            }
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+                        </script>
                     </div>
                 </div>
 

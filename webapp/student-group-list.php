@@ -56,22 +56,12 @@ include 'header.php';
                         <li class="active">Student Group</li>
                     </ul>
                     <?php
-                    if(isset($_REQUEST['succ'])) {
-                        if ($_REQUEST['succ'] == 1) {
+                    if(isset($_REQUEST['suc'])) {
+                        if ($_REQUEST['suc'] == 1) {
                             ?>
                             <div class="alert alert-success alert-dismessible">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Staff Info updated Successfully</strong>
-                            </div>
-                        <?php
-                        }
-                    }
-                    if(isset($_REQUEST['err'])) {
-                        if ($_REQUEST['err'] == 1) {
-                            ?>
-                            <div class="alert alert-success alert-dismessible">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Unable to add to group</strong>
+                                <strong>Group created Successfully</strong>
                             </div>
                         <?php
                         }
