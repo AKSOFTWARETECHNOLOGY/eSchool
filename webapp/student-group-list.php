@@ -61,7 +61,25 @@ include 'header.php';
                             ?>
                             <div class="alert alert-success alert-dismessible">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Group created Successfully</strong>
+                                <strong>Student Group Created Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                        else if($_REQUEST['suc'] == 2){
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Student Group Deleted Successfully</strong>
+                            </div>
+                        <?php
+                        }
+                    }
+                    if(isset($_REQUEST['err'])) {
+                        if ($_REQUEST['err'] == 1) {
+                            ?>
+                            <div class="alert alert-success alert-dismessible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Unable to delete the Group</strong>
                             </div>
                         <?php
                         }
@@ -104,7 +122,8 @@ include 'header.php';
                                             <td><?php echo $staff_fet['group_name']; ?></td>
                                             <td class="text-center">
                                                 <ul class="icons-list">
-                                                    <li><a href="student-group-view.php?group_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a>&nbsp;&nbsp;</li>
+                                                    <li><a href="student-group-view.php?group_id=<?php echo $staff_fet['id']; ?>"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button></a></li>&nbsp;&nbsp;
+                                                    <li><a href="group-delete.php?stud_id=<?php echo $staff_fet['id']; ?>" onclick="return confirm('Do you want to delete?');"><button type="button" class="btn btn-info btn-xs"><i class="fa fa-remove"></i></button></a></li>
                                                 </ul>
                                             </td>
                                         </tr>
